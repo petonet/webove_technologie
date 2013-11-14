@@ -1,9 +1,6 @@
 {% extends "base.html" %}
+{% load ground_tag %}
 
 {% block content %}
-    <ul>
-    {% for ground in homepage_list %}
-       <li> {{ ground.name}}</li>
-    {% endfor %}
-    </ul>
+    {% nav_groundlist %}
 {% endblock %}
