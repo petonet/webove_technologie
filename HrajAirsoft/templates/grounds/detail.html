@@ -1,0 +1,9 @@
+{%extends base.html%}
+
+{% block content %}
+    <ul>
+    {% for ground in grounds_list %}
+       <li> {{ ground.name}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
