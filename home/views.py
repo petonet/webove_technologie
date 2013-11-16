@@ -12,10 +12,10 @@ from django.views import generic
 class HomeView(generic.ListView):
     model = ground
     template_name = 'homepage\\homepage.html'
-    context_object_name = "homepage_list"
+    #context_object_name = "homepage_list"
 
-    def get_queryset(self):
-        return  ground.objects.all().order_by('-pubDate')[:5]
+    #def get_queryset(self):
+    #    return  ground.objects.all().order_by('-pubDate')[:5]
 
 #    def get_context_data(self, **kwargs):
  #       context = super(PageView, self).get_context_data(**kwargs)

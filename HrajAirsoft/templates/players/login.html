@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>
+        {% block title %}Prihlásenie{% endblock %}
+    </h1>
+
+{% if form.errors %}
+  <p>Zle zadané používateľské meno alebo heslo !</p>
+{% endif %}
+
+<form action="." method="POST">
+<table>
+{% include "players/form.html" %}
+<tr>
+<td></td>
+<td>
+<input type="submit" value="Prihlásiť">
+<input type="hidden" name="next" value="{{ next }}">
+</td>
+</tr>
+</table>
+</form>
+{% endblock %}

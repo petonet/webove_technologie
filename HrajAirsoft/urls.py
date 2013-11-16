@@ -3,8 +3,9 @@ from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 import grounds
+import players
 from grounds import urls
-from home import  views as homeViews
+from home import views as homeViews
 
 admin.autodiscover()
 
@@ -19,7 +20,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
      #ground detail
-      url(r'^grounds/', include(grounds.urls)),
-      url(r'^$',homeViews.HomeView.as_view())
+      url(r'^grounds/', include('grounds.urls')),
+      url(r'^$',homeViews.HomeView.as_view()),
+      url(r'^accounts/', include('players.urls')),
 )
 

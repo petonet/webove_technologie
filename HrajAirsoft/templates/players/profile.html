@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{% block title %}Používateľský profil{% endblock %}</h1>
+
+{% if saved %}
+  <p>Profil bol upravený !</p>
+{% endif %}
+
+<form action="." method="POST">
+<table>
+{% include "players/form.html" %}
+<tr>
+<td></td>
+<td><input type="submit" value="Uložiť"></td>
+</tr>
+</table>
+</form>
+
+{% endblock %}
