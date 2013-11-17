@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from grounds import views
+from events import views
 
 
 
