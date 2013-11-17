@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\team\models.py" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\home\templatetags\__init__.py" afterPath="$PROJECT_DIR$/grounds/templatetags/__init__.py" />
-      <change type="MOVED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\home\templatetags\ground_tag.py" afterPath="$PROJECT_DIR$/grounds/templatetags/ground_tag.py" />
-      <change type="MOVED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\teams\template_tags\__init__.py" afterPath="$PROJECT_DIR$/teams/templatetags/__init__.py" />
-      <change type="MOVED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\teams\template_tags\teams_tag.py" afterPath="$PROJECT_DIR$/teams/templatetags/teams_tag.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/settings.py" afterPath="$PROJECT_DIR$/HrajAirsoft/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -35,7 +28,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="8" selection-start="34" selection-end="34" vertical-scroll-proportion="0.029462738" vertical-offset="0" max-vertical-offset="577">
+            <state line="1" column="8" selection-start="34" selection-end="34" vertical-scroll-proportion="0.029565217" vertical-offset="0" max-vertical-offset="575">
               <folding />
             </state>
           </provider>
@@ -704,12 +697,16 @@
       <created>1384695715185</created>
       <updated>1384695715185</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="##########Changelog################&#10;-zaciatok prace na sprave pouzivatelov/hracov&#10;-pridane appky a urobeny model eventov&#10;&#10;#########TODO####################&#10;-vsetko">
+      <created>1384716759203</created>
+      <updated>1384716759203</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32656515" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -719,6 +716,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36682615" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31917632" sideWeight="0.45454547" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282572" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18484849" sideWeight="0.2082671" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18484849" sideWeight="0.67408586" order="0" side_tool="false" content_ui="combo" />
@@ -727,7 +725,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -882,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="8" selection-start="34" selection-end="34" vertical-scroll-proportion="0.029462738" vertical-offset="0" max-vertical-offset="577">
+        <state line="1" column="8" selection-start="34" selection-end="34" vertical-scroll-proportion="0.029565217" vertical-offset="0" max-vertical-offset="575">
           <folding />
         </state>
       </provider>
