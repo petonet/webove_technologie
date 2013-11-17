@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'grounds',
     'home',
     'teams',
+    'events'
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

@@ -1,5 +1,3 @@
-__author__ = 'idefix'
-
 
 from django import template
 from grounds.models import ground
