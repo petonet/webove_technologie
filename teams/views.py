@@ -6,6 +6,11 @@ from players.models import player
 from teams.models import Team, NewsFeeds, Gallery, UserInTeamNtoN
 
 
+class TeamsView(generic.ListView):
+    model = Team
+    template_name = 'teams\\index.html'
+
+
 class IndexView(generic.ListView):
 
     template_name = 'teams/index.html'
@@ -41,3 +46,4 @@ class DetailView(generic.DetailView):
         context['GalleryTeam'] = Gallery(team_id=self.model.pk).objects.all()
 
         return context
+

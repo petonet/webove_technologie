@@ -1,21 +1,6 @@
 {% extends "base.html" %}
+{% load teams_tag %}
 
 {% block content %}
-    {% if edited_team_list %}
-
-
-        <dl>
-        {% for team in edited_team_list %}
-            <img src="{{ team.team_logo }}" alt="some_text">
-            <dt><a href="/teams/{{ poll.id }}/">{{ team.name }}</a></dt>
-            <dd>- Registration date and time - {{ team.reg_date }}</dd>
-            <dd>- Number of players - {{ team.counts_of_players }}</dd>
-        {% endfor %}
-        </dl>
-
-    {% else %}
-
-        <p>No teams are available.</p>
-
-    {% endif %}
+    {% nav_teamslist %}
 {% endblock %}

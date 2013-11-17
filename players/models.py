@@ -15,5 +15,9 @@ class player(models.Model):
         return self.user.username
 
 
-
+class Armory(models.Model):
+    user_id = models.ForeignKey(player)
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=300)
+    image = ProcessedImageField(upload_to='uploads/image/armory', processors=[ResizeToFill(800, 600)], format='JPEG', options={'quality': 60}, blank=True, null=True)
 
