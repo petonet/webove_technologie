@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="##########Changelog################&#10;-zaciatok prace na sprave pouzivatelov/hracov&#10;-pridane appky a urobeny model eventov&#10;&#10;#########TODO####################&#10;-vsetko">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/events/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/players/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/events/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/players/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/events/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/players/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/events/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/players/views.py" />
+    <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/team/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/team/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/team/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/team/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -58,7 +54,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grounds/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="0.94683546" vertical-offset="0" max-vertical-offset="476">
+            <state line="15" column="50" selection-start="371" selection-end="417" vertical-scroll-proportion="0.6455696" vertical-offset="0" max-vertical-offset="476">
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -287,6 +283,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="grounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="team" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -685,7 +695,11 @@
       <created>1384695447720</created>
       <updated>1384695447720</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="##########Changelog################&#10;-zaciatok prace na sprave pouzivatelov/hracov&#10;-pridane appky a urobeny model eventov&#10;&#10;#########TODO####################&#10;-vsetko">
+      <created>1384695715185</created>
+      <updated>1384695715185</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -869,7 +883,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grounds/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="0.94683546" vertical-offset="0" max-vertical-offset="476">
+        <state line="15" column="50" selection-start="371" selection-end="417" vertical-scroll-proportion="0.6455696" vertical-offset="0" max-vertical-offset="476">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
