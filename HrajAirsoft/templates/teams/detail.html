@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if team %}
+        <h2>{{ team.name }}</h2>
+        <p>{{ team.description }}</p>
+        <p>{{ team.reg_date }}</p>
+        <p>{{ team.counts_of_players }}</p>
+
+        {% for player in players %}
+            <img src="{{ player.photo }}" alt="some_text">
+            <dt><a href="/player/{{ player.id }}/">{{ player.username }}</a></dt>
+        {% endfor %}
+
+        {% for feed in new_feeds %}
+
+            <p>{{ feed.title }}</p>
+            <p>{{ feed.content }}</p>
+            <p>{{ feed.publish_date }}</p>
+
+        {% endfor %}
+
+         {% for img in GalleryNewFeeds %}
+
+             <img src="{{ img.image }}" alt="some_text">
+
+        {% endfor %}
+
+         {% for gal in GalleryTeam %}
+
+             <img src="{{ gal.image }}" alt="some_text">
+
+        {% endfor %}
+
+
+    {% else %}
+
+        <p>This team non exist !</p>
+
+    {% endif %}
+{% endblock %}
