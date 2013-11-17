@@ -12,7 +12,6 @@ class IndexView(generic.ListView):
     context_object_name = 'teams_list'
 
     def get_queryset(self):
-        """Return the last five published polls."""
         return Team.objects.order_by('-reg_date')
 
     def get_context_data(self, **kwargs):
