@@ -10,6 +10,11 @@ class TeamsView(generic.ListView):
     model = Team
     template_name = 'teams\\index.html'
 
+class TeamsDetailView(generic.ListView):
+    model = Team
+    template_name = 'teams\\detail.html'
+
+"""
 
 class IndexView(generic.ListView):
 
@@ -30,20 +35,31 @@ class IndexView(generic.ListView):
         context['edited_team_list'] = Team.objects.order_by('-reg_date')
 
         return context
-
+"""
 
 class DetailView(generic.DetailView):
     model = Team
     template_name = 'teams/detail.html'
 
     def get_context_data(self, **kwargs):
-
+        a = []
         context = super(DetailView, self).get_context_data(**kwargs)
+        #print 'toto je kontext id', self.kwargs.get('pk', None)
+        for e in UserInTeamNtoN.objects.filter(team_id=self.kwargs.get('pk', None)):
+            a.append(player.objects.filter(pk=e.user_id.user_id)[0])
+        context['players'] = a
 
-        context['players'] = player(pk=UserInTeamNtoN(team_id=self.model.pk).user_id).objects.all()
-        context['new_feeds'] = NewsFeeds(team_id=self.model.pk).objects.order_by('-publish_date')
-        context['GalleryNewFeeds'] = Gallery(news_id=NewsFeeds.pk).objects.all()
-        context['GalleryTeam'] = Gallery(team_id=self.model.pk).objects.all()
+        #try:
+        #    context['players'] = player(pk=UserInTeamNtoN(team_id=self.model.pk).user_id).objects.all()
+        #except ValueError:
+        #    print 'Error(Weak) - teams.views.DetailView - v danom time je len osoba ktora ho vytvorila'
+        #    context['players'] = None
+
+        #context['new_feeds'] = NewsFeeds(team_id=self.model.pk).objects.order_by('-publish_date')
+        context['new_feeds'] = NewsFeeds.objects.filter(team_id=self.kwargs.get('pk', None))
+        context['GalleryTeam'] = Gallery.objects.filter(team_id=self.kwargs.get('pk', None))
+
+
 
         return context
 

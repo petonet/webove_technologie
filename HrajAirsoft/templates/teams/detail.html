@@ -2,33 +2,48 @@
 
 {% block content %}
     {% if team %}
-        <h2>{{ team.name }}</h2>
-        <p>{{ team.description }}</p>
-        <p>{{ team.reg_date }}</p>
-        <p>{{ team.counts_of_players }}</p>
+        <ul><h1>{{ team.name }}</h1>
+        <li><b>O tíme - </b>{{ team.description }}</li>
+        <li><b>SPrávca/Vytvoril - </b>{{ team.leader }}</li>
+        <li><b>Registrácia tímu - </b>{{ team.reg_date }}</li>
+        <li><b>Počet hráčov - </b>{{ team.counts_of_players }}</li>
+        </ul>
 
+        <ul><h1>Členovia tímu</h1>
+
+        <li> <img src="{{ team.leader.photo }}" alt="Default photo  -">
+            <b>Meno</b> - <a href="/player/{{ team.leader.user.id }}/">{{ team.leader.user.username }}</a> -
+            <b>Registrovaný</b> - {{ team.leader.user.date_joined }} -
+            <b>Administrátor</b> </li>
+
+        {% if players %}
         {% for player in players %}
-            <img src="{{ player.photo }}" alt="some_text">
-            <dt><a href="/player/{{ player.id }}/">{{ player.username }}</a></dt>
-        {% endfor %}
 
+            <li>
+            <img src="{{ player.photo }}" alt="Default photo  -">
+                <b>Meno</b> - <a href="/player/{{ player.user.id }}/">{{ player.user.username }}</a> -
+                <b>Registrovaný</b> - {{ player.user.date_joined }}
+            </li>
+
+        {% endfor %}
+        {% endif %}
+        </ul>
+
+        <h1> Novinky, Clanky a neviem este co</h1>
         {% for feed in new_feeds %}
 
             <p>{{ feed.title }}</p>
             <p>{{ feed.content }}</p>
             <p>{{ feed.publish_date }}</p>
+            <p>{{ feed.title_image }}</p>
 
         {% endfor %}
 
-         {% for img in GalleryNewFeeds %}
-
-             <img src="{{ img.image }}" alt="some_text">
-
-        {% endfor %}
+        <h1> Galeria timu </h1>
 
          {% for gal in GalleryTeam %}
 
-             <img src="{{ gal.image }}" alt="some_text">
+             <img src="{{ gal.image }}" alt="{{ gal.image }}">
 
         {% endfor %}
 

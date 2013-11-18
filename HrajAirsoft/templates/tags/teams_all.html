@@ -4,8 +4,8 @@
 
         <dl>
         {% for team in teams %}
-            <img src="{{ team.team_logo }}" alt="some_text">
-            <dt><a href="/teams/{{ poll.id }}/">{{ team.name }}</a></dt>
+            <img src="{{ team.team_logo }}" alt="Default Image"  width="32" height="32" >
+            <dt><a href="/teams/{{ team.id }}/">{{ team.name }}</a></dt>
             <dd>- Registration date and time - {{ team.reg_date }}</dd>
             <dd>- Number of players - {{ team.counts_of_players }}</dd>
         {% endfor %}
@@ -17,3 +17,5 @@
 
     {% endif %}
 </div>
+
+
