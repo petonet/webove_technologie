@@ -25,7 +25,7 @@ class Event(models.Model):
     endOfAction=models.DateTimeField()
     entryFee=models.DecimalField(decimal_places=2, max_digits=5)
     respPerson=models.ForeignKey(player)     #player ako argument ale este nie je imple
-    #comments=models.ForeignKey(Comments)
+    comments=models.ForeignKey(Comments)
     #restrictions=models.ForeignKey(Restrictions)
     #notifications=models.ForeignKey(Notifications)
 

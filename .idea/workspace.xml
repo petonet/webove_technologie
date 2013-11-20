@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/models.py" afterPath="$PROJECT_DIR$/events/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -41,7 +42,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/events/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="35" selection-start="643" selection-end="643" vertical-scroll-proportion="0.5221843" vertical-offset="0" max-vertical-offset="680">
+            <state line="27" column="4" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.62286687" vertical-offset="94" max-vertical-offset="680">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -635,7 +636,11 @@
       <created>1384945948191</created>
       <updated>1384945948191</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="##########Changelog################&#10;-zaciatok prace na timoch&#10;&#10;#########TODO####################&#10;-vsetko">
+      <created>1384946032148</created>
+      <updated>1384946032148</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -818,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/events/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="643" selection-end="643" vertical-scroll-proportion="0.5221843" vertical-offset="0" max-vertical-offset="680">
+        <state line="27" column="4" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.62286687" vertical-offset="94" max-vertical-offset="680">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
