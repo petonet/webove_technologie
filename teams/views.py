@@ -12,7 +12,7 @@ class TeamsView(generic.ListView):
 
 class TeamsDetailView(generic.ListView):
     model = Team
-    template_name = 'teams\\detail.html'
+    template_name = 'teams\\ground_detail.html'
 
 """
 
@@ -39,7 +39,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Team
-    template_name = 'teams/detail.html'
+    template_name = 'teams/ground_detail.html'
 
     def get_context_data(self, **kwargs):
         a = []

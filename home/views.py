@@ -25,6 +25,6 @@ class HomeView(generic.ListView):
 
 #class DetailView(generic.DetailView):
 #    model= ground
-#    template_name = 'grounds/detail.html'
+#    template_name = 'grounds/ground_detail.html'
 
 

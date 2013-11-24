@@ -9,10 +9,7 @@ class Restrictions(models.Model):
     pyro=models.CharField(max_length=100)
     age=models.DecimalField(decimal_places=0, max_digits=3)
 
-class Notifications (models.Model):
 
-    content = models.CharField(max_length=100)
-    eventId = models.ForeignKey(Event)
 
 class Event(models.Model):
     title=models.CharField(max_length=200)
@@ -24,12 +21,17 @@ class Event(models.Model):
     organizationNotes=models.CharField(max_length=1000)
     endOfAction=models.DateTimeField()
     entryFee=models.DecimalField(decimal_places=2, max_digits=5)
-    respPerson=models.ForeignKey(player)     #player ako argument ale este nie je imple
-    comments=models.ForeignKey(Comments)
+    respPerson=models.ForeignKey(player)
+    #comments=models.ForeignKey(Comments)
     #restrictions=models.ForeignKey(Restrictions)
     #notifications=models.ForeignKey(Notifications)
 
 class Comments(models.Model):
     eventId = models.ForeignKey(Event)
-    player=models.ForeignKey(player )#player ako argument ale este nie je imple
+    player=models.ForeignKey(player )
     comment=models.CharField(max_length=500)
+
+class Notifications (models.Model):
+
+    content = models.CharField(max_length=100)
+    eventId = models.ForeignKey(Event)

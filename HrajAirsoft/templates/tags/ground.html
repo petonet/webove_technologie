@@ -3,7 +3,7 @@
     <ul>
     {% for ground in grounds %}
         {%  url 'grounds.models.GroundDetailView' as detailUrl %}
-       <li><a href="{{ detail }}">{{ ground.name }}</a>
+       <li><a href="/grounds/{{ ground.id }}">{{ ground.name }}</a>
        <img src="{{ detail.avatar_thumbnail.url }}" />
        </li><br />
     {% endfor %}
