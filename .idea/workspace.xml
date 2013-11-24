@@ -2,26 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/1_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/gallery/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/feeds/logos/PICT0145.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/gallery/PICT0145.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/feeds/logos/b.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/gallery/b.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/lgoo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/logo1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/logo2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/settings.py" afterPath="$PROJECT_DIR$/HrajAirsoft/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/tags/teams_all.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/tags/teams_all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/urls.py" afterPath="$PROJECT_DIR$/HrajAirsoft/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/players/views.py" afterPath="$PROJECT_DIR$/players/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/views.py" afterPath="$PROJECT_DIR$/teams/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -48,7 +28,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="5" selection-start="4633" selection-end="4642" vertical-scroll-proportion="0.46223566" vertical-offset="2057" max-vertical-offset="2924">
+            <state line="130" column="5" selection-start="4633" selection-end="4642" vertical-scroll-proportion="0.4650456" vertical-offset="2057" max-vertical-offset="2924">
               <folding />
             </state>
           </provider>
@@ -78,7 +58,12 @@
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1020">
-              <folding />
+              <folding>
+                <marker date="1385310198323" expanded="true" signature="76:362" placeholder="..." />
+                <marker date="1385310198323" expanded="true" signature="376:1198" placeholder="..." />
+                <marker date="1385310198323" expanded="true" signature="412:752" placeholder="..." />
+                <marker date="1385310198323" expanded="true" signature="832:1142" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -758,29 +743,33 @@
       <created>1384946032148</created>
       <updated>1384946032148</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="##########Changelog################&#10;-rozbehane obrazky&#10;-uploadovane veci HrajAirsoft/media a staticfiles v HrajAirsoft/static&#10;&#10;#########TODO####################&#10;-vsetko">
+      <created>1385310697541</created>
+      <updated>1385310697541</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32656515" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18484849" sideWeight="0.2082671" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1969697" sideWeight="0.6395939" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1969697" sideWeight="0.6383701" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31917632" sideWeight="0.45454547" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36601308" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3604061" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36162987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32535884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -820,7 +809,8 @@
     <MESSAGE value="##########Changelog################&#10;-zaciatok prace na sprave pouzivatelov/hracov&#10;&#10;#########TODO####################&#10;-vsetko" />
     <MESSAGE value="##########Changelog################&#10;-zaciatok prace na sprave pouzivatelov/hracov&#10;-pridane appky a urobeny model eventov&#10;&#10;#########TODO####################&#10;-vsetko" />
     <MESSAGE value="##########Changelog################&#10;-zaciatok prace na timoch&#10;&#10;#########TODO####################&#10;-vsetko" />
-    <option name="LAST_COMMIT_MESSAGE" value="##########Changelog################&#10;-zaciatok prace na timoch&#10;&#10;#########TODO####################&#10;-vsetko" />
+    <MESSAGE value="##########Changelog################&#10;-rozbehane obrazky&#10;-uploadovane veci HrajAirsoft/media a staticfiles v HrajAirsoft/static&#10;&#10;#########TODO####################&#10;-vsetko" />
+    <option name="LAST_COMMIT_MESSAGE" value="##########Changelog################&#10;-rozbehane obrazky&#10;-uploadovane veci HrajAirsoft/media a staticfiles v HrajAirsoft/static&#10;&#10;#########TODO####################&#10;-vsetko" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -913,7 +903,12 @@
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1020">
-          <folding />
+          <folding>
+            <marker date="1385310198323" expanded="true" signature="76:362" placeholder="..." />
+            <marker date="1385310198323" expanded="true" signature="376:1198" placeholder="..." />
+            <marker date="1385310198323" expanded="true" signature="412:752" placeholder="..." />
+            <marker date="1385310198323" expanded="true" signature="832:1142" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -935,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="5" selection-start="4633" selection-end="4642" vertical-scroll-proportion="0.46223566" vertical-offset="2057" max-vertical-offset="2924">
+        <state line="130" column="5" selection-start="4633" selection-end="4642" vertical-scroll-proportion="0.4650456" vertical-offset="2057" max-vertical-offset="2924">
           <folding />
         </state>
       </provider>
