@@ -4,7 +4,7 @@
 
         <dl>
         {% for team in teams %}
-            <img src="{{ team.team_logo }}" alt="Default Image"  width="32" height="32" >
+            <img src="/media/{{ team.team_logo }}" alt="/media/{{ team.team_logo }}"  width="50" height="50" >
             <dt><a href="/teams/{{ team.id }}/">{{ team.name }}</a></dt>
             <dd>- Registration date and time - {{ team.reg_date }}</dd>
             <dd>- Number of players - {{ team.counts_of_players }}</dd>

@@ -11,7 +11,7 @@
 
         <ul><h1>Členovia tímu</h1>
 
-        <li> <img src="{{ team.leader.photo }}" alt="Default photo  -">
+        <li> <img src="{{ MEDIA_URL }}{{ team.leader.photo }}" alt="{{ MEDIA_URL }}{{ team.leader.photo }}"  width="50" height="50" >
             <b>Meno</b> - <a href="/player/{{ team.leader.user.id }}/">{{ team.leader.user.username }}</a> -
             <b>Registrovaný</b> - {{ team.leader.user.date_joined }} -
             <b>Administrátor</b> </li>
@@ -20,7 +20,7 @@
         {% for player in players %}
 
             <li>
-            <img src="{{ player.photo }}" alt="Default photo  -">
+            <img src="{{ MEDIA_URL }}{{ player.photo }}" alt="{{ MEDIA_URL }}{{ player.photo }}" width="50" height="50">
                 <b>Meno</b> - <a href="/player/{{ player.user.id }}/">{{ player.user.username }}</a> -
                 <b>Registrovaný</b> - {{ player.user.date_joined }}
             </li>
@@ -35,7 +35,7 @@
             <p>{{ feed.title }}</p>
             <p>{{ feed.content }}</p>
             <p>{{ feed.publish_date }}</p>
-            <p>{{ feed.title_image }}</p>
+            <p><img src="{{ MEDIA_URL }}{{ feed.title_image }}" alt="{{ MEDIA_URL }}{{ feed.title_image }}" width="50" height="50" ></p>
 
         {% endfor %}
 
@@ -43,10 +43,8 @@
 
          {% for gal in GalleryTeam %}
 
-             <img src="{{ gal.image }}" alt="{{ gal.image }}">
-
+             <img src="{{ MEDIA_URL }}{{ gal.image }}" alt="{{ MEDIA_URL }}{{ gal.image }}" width="50" height="50">
         {% endfor %}
-
 
     {% else %}
 

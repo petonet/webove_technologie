@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 @login_required
 def profile(request):
+
     try:
         profile = request.user.get_profile()
     except player.DoesNotExist:

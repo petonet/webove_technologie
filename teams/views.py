@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from HrajAirsoft import settings
 from django.views import generic
+from HrajAirsoft.settings import PROJECT_PATH
 from players.models import player
 from teams.models import Team, NewsFeeds, Gallery, UserInTeamNtoN
 
@@ -39,7 +41,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Team
-    template_name = 'teams/ground_detail.html'
+    template_name = 'teams/detail.html'
 
     def get_context_data(self, **kwargs):
         a = []
@@ -58,7 +60,7 @@ class DetailView(generic.DetailView):
         #context['new_feeds'] = NewsFeeds(team_id=self.model.pk).objects.order_by('-publish_date')
         context['new_feeds'] = NewsFeeds.objects.filter(team_id=self.kwargs.get('pk', None))
         context['GalleryTeam'] = Gallery.objects.filter(team_id=self.kwargs.get('pk', None))
-
+        #context['path'] = PROJECT_PATH.strip("\HrajAirsoft").replace('\\', '/') + "/"
 
 
         return context

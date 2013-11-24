@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
-
+from django.conf import settings
+from django.conf.urls.static import static
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 import grounds
 import players
 from grounds import urls
 from home import views as homeViews
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 admin.autodiscover()
 
@@ -26,4 +29,5 @@ urlpatterns = patterns('',
       url(r'^accounts/', include('players.urls')),
       url(r'^teams/', include('teams.urls')),
 )
-
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
