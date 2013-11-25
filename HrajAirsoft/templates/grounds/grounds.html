@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul>
+    {% for ground in grounds %}
+       <li> <a href="/grounds/{{ ground.id }}"> {{ ground.name }} </a ></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

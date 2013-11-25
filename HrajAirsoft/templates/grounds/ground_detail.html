@@ -1,6 +1,11 @@
 {%extends "base.html"%}
 
 {% block content %}
-    <h1>{{ground_detail.name}}</h1>
+    <div>
+    <h1>{{ground.name}}</h1>
+    <div><img src="{{ MEDIA_URL }}{{ ground.photo }}"></div>
+    <p>{{ ground.description }}</p>
+
+    </div>
 
 {% endblock %}
