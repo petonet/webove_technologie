@@ -1,11 +1,15 @@
-<div>
-    <div><a href="/grounds/all/">Ihriska</a> </div>
+<div id="ground_tag">
+   <h2> <a href="/grounds/all/">Najlepšie ihriská</a></h2>
     <ul>
     {% for ground in grounds %}
-        {%  url 'grounds.models.GroundDetailView' as detailUrl %}
-       <li><a href="/grounds/{{ ground.id }}">{{ ground.name }}</a>
-       <img src="{{ detail.avatar_thumbnail.url }}" />
-       </li><br />
+       <li>
+           <a href="/grounds/{{ ground.id }}">{{ ground.name }}</a>
+
+            {% load thumbnail %}
+           {% thumbnail ground.photo "230x170" crop="center" as im %}
+                <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
+            {% endthumbnail %}
+       </li>
     {% endfor %}
     </ul>
     </div>

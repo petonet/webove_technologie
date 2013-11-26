@@ -1,13 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .clear{
     both: clear;
-
 }
 
 #header{
     width: 980px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom:20px ;
+    margin-bottom:50px ;
 }
 
 #header img{
@@ -24,6 +28,7 @@ padding-top: 20px;
     display: inline;
     margin-right: 20px ;
     font-size: 12px;
+    font-family: 'Raleway', sans-serif;
 }
 
 #header ul li#home{
@@ -52,4 +57,73 @@ padding-top: 20px;
 #header ul li a{
     color: #000000;
     text-decoration: none;
+}
+
+
+#footer{
+    background-color: #1d1d1b;
+    color: #ffffff;
+    height: 200px;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 11px;
+
+}
+
+#footer table{
+    width: 980px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer table tr{
+    padding-top: 30px;
+}
+
+#footer table tr td{
+    padding-top: 30px;
+    vertical-align: top;
+}
+
+#footer table tr td ul{
+     list-style-type: none;
+    margin-top: 0;
+    height: 100%;
+}
+
+#footer table tr td ul{
+     list-style-type: none;
+}
+
+#footer table tr td ul li{
+     margin-bottom: 6px;
+}
+
+
+#ground_tag{
+    width: 100%;
+    height: 380px;
+    background-color: #f4f4f0 ;
+}
+
+
+#ground_tag h2 a{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #000000;
+}
+
+#ground_tag ul li{
+    display: inline-block;
+}
+
+#ground_tag ul li a{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
 }

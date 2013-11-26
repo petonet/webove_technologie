@@ -3,6 +3,8 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}layout.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+
 
 </head>
 <body>
@@ -22,13 +24,28 @@
 </div>
 
 
-<div id="content">
+
 {% block content %}
 {% endblock %}
-</div>
+
 
 <div id="footer">
-    <th>
+
+    <table>
+        <tr>
+            <td>
+                <ul>
+                    <li>O nás</li>
+                    <li>Všeobecné podmienky</li>
+                    <li>Reklama</li>
+                    <li>Kontakt</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
 </div>
 
 </body>
