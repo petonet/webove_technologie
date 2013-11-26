@@ -1,0 +1,55 @@
+.clear{
+    both: clear;
+
+}
+
+#header{
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom:20px ;
+}
+
+#header img{
+    float: left;
+    margin-right: 170px;
+}
+
+#header ul{
+padding-top: 20px;
+     margin-top: 0;
+}
+
+#header ul li{
+    display: inline;
+    margin-right: 20px ;
+    font-size: 12px;
+}
+
+#header ul li#home{
+    width: 75px;
+    background-color:#585853;
+     padding: 9px 15px;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+
+#header ul li#login{
+    width: 75px;
+    background-color:#eca701;
+    padding: 9px 15px;
+    color: #ffffff;
+     border-radius: 2px;
+    margin-left:50px ;
+    }
+
+#header ul li#home a,#header ul li#login a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#header ul li a{
+    color: #000000;
+    text-decoration: none;
+}

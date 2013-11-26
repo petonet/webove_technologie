@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}layout.css">
+
+</head>
 <body>
+<div id="header">
+    <img src="{{ MEDIA_URL }}templates_img/logo.png" alt="logo"/>
+    <ul>
+        <li id="home"><a href="#">ÚVOD</a></li>
+        <li><a href="#">NÁJDI TÍM</a></li>
+        <li><a href="#">NÁJDI IHRISKO</a></li>
+        <li><a href="#">TÍMY</a></li>
+        <li><a href="#">ČLÁNKY</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li id="login">LOGIN</li>
+
+    </ul>
+    <div class="clear"></div>
+</div>
+
+
+<div id="content">
 {% block content %}
 {% endblock %}
+</div>
+
+<div id="footer">
+    <th>
+</div>
 
 </body>
 </html>
