@@ -101,6 +101,11 @@ padding-top: 20px;
      margin-bottom: 6px;
 }
 
+.content{
+    margin-right: auto;
+    margin-left: auto;
+    width: 980px;
+}
 
 #ground_tag{
     width: 100%;
@@ -108,6 +113,9 @@ padding-top: 20px;
     background-color: #f4f4f0 ;
 }
 
+#ground_tag h2{
+    margin-bottom: 15px;
+}
 
 #ground_tag h2 a{
     width: 100%;
@@ -120,6 +128,7 @@ padding-top: 20px;
 
 #ground_tag ul li{
     display: inline-block;
+    margin-right: ;
 }
 
 #ground_tag ul li a{

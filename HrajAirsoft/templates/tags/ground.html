@@ -3,12 +3,20 @@
     <ul>
     {% for ground in grounds %}
        <li>
-           <a href="/grounds/{{ ground.id }}">{{ ground.name }}</a>
+
 
             {% load thumbnail %}
            {% thumbnail ground.photo "230x170" crop="center" as im %}
                 <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
             {% endthumbnail %}
+
+        <div class="tag_ground_info">
+           <h3> <a href="/grounds/{{ ground.id }}">{{ ground.name }}</a></h3>
+            <div class="tag_ground_desc">
+                {{ ground.description }}
+            </div>
+        </div>
+
        </li>
     {% endfor %}
     </ul>
