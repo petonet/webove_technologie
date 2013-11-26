@@ -4,8 +4,42 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}layout.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+    <link href="{{ STATIC_URL }}css/eggplant/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>
+    	<script>
+	$(function() {
+		$( "#button" ).button();
+		$( "#dialog" ).dialog({
+                                                    position: ['center',100] ,
+                                                    height: 230,
+                                                    width: 400,
+                                                    modal: true,
+                                                    autoOpen: false,
+                                             show: {
+                                                    effect: "fade",
+                                                    duration: 1000
+                                                    },
+                                             hide: {
+                                                    effect: "fade",
+                                                    duration: 1000
+                                             }
+		});
+		// Link to open the dialog
+		$( "#dialog-link" ).click(function( event ) {
+			$( "#dialog" ).dialog( "open" );
+			event.preventDefault();
+		});
 
+        //get
+        var p = $("#login");
+        var offset = p.offset();
+        //set
+        $("#register").offset({ left: offset.left});
+        $("#logout").offset({ left: offset.left});
 
+	});
+	</script>
 </head>
 <body>
 <div id="header">
@@ -17,10 +51,42 @@
         <li><a href="#">TÍMY</a></li>
         <li><a href="#">ČLÁNKY</a></li>
         <li><a href="#">FAQ</a></li>
-        <li id="login">LOGIN</li>
+    {% if user.is_authenticated %}
+        <li id="logout"><a id="logout-link" href="/accounts/logout/">ODHLÁSIŤ</a></li>
+    {% else %}
+        <li id="login"><a id="dialog-link" href="#">LOGIN</a></li>
+    {% endif %}
 
     </ul>
-    <div class="clear"></div>
+    {% if not user.is_authenticated %}
+        <ul><li id="register"><a id="register-link" href="#">REGISTRÁCIA</a></li></ul>
+    {% else %}
+        <p id="login_as">PRIHLÁSENÝ AKO:  <STRONG>{{ user.username }}</STRONG></p>
+        <p id="postAndSettings">POŠTA</p>
+        <a href="/accounts/profile/"><p id="postAndSettings">EDITÁCIA PROFILU</p></a>
+    {% endif %}
+
+</div>
+<div id="dialog" title="Prihlásenie">
+<form class="crud_form" method="post" action="/accounts/login/" name="login">
+      {% csrf_token %}
+       <div class="center">
+       <table border="0" cellpadding="0" cellspacing="0" width="350" height="100">
+          <tbody id="login_center"><tr>
+            <td align="right"><strong>Meno:</strong></td>
+            <td><input class="login_input" name="username" size="15" type="text"  value="">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="right"><strong>Heslo:</strong></td>
+            <td><input class="login_input" name="password" size="15" type="password"  value="">&nbsp;</td>
+          </tr>
+        </tbody></table>
+           </br>
+           <input class="subBut" name="prihlas" value="Prihlásiť" type="submit">&nbsp;<input type="hidden" name="next" value="/./">
+        </div>
+
+</form>
+
 </div>
 
 

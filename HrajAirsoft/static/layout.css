@@ -40,7 +40,7 @@ padding-top: 20px;
 }
 
 
-#header ul li#login{
+#header ul li#login, #header ul li#register,  #header ul li#logout{
     width: 75px;
     background-color:#eca701;
     padding: 9px 15px;
@@ -48,8 +48,11 @@ padding-top: 20px;
      border-radius: 2px;
     margin-left:50px ;
     }
+#header ul li#register{
+    background-color: #1900ff;
+    }
 
-#header ul li#home a,#header ul li#login a {
+#header ul li#home a,#header ul li#login a,#header ul li#register a,#header ul li#logout a  {
     color: #ffffff;
     text-decoration: none;
 }
@@ -130,9 +133,30 @@ padding-top: 20px;
     display: inline-block;
     margin-right: ;
 }
-
-#ground_tag ul li a{
+#login_as,#postAndSettings{
+    font-size: 12px;
+    text-align: right;
+    margin-right: 60px;
+    margin-top:30px;
+}
+#postAndSettings{
+    margin-top:5px;
+}
+#ground_tag ul li a,#login_as,#postAndSettings{
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
     color: #000000;
+}
+
+.center{
+float: center;
+text-align: center;
+}
+
+.subBut {
+    background-color: #666666;
+    border: 1px solid #999999;
+    color: #EEEEEE;
+    font-weight: bold;
+    padding: 5px 9px;
 }

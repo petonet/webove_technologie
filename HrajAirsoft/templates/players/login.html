@@ -1,10 +1,42 @@
 {% extends "base.html" %}
 
-{% block content %}
-    <h1>
-        {% block title %}Prihlásenie{% endblock %}
-    </h1>
 
+{% block htmlhead %}
+    <link href="{{ STATIC_URL }}css/eggplant/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript">
+
+    $(function() {
+		$( "#button" ).button();
+		$( "#dialog" ).dialog({
+
+                                                    height: 300,
+                                                    width: 400,
+                                                    modal: true,
+                                                    autoOpen: false,
+                                             show: {
+                                                    effect: "fade",
+                                                    duration: 1000
+                                                    },
+                                             hide: {
+                                                    effect: "fade",
+                                                    duration: 1000
+                                             }
+		});
+		// Link to open the dialog
+		$( "#dialog-link" ).click(function( event ) {
+			$( "#dialog" ).dialog( "open" );
+			event.preventDefault();
+		});
+	});
+
+    </script>
+{% endblock htmlhead %}
+
+{% block content %}
+
+<div id="dialog" title="Prihlásenie">
 {% if form.errors %}
   <p>Zle zadané používateľské meno alebo heslo !</p>
 {% endif %}
@@ -21,4 +53,6 @@
 </tr>
 </table>
 </form>
+</div>
+
 {% endblock %}
