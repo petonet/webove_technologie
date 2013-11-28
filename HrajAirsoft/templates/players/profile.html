@@ -1,20 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{% block title %}Používateľský profil{% endblock %}</h1>
 
 {% if saved %}
   <p>Profil bol upravený !</p>
 {% endif %}
 
-<form action="." method="POST">
-<table>
-{% include "players/form.html" %}
-<tr>
-<td></td>
-<td><input type="submit" value="Uložiť"></td>
-</tr>
-</table>
-</form>
+<div class="content">
+    <div id="content-form-player">
+        <div id="left-sidebar">
 
+                <div class="section"><h2>Editácia registračných údajov</h2></div>
+                {% include "players/form.html" %}
+        </div>
+        <div id="right-sidebar">
+        </div>
+
+
+
+        </div>
+    </div>
 {% endblock %}

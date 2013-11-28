@@ -9,7 +9,7 @@
 	<script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
 	<script src="{{ STATIC_URL }}js/jquery-ui-1.10.3.custom.min.js"></script>
     	<script>
-	$(function() {
+	$( document ).ready(function() {
 		$( "#button" ).button();
 		$( "#dialog" ).dialog({
                                                     position: ['center',100] ,
@@ -35,10 +35,12 @@
         //get
         var p = $("#login");
         var offset = p.offset();
+        var isFirefox = typeof InstallTrigger !== 'undefined';
         //set
+        if (!isFirefox) {
         $("#register").offset({ left: offset.left});
         $("#logout").offset({ left: offset.left});
-
+        }
 	});
 	</script>
 </head>
@@ -83,7 +85,7 @@
           </tr>
         </tbody></table>
            </br>
-           <input class="subBut" name="prihlas" value="Prihlásiť" type="submit">&nbsp;<input type="hidden" name="next" value="/./">
+           <input class="subBut" name="prihlas" value="Prihlásiť" type="submit">&nbsp;<input type="hidden" name="next" value="/././">
         </div>
 
 </form>
