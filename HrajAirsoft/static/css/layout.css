@@ -131,7 +131,7 @@ padding-top: 20px;
 
 #ground_tag ul li{
     display: inline-block;
-    margin-right: ;
+    /*margin-right: ;*/
 }
 #login_as,#postAndSettings{
     font-size: 12px;
@@ -149,7 +149,7 @@ padding-top: 20px;
 }
 
 .center{
-float: center;
+flow: center;
 text-align: center;
 }
 
