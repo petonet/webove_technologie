@@ -4,7 +4,7 @@ PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 MEDIA_PATH = PROJECT_PATH + '/media/'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
+DATE_INPUT_FORMATS = ('%m/%d/%Y')
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )

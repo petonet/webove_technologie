@@ -2,6 +2,7 @@
 from django.forms.extras.widgets import SelectDateWidget
 from players.models import player
 from django import forms
+from HrajAirsoft import settings
 
 class PlayerForm(forms.ModelForm):
     #username = forms.CharField(label='Užívateľské meno', widget=forms.CharField(), required=True)
@@ -13,9 +14,9 @@ class PlayerForm(forms.ModelForm):
     date_of_birth = forms.CharField(label='Dátum nar.',widget=forms.TextInput(attrs={'id': 'datepicker', 'class': 'form-control','type':'text','uniq':'calendar'}), required=True )
     countryPart = forms.CharField(label='Kraj',widget=forms.Select(choices = player.KRAJE_CHOICES, attrs={'id': 'select', 'class': 'form-control'}), required=True )
     city = forms.CharField(label='Mesto', widget=forms.TextInput(attrs={'id': 'inputEmail', 'class': 'form-control','type':'text','placeholder':'Mesto'}), required=False)
-    street = forms.CharField(label='Ulica', widget=forms.TextInput(attrs={'id': 'inputEmail', 'class': 'form-control','type':'text','placeholder':'Ulica'}), required=False)
+    street = forms.CharField(label='Adresa', widget=forms.TextInput(attrs={'id': 'inputEmail', 'class': 'form-control','type':'text','placeholder':'Ulica'}), required=False)
     email = forms.CharField(label='Email', widget=forms.TextInput(attrs={'id': 'inputEmail', 'class': 'form-control','type':'text','placeholder':'Email'}), required=True)
-    phone = forms.DecimalField(label='Mobil',widget=forms.TextInput(attrs={'id': 'inputEmail', 'class': 'form-control','type':'text','placeholder':'Telefón'}), required=False)
+    phone = forms.CharField(label='Mobil',widget=forms.TextInput(attrs={'id': 'inputEmail', 'class': 'form-control','type':'text','placeholder':'Telefón'}), required=False)
     about_me = forms.CharField(label='O mne',widget=forms.Textarea(attrs={'id': 'textArea', 'class': 'form-control','rows':'3','type':'text','placeholder':'Napíš nám niečo o sebe'}), required=False)
     #photo = forms.FileField(label='Profilová fotka',widget=forms.FileInput, required=False)
 
@@ -24,8 +25,8 @@ class PlayerForm(forms.ModelForm):
         model = player
         fields = ('first_name','last_name','gender','date_of_birth','countryPart','city', 'street','email','phone','about_me')
 
-    def clean_password2(self):
-        if self.cleaned_data.get('password1') != self.cleaned_data['password2']:
-            raise forms.ValidationError('Zadané heslá sú odlišné !')
-
-        return self.cleaned_data['password2']
+    #def clean_password2(self):
+    #    if self.cleaned_data.get('password1') != self.cleaned_data['password2']:
+    #        raise forms.ValidationError('Zadané heslá sú odlišné !')
+    #
+    #    return self.cleaned_data['password2']
