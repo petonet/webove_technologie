@@ -961,7 +961,7 @@ pre code {
   position: relative;
   min-height: 1px;
   /*padding-right: 15px;*/
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .col-xs-1,
@@ -1961,11 +1961,9 @@ input[type="checkbox"] {
 
   line-height: normal;
 }
-
 input[type="file"] {
   display: block;
 }
-
 select[multiple],
 select[size] {
   height: auto;
@@ -2002,7 +2000,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 43px;
+  /*height: 43px;*/
   padding: 10px 15px;
   font-size: 15px;
   line-height: 1.428571429;

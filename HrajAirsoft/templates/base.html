@@ -63,14 +63,14 @@
 
     </ul>
     {% if not user.is_authenticated %}
-        <ul><li id="register"><a id="register-link" href="#">REGISTRÁCIA</a></li></ul>
+        <ul><li id="register"><a id="register-link" href="/accounts/registration/">REGISTRÁCIA</a></li></ul>
     {% else %}
         <p id="login_as">PRIHLÁSENÝ AKO:  <a href="/accounts/profile/"><STRONG>{{ user.username }}</STRONG></a></p>
     {% endif %}
 
 </div>
 <div id="dialog" title="Prihlásenie">
-<form class="crud_form" method="post" action="/accounts/login/" name="login">
+<form class="crud_form" method="post" action="/accounts/login/fail" name="login">
       {% csrf_token %}
        <div class="center">
        <table border="0" cellpadding="0" cellspacing="0" width="350" height="100">

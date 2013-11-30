@@ -8,11 +8,13 @@
         <div id="left-sidebar">
 
             <div class="section"><h2>Prihlásenie používateľa</h2></div>
+            {% if messages.request.path == '/accounts/login/fail' %}
             <div class="com_error">Nesprávne vyplnené údaje!</div>
-
+            {% else %}<br /><br />
+            {% endif %}
             <div class="login_form">
 
-            <form class="crud_form" method="post" action="/accounts/login/" name="login">
+            <form class="crud_form" method="post" action="/accounts/login/fail" name="login">
 
                   {% csrf_token %}
 

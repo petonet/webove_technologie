@@ -1,8 +1,11 @@
 
 <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+
+
                 <li>
                     <a href="/homepage">DOMOV</a>
                 </li>
+    {% if not reg %}
                 <li>
                     <a href="/homepage">O MNE</a>
                 </li>
@@ -15,4 +18,5 @@
                 <li>
                     <a href="/homepage">ZMENA HESLA</a>
                 </li>
+    {% endif %}
 </ul>

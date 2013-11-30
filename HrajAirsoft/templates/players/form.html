@@ -1,9 +1,17 @@
 <div class="well" xmlns="http://www.w3.org/1999/html">
 
-                    <form class="bs-example form-horizontal" action="." method="POST">
+                    <form class="bs-example form-horizontal" action="." method="POST" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
 
                     <fieldset>
-                            <legend>Osobné údaje používateľa <strong>{{ user.username }}</strong></legend>
+                    <legend>
+                    {% if reg %}
+                       Registračné údaje
+                    {% else %}
+                       Osobné údaje používateľa
+                       <strong> {{ user.username }}</strong>
+                    {% endif %}
+                    </legend>
+
                                     {% csrf_token %}
 
 
@@ -15,6 +23,9 @@
 
                                                 {{ f }}
 
+                                          {% if f.label == 'Dátum nar. *' %}
+                                            <span class="help-block">Dátum narodenia musí byť v tvare rok-mesiac-deň ! príklad: 1990-12-22 </span>
+                                          {% endif %}
 
                                           </div>
 
