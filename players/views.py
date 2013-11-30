@@ -2,7 +2,7 @@
 
 from django.views.decorators.csrf import csrf_exempt
 from models import player
-from forms import PlayerForm, RegistrationForm
+from forms import PlayerForm, RegistrationForm, ChangePassForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, RequestContext
 from django.contrib.auth.decorators import login_required
@@ -128,3 +128,25 @@ def registration(request):
         return render_to_response('players/registration.html', {'form': form, 'reg':True }, context_instance=RequestContext(request))
 
 
+@login_required
+def changepass(request):
+
+    saved = None
+    if request.method == 'POST':
+
+        form = ChangePassForm(request.POST)
+
+        if form.is_valid() and form.is_bound==True :
+            old_password = form.cleaned_data['old_password']
+            password1 = form.cleaned_data['password1']
+            if request.user.check_password(old_password):
+                request.user.set_password(password1)
+                request.user.save()
+                return render_to_response('players/changepass.html', {'form': form, 'saved': True , 'changePass': True }, context_instance=RequestContext(request))
+            else:
+                return render_to_response('players/changepass.html', {'form': form, 'fail': True, 'changePass': True, 'badpassword': 'Zadal si nesprávne heslo !'}, context_instance=RequestContext(request))
+        return render_to_response('players/changepass.html', {'form': form, 'fail': True, 'changePass': True }, context_instance=RequestContext(request))
+
+    else:
+        form = ChangePassForm({})
+        return render_to_response('players/changepass.html', {'form': form, 'changePass': True }, context_instance=RequestContext(request))

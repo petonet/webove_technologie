@@ -122,3 +122,28 @@ class RegistrationForm(forms.Form):
                 raise forms.ValidationError("Nie je to obrázok !")
         return photo
 
+class ChangePassForm(forms.Form):
+
+    old_password = forms.CharField(label='Aktuálne heslo *', widget=forms.PasswordInput(attrs={'id': 'inputPassword', 'class': 'form-control','type':'password','placeholder':'Aktuálne heslo'}), required=False)
+    password1 = forms.CharField(label='Nové heslo *', widget=forms.PasswordInput(attrs={'id': 'inputPassword', 'class': 'form-control','type':'password','placeholder':'Nové heslo'}), required=False)
+    password2 = forms.CharField(label='Nové heslo znovu *', widget=forms.PasswordInput(attrs={'id': 'inputPassword', 'class': 'form-control','type':'password','placeholder':'Nové heslo znovu'}), required=False)
+
+    def clean_old_password(self):
+        if len(self.cleaned_data.get('old_password')) == 0:
+            raise forms.ValidationError('Povinné pole !')
+        return self.cleaned_data['old_password']
+
+
+
+    def clean_password1(self):
+        if len(self.cleaned_data.get('password1')) == 0:
+            raise forms.ValidationError('Povinné pole !')
+        return self.cleaned_data['password1']
+
+
+    def clean_password2(self):
+        if len(self.cleaned_data.get('password2')) == 0:
+            raise forms.ValidationError('Povinné pole !')
+        if self.cleaned_data.get('password1') != self.cleaned_data['password2']:
+            raise forms.ValidationError('Zadané heslá sú odlišné !')
+        return self.cleaned_data['password2']

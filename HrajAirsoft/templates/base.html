@@ -47,9 +47,9 @@
 </head>
 <body>
 <div id="header">
-    <img src="{{ MEDIA_URL }}templates_img/logo.png" alt="logo"/>
+    <a href="/"><img src="{{ MEDIA_URL }}templates_img/logo.png" alt="logo"/></a>
     <ul>
-        <li id="home"><a href="#">ÚVOD</a></li>
+        <li id="home"><a href="/">ÚVOD</a></li>
         <li><a href="#">NÁJDI TÍM</a></li>
         <li><a href="#">NÁJDI IHRISKO</a></li>
         <li><a href="#">TÍMY</a></li>
@@ -62,9 +62,8 @@
     {% endif %}
 
     </ul>
-    {% if not user.is_authenticated %}
-        <ul><li id="register"><a id="register-link" href="/accounts/registration/">REGISTRÁCIA</a></li></ul>
-    {% else %}
+
+    {% if user.is_authenticated %}
         <p id="login_as">PRIHLÁSENÝ AKO:  <a href="/accounts/profile/"><STRONG>{{ user.username }}</STRONG></a></p>
     {% endif %}
 
@@ -85,6 +84,7 @@
         </tbody></table>
            </br>
            <input class="subBut" name="prihlas" value="Prihlásiť" type="submit">&nbsp;<input type="hidden" name="next" value="/homepage">
+           <input class="subBut" name="prihlas" value="Registrácia" type="button" onclick="window.location='/accounts/registration/';">
         </div>
 
 </form>
