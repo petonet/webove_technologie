@@ -71,7 +71,8 @@ padding-top: 20px;
     margin-left: 0px;
     margin-right: 0px;
     font-size: 11px;
-
+    vertical-align: bottom;
+    display:block;
 }
 
 #footer table{
@@ -292,4 +293,62 @@ text-align: center;
 .unsigned-list{
 list-style-type: none;
 float: right;
+}
+
+.profile{
+min-height: 240px;
+background-color: #ECF0F1;
+}
+.profile-left{
+float: left;
+width: 30%;
+position: static;
+height: 100%;
+padding: 20px;
+}
+.nickname{
+  margin: 0;
+  padding: 10px 0px 0px 20px;
+  font-size: 23px;
+  line-height: inherit;
+  color: #2c3e50;
+}
+
+.profile-right{
+float: right;
+width: 70%;
+position: static;
+height: 100%;
+}
+
+.profile-buttons{
+bottom: 10px;
+left: 205px;
+position: absolute;
+}
+
+.profil_udaje{
+    color: #002B51;
+    font-size: 15px;
+    line-height: 180%;
+    padding-top: 15px;
+    padding-bottom: 15px ;
+}
+.info-left {
+    float: left;
+    width: 50%;
+    text-align: right;
+    font-weight:bold ;
+}
+
+.info-right {
+    float: right;
+    text-align: left;
+    padding-left: 40px;
+    width: 50%;
+}
+
+.profile-photo{
+float: left;
+margin: 0 15px 10px 0;
 }

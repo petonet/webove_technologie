@@ -7722,3 +7722,14 @@ vertical-align: top;
 margin-left: 35%;
 width: 30%;
 }
+
+.col-lg-2b-moj{
+width: 30%;
+margin-right: 10px;
+}
+
+.col-lg-10b-moj{
+vertical-align: top;
+margin-left: 35%;
+width: 60%;
+}
