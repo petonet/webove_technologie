@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
-from grounds import views
+from grounds.views import *
 from models import ground
+from django.contrib.auth.decorators import login_required
+
 
 
 
 urlpatterns = patterns('',
    #url(r'^$/',views.IndexView.as_view(),name='index' ),
-  url(r'^(?P<pk>\d+)/$', views.GroundDetailView.as_view(model=ground), name='detail'),
-  url(r'^all/$',views.GroundsOverview.as_view(model=ground))
+  url(r'add/$', login_required(GroundCreate.as_view(model=ground))),
+  url(r'^(?P<pk>\d+)/$', GroundDetailView.as_view(model=ground), name='detail'),
+  url(r'^all/$',GroundsOverview.as_view(model=ground))
 )
