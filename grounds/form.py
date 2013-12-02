@@ -13,11 +13,11 @@ class AddGroundForm(forms.ModelForm):
     #city = forms.CharField(label='Mesto', widget=forms.TextInput, required=True, max_length= 100)
    # street = forms.CharField(label='Ulica', widget=forms.TextInput, required=True)
     description = forms.CharField(label='Popis', widget=forms.Textarea, required=False)
-    #rate = forms.DecimalField(label='Hodnotenie', widget=forms.HiddenInput, required=False,initial=2.5)
+    rate = forms.DecimalField(label='Hodnotenie', widget=forms.HiddenInput, required=False,initial=2.5)
     official = forms.BooleanField(label='Oficiálne ihrisko', widget=forms.CheckboxInput, required=False)
-    #pubDate = forms.CharField(label='Datum pridania', widget=forms.HiddenInput, required=False)
+    pubDate = forms.CharField(label='Datum pridania', widget=forms.HiddenInput, required=False)
     photo = forms.ImageField(label='Fotka ihriska',widget=forms.FileInput, required=False,)
-    #user = forms.DecimalField(label='Pouzivatel', widget=forms.HiddenInput, required=False)
+    user = forms.DecimalField(label='Pouzivatel', widget=forms.HiddenInput, required=False)
 
 
     class Meta:
