@@ -5,6 +5,11 @@ from django.contrib.auth.models import User
 from django import forms
 import re,views,imghdr
 from HrajAirsoft import settings
+from pilkit.processors import ResizeToFill
+
+from imagekit.forms import ProcessedImageField
+
+
 
 class PlayerForm(forms.ModelForm):
 
@@ -147,3 +152,17 @@ class ChangePassForm(forms.Form):
         if self.cleaned_data.get('password1') != self.cleaned_data['password2']:
             raise forms.ValidationError('Zadané heslá sú odlišné !')
         return self.cleaned_data['password2']
+
+
+class ChangePhotoForm(forms.Form):
+
+    photo = forms.FileField(label='Profil. fotka',widget=forms.FileInput(attrs={'id': 'inputEmail', 'class': 'form-control','placeholder':'Path to file'}), required=False)
+
+    def clean_photo(self):
+        photo = self.cleaned_data['photo']
+        if photo is not None:
+            if len(photo) == 0:
+                  raise forms.ValidationError('Povinné pole !')
+            if len(photo) != 0 and not imghdr.what(photo) :
+                raise forms.ValidationError("Nie je to obrázok !")
+        return photo

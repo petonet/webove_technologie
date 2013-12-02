@@ -186,6 +186,7 @@ text-align: center;
     height: auto;
     width: 71%;
     margin-top: 5px;
+    overflow: hidden;
     margin-bottom: 5px;
 }
 
@@ -298,6 +299,7 @@ float: right;
 .profile{
 min-height: 240px;
 background-color: #ECF0F1;
+    overflow: hidden;
 }
 .profile-left{
 float: left;
@@ -308,8 +310,8 @@ padding: 20px;
 }
 .nickname{
   margin: 0;
-  padding: 10px 0px 0px 20px;
-  font-size: 23px;
+    padding-top: 20px;
+    font-size: 23px;
   line-height: inherit;
   color: #2c3e50;
 }
@@ -317,8 +319,10 @@ padding: 20px;
 .profile-right{
 float: right;
 width: 70%;
+padding-bottom: 20px;
 position: static;
 height: 100%;
+
 }
 
 .profile-buttons{
@@ -332,11 +336,11 @@ position: absolute;
     font-size: 15px;
     line-height: 180%;
     padding-top: 15px;
-    padding-bottom: 15px ;
+    padding-bottom: 20px ;
 }
 .info-left {
     float: left;
-    width: 50%;
+    width: 40%;
     text-align: right;
     font-weight:bold ;
 }
@@ -345,10 +349,17 @@ position: absolute;
     float: right;
     text-align: left;
     padding-left: 40px;
-    width: 50%;
+    width: 60%;
+
 }
 
 .profile-photo{
-float: left;
-margin: 0 15px 10px 0;
+    background-color: #ECF0F1;
+    float: left;
+    margin: 0 15px 10px 0;
+}
+
+.medzera{
+    padding-top: 30px;
+    margin-bottom: 30px;
 }

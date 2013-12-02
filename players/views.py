@@ -2,7 +2,7 @@
 
 from django.views.decorators.csrf import csrf_exempt
 from models import player
-from forms import PlayerForm, RegistrationForm, ChangePassForm
+from forms import PlayerForm, RegistrationForm, ChangePassForm, ChangePhotoForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, RequestContext
 from django.contrib.auth.decorators import login_required
@@ -127,7 +127,7 @@ def registration(request):
 
             new_user.save()
 
-            new_player = player(user=new_user,gender=gender,date_of_birth=date_of_birth,countryPart=countryPart,city=city,street=street,phone=phone,about_me=about_me,photo=photo)
+            new_player = player(user=new_user,gender=gender,date_of_birth=date_of_birth,countryPart=countryPart,city=city,street=street,phone=phone,about_me=about_me,photo=photo,rank=0)
             new_player.save()
 
             saved = True
@@ -173,3 +173,43 @@ def aboutMe(request):
 
     age = calculate_age(info_about_player.date_of_birth)
     return render_to_response('players/aboutMe.html', {'info_about_player': info_about_player,'age':age }, context_instance=RequestContext(request))
+
+
+@login_required
+def changephoto(request):
+
+    saved = None
+    if request.method == 'POST':
+
+        form = ChangePhotoForm(request.POST, files=request.FILES)
+
+        if form.is_valid() and form.is_bound==True :
+            photo = form.cleaned_data['photo']
+
+            try:
+                info_about_player = request.user.get_profile()
+            except player.DoesNotExist:
+                info_about_player = player(user=request.user)
+
+            about_me = info_about_player.about_me
+            city = info_about_player.city
+            countryPart = info_about_player.countryPart
+            date_of_birth = info_about_player.date_of_birth
+            gender = info_about_player.gender
+            phone = info_about_player.phone
+            rank = info_about_player.rank
+            street = info_about_player.street
+
+            info_about_player.delete()
+
+            new_player = player(user=request.user,gender=gender,date_of_birth=date_of_birth,countryPart=countryPart,city=city,street=street,phone=phone,about_me=about_me,photo=photo,rank=rank)
+
+            new_player.save()
+
+            return render_to_response('players/changephoto.html', {'form': form, 'saved': True , 'changePass': True, 'changephoto':True }, context_instance=RequestContext(request))
+        else:
+            return render_to_response('players/changephoto.html', {'form': form, 'fail': True, 'changePass': True, 'changephoto':True  }, context_instance=RequestContext(request))
+
+    else:
+        form = ChangePhotoForm({})
+        return render_to_response('players/changephoto.html', {'form': form, 'changePass': True , 'changephoto':True }, context_instance=RequestContext(request))
