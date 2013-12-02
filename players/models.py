@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from pilkit.processors import ResizeToFill
 from imagekit.models import ProcessedImageField
 
-
 class player(models.Model):
     user = models.OneToOneField(User, verbose_name='Pouzivatel')
     phone = models.CharField(max_length=30, blank=True, null=True)
@@ -56,6 +55,10 @@ class player(models.Model):
     countryPart = models.CharField(max_length=60,
                                       choices=KRAJE_CHOICES,
                                       default=KOSICE)
+
+
+
+
 class Armory(models.Model):
     user_id = models.ForeignKey(player)
     name = models.CharField(max_length=30)

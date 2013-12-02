@@ -2,14 +2,27 @@
 
 from django.views.decorators.csrf import csrf_exempt
 from models import player
-from forms import PlayerForm, RegistrationForm
+from forms import PlayerForm, RegistrationForm, ChangePassForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, RequestContext
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 #from players.views import profile
-import re,datetime
+import datetime
 from django.contrib.auth.models import User
+
+def calculate_age(born):
+    today = datetime.date.today()
+    try:
+        birthday = born.replace(year=today.year)
+    except ValueError: # narodenie 29.februara a aktualny rok nie je priestupny
+        birthday = born.replace(year=today.year, day=born.day-1)
+    if birthday > today:
+        return today.year - born.year - 1
+    else:
+        return today.year - born.year
+
+
 
 def validateDate(date_text):
     try:
@@ -128,3 +141,35 @@ def registration(request):
         return render_to_response('players/registration.html', {'form': form, 'reg':True }, context_instance=RequestContext(request))
 
 
+@login_required
+def changepass(request):
+
+    saved = None
+    if request.method == 'POST':
+
+        form = ChangePassForm(request.POST)
+
+        if form.is_valid() and form.is_bound==True :
+            old_password = form.cleaned_data['old_password']
+            password1 = form.cleaned_data['password1']
+            if request.user.check_password(old_password):
+                request.user.set_password(password1)
+                request.user.save()
+                return render_to_response('players/changepass.html', {'form': form, 'saved': True , 'changePass': True }, context_instance=RequestContext(request))
+            else:
+                return render_to_response('players/changepass.html', {'form': form, 'fail': True, 'changePass': True, 'badpassword': 'Zadal si nesprávne heslo !'}, context_instance=RequestContext(request))
+        return render_to_response('players/changepass.html', {'form': form, 'fail': True, 'changePass': True }, context_instance=RequestContext(request))
+
+    else:
+        form = ChangePassForm({})
+        return render_to_response('players/changepass.html', {'form': form, 'changePass': True }, context_instance=RequestContext(request))
+
+@login_required
+def aboutMe(request):
+    try:
+        info_about_player = request.user.get_profile()
+    except player.DoesNotExist:
+        info_about_player = player(user=request.user)
+
+    age = calculate_age(info_about_player.date_of_birth)
+    return render_to_response('players/aboutMe.html', {'info_about_player': info_about_player,'age':age }, context_instance=RequestContext(request))

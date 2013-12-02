@@ -6,6 +6,9 @@
                     <legend>
                     {% if reg %}
                        Registračné údaje
+                    {% elif changePass %}
+                        Nastavenie hesla používateľa
+                        <strong> {{ user.username }}</strong>
                     {% else %}
                        Osobné údaje používateľa
                        <strong> {{ user.username }}</strong>
@@ -16,11 +19,21 @@
 
 
                                     {% for f in form %}
+                                        <div>
 
-                                          <label class="col-lg-2 control-label" for="id_{{ f.id }}">{{ f.label }} {% if f.field.required %}*{% endif %} :</label>
+                                        {% if changePass %}
+                                          <label class="col-lg-2-moj control-label" for="id_{{ f.id }}">
+                                        {% else %}
+                                          <label class="col-lg-2 control-label" for="id_{{ f.id }}">
+                                        {% endif %}
 
+                                              {{ f.label }} {% if f.field.required %}*{% endif %} :</label>
+
+                                        {% if changePass %}
+                                          <div class="col-lg-10-moj">
+                                        {% else %}
                                           <div class="col-lg-10">
-
+                                        {% endif %}
                                                 {{ f }}
 
                                           {% if f.label == 'Dátum nar. *' %}
@@ -28,7 +41,7 @@
                                           {% endif %}
 
                                           </div>
-
+                                    </div>
                                     {% endfor %}
                     </fieldset>
 
