@@ -1,10 +1,11 @@
 from models import ground
 from django.views.generic import DetailView , ListView
 from django.shortcuts import get_object_or_404
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from form import *
+from django.core.urlresolvers import reverse_lazy
+from forms import *
 import datetime
 
 
@@ -64,3 +65,31 @@ class GroundCreate(CreateView):
 
 
 
+class GroundUpdate(UpdateView):
+    model = ground
+    template_name = 'grounds/addForm.html'
+    form_class = AddGroundForm
+    fields = ['name,city,street,description,rate,official,photo']
+    template_name_suffix = '_update_form'
+
+
+
+    #def form_valid(self, form):
+    #    print self.request.user
+    #    form.instance.user = self.request.user
+    #    #print(self.photo)
+    #    return super(GroundUpdate, self).form_valid(form)
+    #
+    #
+    #def get_context_data(self, **kwargs):
+    #    a = get_object_or_404(self.model,pk=self.kwargs['pk'])
+    #    if self.request.user is a.user:
+    #        context = super(GroundCreate, self).get_context_data(**kwargs)
+    #        #context['user'] = self.request.user
+    #        #context['photo']=self.request.FILES['photo']
+    #        return context
+
+
+class GroundDelete(DeleteView):
+    model = ground
+    success_url = reverse_lazy('author-list')

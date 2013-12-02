@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = patterns('',
    #url(r'^$/',views.IndexView.as_view(),name='index' ),
   url(r'add/$', login_required(GroundCreate.as_view(model=ground))),
+  url(r'add_update_form/(?P<pk>\d+)$', login_required(GroundUpdate.as_view(model=ground))),
+  url(r'delete/(?P<pk>\d+)$', login_required(GroundUpdate.as_view(model=ground))),
   url(r'^(?P<pk>\d+)/$', GroundDetailView.as_view(model=ground), name='detail'),
   url(r'^all/$',GroundsOverview.as_view(model=ground))
 )
