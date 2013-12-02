@@ -1,21 +1,21 @@
 from django.db import models
 from pilkit.processors import ResizeToFill
 from imagekit.models import ProcessedImageField
+from players import models as player
+import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 
 class ground(models.Model):
     name=models.CharField(max_length=100)
-    city=models.CharField(max_length=200)
-    street=models.CharField(max_length=200)
-    #photo=models.ImageField(upload_to="uploads/image/grounds",blank=True)
     description=models.CharField(max_length=1000)
-    rate=models.PositiveIntegerField()
+    rate=models.PositiveIntegerField(default=2.5)
     official=models.BooleanField(default='false')
-    pubDate=models.DateTimeField("published")
+    pubDate=models.DateTimeField("published",default=datetime.datetime.now())
     photo = ProcessedImageField(upload_to='uploads/image/grounds',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
-
+    user =models.ForeignKey(User)
 
 
 
