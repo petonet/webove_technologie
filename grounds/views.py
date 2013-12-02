@@ -91,5 +91,6 @@ class GroundUpdate(UpdateView):
 
 
 class GroundDelete(DeleteView):
+    template_name = 'grounds/delete.html'
     model = ground
-    success_url = reverse_lazy('author-list')
+    success_url = '/grounds/'

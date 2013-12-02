@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_delete.html" />
-      <change type="MOVED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\grounds\form.py" afterPath="$PROJECT_DIR$/grounds/forms.py" />
+      <change type="MOVED" beforePath="C:\Users\idefix\PycharmProjects\HrajAirsoft\HrajAirsoft\templates\grounds\ground_delete.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/delete.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grounds/urls.py" afterPath="$PROJECT_DIR$/grounds/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grounds/views.py" afterPath="$PROJECT_DIR$/grounds/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -29,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grounds/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="48" selection-start="461" selection-end="461" vertical-scroll-proportion="0.6822742" vertical-offset="0" max-vertical-offset="374">
+            <state line="12" column="57" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="374">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -51,20 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grounds/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="49" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="1401" max-vertical-offset="1700">
-              <folding />
+            <state line="95" column="28" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.6588629" vertical-offset="1418" max-vertical-offset="1717">
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ground_delete.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_delete.html">
+      <file leaf-file-name="delete.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/delete.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="40" selection-start="146" selection-end="146" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
-              <folding />
+              <folding>
+                <marker date="1386012683318" expanded="true" signature="29:157" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,7 +76,7 @@
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grounds/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="4" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="493">
+            <state line="15" column="4" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -115,9 +119,9 @@
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/players/form.html" />
         <option value="$PROJECT_DIR$/grounds/form.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" />
-        <option value="$PROJECT_DIR$/grounds/views.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_delete.html" />
         <option value="$PROJECT_DIR$/grounds/urls.py" />
+        <option value="$PROJECT_DIR$/grounds/views.py" />
       </list>
     </option>
   </component>
@@ -716,12 +720,16 @@
       <created>1386007907351</created>
       <updated>1386007907351</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="##########Changelog################&#10;-tvorba formularov pre balik users-pokracujem&#10;- players alebo users - ide zmena hesla&#10;&#10;#########TODO####################&#10;-vsetko">
+      <created>1386013115046</created>
+      <updated>1386013115046</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32656515" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -733,7 +741,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42978004" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31917632" sideWeight="0.45454547" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36601308" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4816587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4816587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -888,6 +896,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="40" selection-start="146" selection-end="146" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
+          <folding>
+            <marker date="1386012683318" expanded="true" signature="29:157" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grounds/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="57" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="374">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grounds/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="4" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
@@ -895,25 +921,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="40" selection-start="146" selection-end="146" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grounds/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="49" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="1401" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grounds/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="48" selection-start="461" selection-end="461" vertical-scroll-proportion="0.6822742" vertical-offset="0" max-vertical-offset="374">
+        <state line="95" column="28" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.6588629" vertical-offset="1418" max-vertical-offset="1717">
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
