@@ -1,14 +1,14 @@
 # Create your views here.
-import models
 import datetime
 from models import Event
 from django.views import generic
 from django.shortcuts import get_object_or_404, render_to_response, RequestContext, render
 from django.contrib.auth.decorators import login_required
 from forms import NewForm
-from models import ground
 from models import player
 from django.contrib.auth.models import User
+from gmapi import maps
+from forms import MapForm
 
 
 class EventDetailView(generic.DetailView):
@@ -33,6 +33,46 @@ class EventsView(generic.ListView):
             events.append(event)
             context['events'] = events
         return context
+
+
+def MapView(request):
+    context = {}
+    gmap = maps.Map(opts = {
+        'center': maps.LatLng(38, -97),
+        'mapTypeId': maps.MapTypeId.ROADMAP,
+        'zoom': 3,
+        'mapTypeControlOptions': {
+             'style': maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
+    })
+
+    marker = maps.Marker(opts = {
+        'map': gmap,
+        'position': maps.LatLng(38, -97),
+    })
+    maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
+    maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
+    info = maps.InfoWindow({
+        'content': 'Hello!',
+        'disableAutoPan': True
+    })
+    info.open(gmap, marker)
+
+    context['mapform'] = MapForm(initial={'map': gmap})
+    events = []
+    for event in Event.objects.all():
+        events.append(event)
+    context['events'] = events
+    return render_to_response('event/mapTest.html', context, context_instance=RequestContext(request))
+
+    #def get_context_data(self, **kwargs):
+    #    events = []
+#
+    #    context.
+    #    for event in Event.objects.all():
+    #        events.append(event)
+    #        context['events'] = events
+    #    return context
 
 
 @login_required
@@ -66,3 +106,29 @@ def add(request):
     else:
         form = NewForm()
         return render_to_response('event/newEvent.html', {'form': form, 'saved': saved }, context_instance=RequestContext(request))
+
+
+def map(request):
+    gmap = maps.Map(opts = {
+        'center': maps.LatLng(38, -97),
+        'mapTypeId': maps.MapTypeId.ROADMAP,
+        'zoom': 3,
+        'mapTypeControlOptions': {
+             'style': maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
+    })
+
+    marker = maps.Marker(opts = {
+        'map': gmap,
+        'position': maps.LatLng(38, -97),
+    })
+    maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
+    maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
+    info = maps.InfoWindow({
+        'content': 'Hello!',
+        'disableAutoPan': True
+    })
+    info.open(gmap, marker)
+
+    context = {'mapform': MapForm(initial={'map': gmap})}
+    return render_to_response('event/map.html', context)

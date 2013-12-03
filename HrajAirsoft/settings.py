@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'sorl.thumbnail',
     'floppyforms',
+    'gmapi.urls.media',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'players',

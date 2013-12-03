@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 from django import forms
 from models import Event
+from gmapi.forms.widgets import GoogleMap
+
+
+class MapForm(forms.Form):
+    map = forms.Field(widget=GoogleMap(attrs={'width':510, 'height':510}))
 
 
 class NewForm(forms.ModelForm):

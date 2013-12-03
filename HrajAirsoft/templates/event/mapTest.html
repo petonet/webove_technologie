@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Events</h1>
+    <ul>
+        {% for event in events %}
+            <li>{{ event.title }}</li>
+        {% endfor %}
+    </ul>
+
+{% include "event/map.html" %}
+
+{% endblock %}
