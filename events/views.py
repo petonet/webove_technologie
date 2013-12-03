@@ -1,17 +1,68 @@
 # Create your views here.
 import models
+import datetime
 from models import Event
 from django.views import generic
+from django.shortcuts import get_object_or_404, render_to_response, RequestContext, render
+from django.contrib.auth.decorators import login_required
+from forms import NewForm
+from models import ground
+from models import player
+from django.contrib.auth.models import User
 
 
-class DetailView(generic.DetailView):
-    model= Event
-    template_name = 'event/ground_detail.html'
-    context_object_name = "event"
-    def get_queryset(self):
-        return Event.objects.filter(pk=self.pk)
+class EventDetailView(generic.DetailView):
+    model = Event
+    template_name = 'event/detail.html'
+    queryset = Event.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context={}
+        context['event'] = get_object_or_404(self.model, pk=self.kwargs['pk'])
+        return context
+
 
 class EventsView(generic.ListView):
     model = Event
     template_name = 'event/events.html'
 
+    def get_context_data(self, **kwargs):
+        events = []
+        context = {}
+        for event in Event.objects.all():
+            events.append(event)
+            context['events'] = events
+        return context
+
+
+@login_required
+def add(request):
+
+    saved = None
+
+    user = User.objects.get(id=request.user.id)
+    play = player.objects.get(user=user)
+
+    if request.method == 'POST':
+        form = NewForm(request.POST)
+
+        if form.is_valid():
+            event = Event(title = form.cleaned_data['title'])
+            event.startOfAction = datetime.datetime(2000, 10, 10, 10, 10, 10, 10)
+            event.published = datetime.datetime(2000, 10, 10, 10, 10, 10, 10)
+            event.numberOfPlayers = form.cleaned_data['numberOfPlayers']
+            event.login_since = datetime.datetime(2000, 10, 10)
+            event.prologue = form.cleaned_data['prologue']
+            event.scenario = form.cleaned_data['scenario']
+            event.organizationNotes = form.cleaned_data['organizationNotes']
+            event.duration = datetime.time(0, 0, 0)
+            event.entryFee = form.cleaned_data['entryFee']
+            event.author = play
+            event.ground = form.cleaned_data['ground']
+            event.save()
+            saved = True
+        return render_to_response('event/newEvent.html', {'form': form, 'saved': saved }, context_instance=RequestContext(request))
+
+    else:
+        form = NewForm()
+        return render_to_response('event/newEvent.html', {'form': form, 'saved': saved }, context_instance=RequestContext(request))

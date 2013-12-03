@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html>
-<body>
+{% block content %}
+
 <h1>Events</h1>
     <ul>
+        {% for event in events %}
+            <li><a href="/events/detail/{{ event.id }}"> {{ event.title }} </a></li>
+        {% endfor %}
     </ul>
-</body>
-</html>
-
+{% endblock %}
