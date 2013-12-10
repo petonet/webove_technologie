@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <ul>
+    <div class="content">
+    <ul id="ground_list">
     {% for ground in grounds %}
        <li> <a href="/grounds/{{ ground.id }}"> {{ ground.name }} </a ></li>
     {% endfor %}
     </ul>
+    </div>
 {% endblock %}

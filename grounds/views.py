@@ -34,7 +34,7 @@ class GroundsOverview(ListView):
         for g in ground.objects.all():
             print g
             a.append(g)
-            context['ground'] = a
+            context['grounds'] = a
 
         return context
 
@@ -69,17 +69,21 @@ class GroundUpdate(UpdateView):
     model = ground
     template_name = 'grounds/addForm.html'
     form_class = AddGroundForm
+    success_url = '/thanks/'
     fields = ['name,city,street,description,rate,official,photo']
-    template_name_suffix = '_update_form'
+    #template_name_suffix = '_update_form'
+
+    #def get_object(self, queryset=None):
+    #    obj = get_object_or_404(self.model,pk=self.kwargs['pk'])
+    #    print obj.name
+    #    return obj
 
 
 
     #def form_valid(self, form):
-    #    print self.request.user
-    #    form.instance.user = self.request.user
     #    #print(self.photo)
     #    return super(GroundUpdate, self).form_valid(form)
-    #
+
     #
     #def get_context_data(self, **kwargs):
     #    a = get_object_or_404(self.model,pk=self.kwargs['pk'])
