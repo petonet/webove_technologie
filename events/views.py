@@ -39,7 +39,7 @@ class EventsView(generic.ListView):
 def MapView(request):
 
     if request.is_ajax():
-        return HttpResponse("This is response from server, received title:" + request.POST['title'])
+        return HttpResponse("This is response from server. Received title:" + request.POST['title'])
     else:
         context = {}
         gmap = maps.Map(opts = {
