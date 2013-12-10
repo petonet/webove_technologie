@@ -128,6 +128,8 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'floppyforms',
     'gmapi.urls.media',
+    #'dajax',
+    #'dajaxice',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'players',

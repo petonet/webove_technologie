@@ -2,6 +2,7 @@
 import datetime
 from models import Event
 from django.views import generic
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response, RequestContext, render
 from django.contrib.auth.decorators import login_required
 from forms import NewForm
@@ -36,34 +37,38 @@ class EventsView(generic.ListView):
 
 
 def MapView(request):
-    context = {}
-    gmap = maps.Map(opts = {
-        'center': maps.LatLng(38, -97),
-        'mapTypeId': maps.MapTypeId.ROADMAP,
-        'zoom': 3,
-        'mapTypeControlOptions': {
-             'style': maps.MapTypeControlStyle.DROPDOWN_MENU
-        },
-    })
 
-    marker = maps.Marker(opts = {
-        'map': gmap,
-        'position': maps.LatLng(38, -97),
-    })
-    maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
-    maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
-    info = maps.InfoWindow({
-        'content': 'Hello!',
-        'disableAutoPan': True
-    })
-    info.open(gmap, marker)
+    if request.is_ajax():
+        return HttpResponse("This is response from server, received title:" + request.POST['title'])
+    else:
+        context = {}
+        gmap = maps.Map(opts = {
+            'center': maps.LatLng(38, -97),
+            'mapTypeId': maps.MapTypeId.ROADMAP,
+            'zoom': 3,
+            'mapTypeControlOptions': {
+                 'style': maps.MapTypeControlStyle.DROPDOWN_MENU
+            },
+        })
 
-    context['mapform'] = MapForm(initial={'map': gmap})
-    events = []
-    for event in Event.objects.all():
-        events.append(event)
-    context['events'] = events
-    return render_to_response('event/mapTest.html', context, context_instance=RequestContext(request))
+        marker = maps.Marker(opts = {
+            'map': gmap,
+            'position': maps.LatLng(38, -97),
+        })
+        maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
+        maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
+        info = maps.InfoWindow({
+            'content': 'Hello!',
+            'disableAutoPan': True
+        })
+        info.open(gmap, marker)
+
+        context['mapform'] = MapForm(initial={'map': gmap})
+        #events = []
+        #for event in Event.objects.all():
+        #    events.append(event)
+        context['event'] = Event.objects.get(pk=1)
+        return render_to_response('event/mapTest.html', context, context_instance=RequestContext(request))
 
     #def get_context_data(self, **kwargs):
     #    events = []

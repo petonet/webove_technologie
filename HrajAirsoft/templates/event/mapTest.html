@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
+<script>
+function test() {
+    $.ajax({
+        url: "{% url "mapTest" %}",
+        type: "POST",
+        data : {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            title: "{{ event.title }}"
+        },
+        success: function(data) {
+            alert (data);
+        },
+        error: function() {
+            alert ("error");
+        }
+    });
+}
 
-    <h1>Events</h1>
-    <ul>
-        {% for event in events %}
-            <li>{{ event.title }}</li>
-        {% endfor %}
-    </ul>
+function success() {
+    alert ("success");
+}
+
+function error() {
+    alert ("error");
+}
+
+</script>
+    {% csrf_token %}
+    <button onclick="test()"> AJAX </button>
 
 {% include "event/map.html" %}
 
