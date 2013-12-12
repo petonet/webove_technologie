@@ -54,8 +54,11 @@
                 {% endif %}
                 -->
             {% endfor %}
+            <input type="hidden" name="Latitude" id="formLat">
+            <input type="hidden" name="Longitude" id="formLng">
         </fieldset>
-        <input id="submit-edit-event" type="submit" value="Uložiť" >
+    {% include "event/newEventMap.html" %}
+        <input id="submit-edit-event" type="submit" value="Uložiť">
         {% if form.errors %}
     {% for field in form %}
         {% for error in field.errors %}
@@ -70,5 +73,6 @@
         </div>
     {% endfor %}
 {% endif %}
+
     </form>
 </div>

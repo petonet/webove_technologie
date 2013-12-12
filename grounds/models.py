@@ -15,7 +15,11 @@ class ground(models.Model):
     official=models.BooleanField(default='false')
     pubDate=models.DateTimeField("published",default=datetime.datetime.now())
     photo = ProcessedImageField(upload_to='uploads/image/grounds',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
-    user =models.ForeignKey(User)
+    locationLat = models.CharField(max_length=20, verbose_name='Latitude')
+    locationLng = models.CharField(max_length=20, verbose_name='Longitude')
+    user = models.ForeignKey(User)
+    def __unicode__(self):
+        return self.name
 
 
 

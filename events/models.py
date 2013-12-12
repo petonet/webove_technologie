@@ -1,6 +1,7 @@
 from django.db import models
 from players.models import player
 from grounds.models import ground
+from django.contrib.auth.models import User
 
 
 class Event(models.Model):
@@ -14,8 +15,11 @@ class Event(models.Model):
     organizationNotes = models.CharField(max_length=1000)
     duration = models.TimeField()
     entryFee = models.DecimalField(decimal_places=3, max_digits=5)
-    author = models.ForeignKey(player)
-    ground = models.ForeignKey(ground)
+    locationLat = models.CharField(max_length=20, null=True, verbose_name='Latitude')
+    locationLng = models.CharField(max_length=20, null=True, verbose_name='Longitude')
+    users = models.ManyToManyField(player, null=True, blank=True)
+    author = models.ForeignKey(User)
+    ground = models.ForeignKey(ground, null=True, blank=True)
     def __unicode__(self):
         return self.title
 
@@ -31,8 +35,8 @@ class Restrictions(models.Model):
 class Comments(models.Model):
     eventId = models.ForeignKey(Event)
     user = models.ForeignKey(player)
-    comment = models.CharField(max_length=500)
-    sent = models.DateTimeField()
+    comment = models.CharField(max_length=1000)
+    sent = models.DateTimeField(blank=True)
     def __unicode__(self):
         return self.comment
 

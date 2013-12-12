@@ -2,35 +2,28 @@
 
 {% block content %}
 <script>
-function test() {
-    $.ajax({
+
+$(document).on("click","#button",function(e){
+     $.ajax({
         url: "{% url "mapTest" %}",
         type: "POST",
         data : {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            title: "{{ event.title }}"
         },
         success: function(data) {
-            alert (data);
+            alert(data);
         },
         error: function() {
             alert ("Error");
         }
     });
-}
-
-function success() {
-    alert ("success");
-}
-
-function error() {
-    alert ("error");
-}
-
+});
 </script>
-    {% csrf_token %}
-    <button onclick="test()"> AJAX </button>
 
-{% include "event/map.html" %}
+{% csrf_token %}
+<button id="button"> Mark Kosice </button>
+<div id="maps"">
+    {% include "event/newEventMap.html" %}
+</div>
 
 {% endblock %}

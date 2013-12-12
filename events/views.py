@@ -1,15 +1,15 @@
 # Create your views here.
 import datetime
 from models import Event
+#from django.contrib.gis.geoip import GeoIP
 from django.views import generic
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render_to_response, RequestContext, render
 from django.contrib.auth.decorators import login_required
 from forms import NewForm
 from models import player
+from grounds.models import ground
 from django.contrib.auth.models import User
-from gmapi import maps
-from forms import MapForm
 
 
 class EventDetailView(generic.DetailView):
@@ -39,49 +39,47 @@ class EventsView(generic.ListView):
 def MapView(request):
 
     if request.is_ajax():
-        return HttpResponse("This is response from server. Received title:" + request.POST['title'])
-    else:
         context = {}
-        gmap = maps.Map(opts = {
-            'center': maps.LatLng(38, -97),
-            'mapTypeId': maps.MapTypeId.ROADMAP,
-            'zoom': 3,
-            'mapTypeControlOptions': {
-                 'style': maps.MapTypeControlStyle.DROPDOWN_MENU
-            },
-        })
-
-        marker = maps.Marker(opts = {
-            'map': gmap,
-            'position': maps.LatLng(38, -97),
-        })
-        maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
-        maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
-        info = maps.InfoWindow({
-            'content': 'Hello!',
-            'disableAutoPan': True
-        })
-        info.open(gmap, marker)
-
-        context['mapform'] = MapForm(initial={'map': gmap})
+        #context['mapform'] = MapForm(initial={'map': gmap})
         #events = []
         #for event in Event.objects.all():
         #    events.append(event)
-        context['event'] = Event.objects.get(pk=1)
-        return render_to_response('event/mapTest.html', context, context_instance=RequestContext(request))
+        return HttpResponse("OK")
+    else:
+        context = {}
+        #client_address = request.META['REMOTE_ADDR']
+        #context['mapform'] = MapForm(initial={'map': gmap})
+        #events = []
+        #for event in Event.objects.all():
+        #    events.append(event)
+        #context['event'] = Event.objects.get(pk=1)
+        context['mapHeight'] = 500
+        context['mapWidth'] = 500
+        context['mapCenterLat'] = 48.998465
+        context['mapCenterLng'] = 21.239812
+        context['mapZoomLevel'] = 13
 
-    #def get_context_data(self, **kwargs):
-    #    events = []
-#
-    #    context.
-    #    for event in Event.objects.all():
-    #        events.append(event)
-    #        context['events'] = events
-    #    return context
+        events = []
+        for event in Event.objects.all():
+            events.append(event)
+            context['events'] = events
+        return render_to_response('event/mapTest.html', context, context_instance=RequestContext(request))
 
 
 @login_required
 def add(request):
+
+    context = {}
+    context['mapHeight'] = 500
+    context['mapWidth'] = 500
+    context['mapCenterLat'] = 48.998465
+    context['mapCenterLng'] = 21.239812
+    context['mapZoomLevel'] = 13
+
+    grounds = []
+    for grnd in ground.objects.all():
+        grounds.append(grnd)
+        context['grounds'] = grounds
 
     saved = None
 
@@ -93,47 +91,45 @@ def add(request):
 
         if form.is_valid():
             event = Event(title = form.cleaned_data['title'])
-            event.startOfAction = datetime.datetime(2000, 10, 10, 10, 10, 10, 10)
-            event.published = datetime.datetime(2000, 10, 10, 10, 10, 10, 10)
+
+            startDate = form.cleaned_data['startOfActionDate']
+            startTime = form.cleaned_data['startOfActionTime']
+            splitStartDate = startDate.split(".")
+            splitStartTime = startTime.split(":")
+            event.startOfAction = datetime.datetime(int(float(splitStartDate[2])), int(float(splitStartDate[1])), int(float(splitStartDate[0])),
+                                              int(float(splitStartTime[0])), int(float(splitStartTime[1])))
+
+            event.published = datetime.datetime.now()
             event.numberOfPlayers = form.cleaned_data['numberOfPlayers']
-            event.login_since = datetime.datetime(2000, 10, 10)
+
+            loginDate = form.cleaned_data['login_sinceDate']
+            loginTime = form.cleaned_data['login_sinceTime']
+            splitLoginDate = loginDate.split(".")
+            splitLoginTime = loginTime.split(":")
+            event.login_since = datetime.datetime(int(float(splitLoginDate[2])), int(float(splitLoginDate[1])), int(float(splitLoginDate[0])),
+                                              int(float(splitLoginTime[0])), int(float(splitLoginTime[1])))
+
             event.prologue = form.cleaned_data['prologue']
             event.scenario = form.cleaned_data['scenario']
             event.organizationNotes = form.cleaned_data['organizationNotes']
-            event.duration = datetime.time(0, 0, 0)
-            event.entryFee = form.cleaned_data['entryFee']
-            event.author = play
-            event.ground = form.cleaned_data['ground']
-            event.save()
-            saved = True
-        return render_to_response('event/newEvent.html', {'form': form, 'saved': saved }, context_instance=RequestContext(request))
 
+            durationTime = form.cleaned_data['duration']
+            splitDurationTime = durationTime.split(":")
+
+            event.duration = datetime.time(int(float(splitDurationTime[0])), int(float(splitDurationTime[1])), 0)
+            event.entryFee = form.cleaned_data['entryFee']
+            event.author = user
+            event.ground = form.cleaned_data['ground']
+            event.locationLat = form.data['Latitude']
+            event.locationLng = form.data['Longitude']
+            event.save()
+            return HttpResponseRedirect('/events/detail/' + str(event.id))
+        else:
+            context['form'] = form
+            context['fail'] = True
+            return render_to_response('event/newEvent.html', context, context_instance=RequestContext(request))
     else:
         form = NewForm()
-        return render_to_response('event/newEvent.html', {'form': form, 'saved': saved }, context_instance=RequestContext(request))
-
-
-def map(request):
-    gmap = maps.Map(opts = {
-        'center': maps.LatLng(38, -97),
-        'mapTypeId': maps.MapTypeId.ROADMAP,
-        'zoom': 3,
-        'mapTypeControlOptions': {
-             'style': maps.MapTypeControlStyle.DROPDOWN_MENU
-        },
-    })
-
-    marker = maps.Marker(opts = {
-        'map': gmap,
-        'position': maps.LatLng(38, -97),
-    })
-    maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
-    maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
-    info = maps.InfoWindow({
-        'content': 'Hello!',
-        'disableAutoPan': True
-    })
-    info.open(gmap, marker)
-
-    context = {'mapform': MapForm(initial={'map': gmap})}
-    return render_to_response('event/map.html', context)
+        context['form'] = form
+        context['saved'] = saved
+        return render_to_response('event/newEvent.html', context, context_instance=RequestContext(request))
