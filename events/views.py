@@ -122,6 +122,7 @@ def add(request):
             event.ground = form.cleaned_data['ground']
             event.locationLat = form.data['Latitude']
             event.locationLng = form.data['Longitude']
+            event.titleImage=form.data['titleImage']
             event.save()
             return HttpResponseRedirect('/events/detail/' + str(event.id))
         else:

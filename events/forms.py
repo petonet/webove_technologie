@@ -20,7 +20,7 @@ class NewForm(forms.ModelForm):
     duration = forms.CharField(label='Trvanie', widget=forms.TextInput(attrs={'placeholder': '0'}), required=False)
     entryFee = forms.CharField(label='Vstupné', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Vstupné'}), required=False)
     ground = forms.ModelChoiceField(label='Miesto',queryset= ground.objects.all().order_by('name'), empty_label='Nové miesto', required=False)
-
+    titleImage=forms.ImageField(label='Titulná fotka',widget=forms.FileInput, required=False,)
 
     class Meta:
         model = Event

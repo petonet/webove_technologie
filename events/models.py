@@ -2,6 +2,8 @@ from django.db import models
 from players.models import player
 from grounds.models import ground
 from django.contrib.auth.models import User
+from pilkit.processors import ResizeToFill
+from imagekit.models import ProcessedImageField
 
 
 class Event(models.Model):
@@ -20,6 +22,7 @@ class Event(models.Model):
     users = models.ManyToManyField(player, null=True, blank=True)
     author = models.ForeignKey(User)
     ground = models.ForeignKey(ground, null=True, blank=True)
+    titleImage=ProcessedImageField(upload_to='uploads/image/events',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
     def __unicode__(self):
         return self.title
 
