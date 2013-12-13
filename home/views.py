@@ -1,6 +1,6 @@
 # Create your views here.
 
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, RequestContext
 from grounds.models import ground
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -9,9 +9,28 @@ from django.views import generic
 
 
 
-class HomeView(generic.ListView):
-    model = ground
-    template_name = 'homepage\\homepage.html'
+def HomeView(request):
+    context = {}
+    context['mapHeight'] = 500
+    context['mapWidth'] = 1000
+    context['mapCenterLat'] = 48.735965
+    context['mapCenterLng'] = 19.662094
+    context['mapZoomLevel'] = 8
+
+    grounds = []
+    for grnd in ground.objects.all():
+        grounds.append(grnd)
+        context['grounds'] = grounds
+
+    return render_to_response('homepage/homepage.html', context, context_instance=RequestContext(request))
+
+
+
+
+    #model = ground
+    #template_name = 'homepage\\homepage.html'
+
+
     #context_object_name = "homepage_list"
 
     #def get_queryset(self):
