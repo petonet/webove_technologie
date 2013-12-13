@@ -4,12 +4,12 @@
 
 <ul class="unsigned-list">
 
-                             {% if form.errors.numberOfPlayers %}<li>
-                                 <div class="error_box"><div class="error_label_box">Login</div>
-                                 <div class="error_content_box" type="button"><p>{{ form.errors.numberOfPlayers.0 }}</p></div></div></li>
-                             {% endif %}
+    {% if form.errors.numberOfPlayers %}<li>
+         <div class="error_box"><div class="error_label_box">Login</div>
+         <div class="error_content_box" type="button"><p>{{ form.errors.numberOfPlayers.0 }}</p></div></div></li>
+    {% endif %}
 
-                        </ul>
+</ul>
 {% include "event/form.html" %}
 
 {% endblock %}

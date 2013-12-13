@@ -39,7 +39,7 @@ class Comments(models.Model):
     eventId = models.ForeignKey(Event)
     user = models.ForeignKey(player)
     comment = models.CharField(max_length=1000)
-    sent = models.DateTimeField(blank=True)
+    sent = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return self.comment
 

@@ -7,5 +7,7 @@
         {% for event in events %}
             <li><a href="/events/detail/{{ event.id }}"> {{ event.title }} </a></li>
         {% endfor %}
+
+    <a href="{% url "addEvent" %}">Vytvoriť novú akciu</a>
     </ul>
 {% endblock %}

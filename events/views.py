@@ -1,4 +1,4 @@
-# Create your views here.
+# -*- coding: utf-8 -*-
 import datetime
 from models import Event
 #from django.contrib.gis.geoip import GeoIP
@@ -9,18 +9,73 @@ from django.contrib.auth.decorators import login_required
 from forms import NewForm
 from models import player
 from grounds.models import ground
+from players.models import player
 from django.contrib.auth.models import User
 
 
-class EventDetailView(generic.DetailView):
-    model = Event
-    template_name = 'event/detail.html'
-    queryset = Event.objects.all()
+def eventDetail(request, pk):
+    if request.is_ajax():
+        action = request.POST['operation']
+        event = Event.objects.get(id=request.POST['eventId'])
+        response = ""
+        if action == "SignUp":
+            #currentPlayer = request.user.player
+            event.users.add(request.user.player)
+            event.save()
+            response = "Boli ste prihlásený na túto akciu"
+        elif action == "Unsign":
+            #currentPlayer = player.objects.get(id=request.user.id)
+            event.users.remove(request.user.player)
+            event.save()
+            response = "Boli ste odhlásený z tejto akcie"
+        elif action == "Delete":
+            event.delete()
+            response = "Deleted"
+        else:
+            response = "Error"
 
-    def get_context_data(self, **kwargs):
-        context={}
-        context['event'] = get_object_or_404(self.model, pk=self.kwargs['pk'])
-        return context
+        return HttpResponse(response)
+    else:
+        context = {}
+
+        event = Event.objects.get(id = pk)
+        naive = event.login_since.replace(tzinfo=None)
+        difference = datetime.datetime.now() - naive
+        if (difference.total_seconds() > 0):
+            context['signAllowed'] = True
+        else:
+            context['signAllowed'] = False
+
+        context['isAuthor'] = False
+        context['isSigned'] = False
+
+        if request.user.is_authenticated():
+            context['authenticated'] = True
+            user = request.user
+            if event.author.id == user.id:
+                context['isAuthor'] = True
+            try:
+                event.users.get(id=user.player.id)
+                context['isSigned'] = True
+            except:
+                context['isSigned'] = False
+        else:
+            context['authenticated'] = False
+
+        context['event'] = event
+
+        return render_to_response('event/detail.html', context, context_instance=RequestContext(request))
+
+
+#class EventDetailView(generic.DetailView):
+#    model = Event
+#    template_name = 'event/detail.html'
+#    queryset = Event.objects.all()
+#
+#    def get_context_data(self, **kwargs):
+#        context={}
+#        context['event'] = get_object_or_404(self.model, pk=self.kwargs['pk'])
+#        return context
 
 
 class EventsView(generic.ListView):
@@ -30,7 +85,7 @@ class EventsView(generic.ListView):
     def get_context_data(self, **kwargs):
         events = []
         context = {}
-        for event in Event.objects.all():
+        for event in Event.objects.all().order_by('published'):
             events.append(event)
             context['events'] = events
         return context
@@ -84,7 +139,6 @@ def add(request):
     saved = None
 
     user = User.objects.get(id=request.user.id)
-    play = player.objects.get(user=user)
 
     if request.method == 'POST':
         form = NewForm(request.POST)
