@@ -1,16 +1,14 @@
 {% extends "base.html" %}
 {% load ground_tag %}
 {% load event_tag %}
-{% load poll_tag %}
 
 {% block content %}
     <div class="head">
-{#        tu niekde bude mapa#}
+    {% include "homepage/homepageMap.html" %}
     </div>
     <div class="content">
         {% nav_groundlist %}
        {% nav_eventlist %}
-        {% nav_detailankety %}
     </div>
 
 {% endblock %}

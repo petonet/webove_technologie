@@ -25,8 +25,10 @@ urlpatterns = patterns('',
      #ground detail
       url(r'^grounds/', include('grounds.urls')),
       url(r'^events/', include('events.urls')),
-      url(r'^homepage$',homeViews.HomeView.as_view()),
-      url(r'^$',homeViews.HomeView.as_view()),
+      #url(r'^homepage$',homeViews.HomeView.as_view()),
+      url(r'^homepage$', 'home.views.HomeView'),
+      #url(r'^$',homeViews.HomeView.as_view()),
+      url(r'^$','home.views.HomeView'),
       url(r'^accounts/', include('players.urls')),
       url(r'^teams/', include('teams.urls')),
 )
