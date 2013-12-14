@@ -18,6 +18,8 @@ class AddGroundForm(forms.ModelForm):
     pubDate = forms.CharField(label='Datum pridania', widget=forms.HiddenInput, required=False)
     photo = forms.ImageField(label='Fotka ihriska',widget=forms.FileInput, required=False,)
     user = forms.DecimalField(label='Pouzivatel', widget=forms.HiddenInput, required=False)
+    Latitude=forms.DecimalField(widget=forms.HiddenInput,required=False)
+    Longitude=forms.DecimalField(widget=forms.HiddenInput,required=False)
 
 
     class Meta:

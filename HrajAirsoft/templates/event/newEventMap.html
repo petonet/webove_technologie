@@ -71,6 +71,8 @@ function initialize() {
       form = document.forms[0];
       form["Latitude"].value = event.latLng.lat();
       form["Longitude"].value = event.latLng.lng();
+      console.log(form["Latitude"].value)
+      console.log(form["Longitude"].value)
   });
 }
 
