@@ -21,11 +21,13 @@ class NewForm(forms.ModelForm):
     entryFee = forms.CharField(label='Vstupné', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Vstupné'}), required=False)
     ground = forms.ModelChoiceField(label='Miesto',queryset= ground.objects.all().order_by('name'), empty_label='Nové miesto', required=False)
     titleImage=forms.ImageField(label='Titulná fotka',widget=forms.FileInput, required=False,)
+    facebookEvent=forms.BooleanField(label='Vytvoriť udalosť na facebooku?',widget=forms.CheckboxInput,required=False)
 
     class Meta:
         model = Event
         fields = ('title','startOfActionDate', 'startOfActionTime','duration','login_sinceDate', 'login_sinceTime',
-                  'numberOfPlayers','entryFee','prologue','scenario','organizationNotes','ground')
+                  'numberOfPlayers','entryFee','prologue','scenario','organizationNotes','ground','titleImage')
+        exclude= ('facebookEvent')
 
     def clean_numberOfPlayers(self):
         value = self.cleaned_data.get("numberOfPlayers")

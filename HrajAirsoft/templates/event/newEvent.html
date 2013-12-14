@@ -12,4 +12,91 @@
                         </ul>
 {% include "event/form.html" %}
 
+    <script type=text/javascript>
+    $(document).ready(function(){
+        $('#submit-edit-event').submit( function () {
+            console.log('submit');
+            if ($('#id_facebookEvent').is(':checked')) {
+                var fbuserid, fbtoken;
+                var appid = "661642747192057";
+                var loggedin = false;
+                $(document).ready(function () {
+                    //loginFB();
+                });
+
+                FB.init({appId: appid, status: true, cookie: true, xfbml: true});
+                FB.Event.subscribe('auth.sessionChange', function (response) {
+                    if (response.session) {
+                        var session = FB.getSession();
+                        fbtoken = session.access_token;
+                        fbuserid = session.uid;
+                    }
+                });
+
+                FB.getLoginStatus(function (response) {
+                    if (response.session) {
+                        var session = FB.getSession();
+                        fbtoken = session.access_token;
+                        fbuserid = session.uid;
+                    }
+                    else {
+                        loginFB();
+                    }
+                });
+
+                function loginFB() {
+                    FB.login(function (response) {
+                        if (response.session) {
+                            var session = FB.getSession();
+                            fbtoken = session.access_token;
+                            fbuserid = session.uid;
+                        }
+                    }, {perms: 'create_event'});
+                }
+
+                function logoutFB() {
+                    FB.logout(function (response) {
+                        // user is now logged out
+                    });
+
+
+
+
+
+
+
+
+
+                }
+                  function createEvent(name, startTime, endTime, location, description) {
+                        var eventData = {
+                            "access_token": fbtoken,
+                            "start_time": startTime,
+                            "end_time": endTime,
+                            "location": location,
+                            "name": name,
+                            "description": description,
+                            "privacy": "OPEN"
+                        }
+                        FB.api("/me/events", 'post', eventData, function (response) {
+                            if (response.id) {
+                                alert("We have successfully created a Facebook event with ID: " + response.id);
+                            }
+                        })
+                    }
+                   createEvent($('#id_title').val(),
+                           $('#startDatePicker').val()+'T'+$('#startTimePicker').val(),
+                           $('#endDatePicker').val+'T'+$('#endTimePicker').val(),
+                           "Presov",
+                           $('#id_prologue').val());
+            }
+            else {
+                console.log('not checked')
+            }
+
+        });
+    });
+
+    </script>
+
 {% endblock %}
