@@ -74,6 +74,7 @@ padding-top: 20px;
     font-size: 11px;
     vertical-align: bottom;
     display:block;
+    float: left;
 }
 
 #footer table{
@@ -450,4 +451,368 @@ position: absolute;
     width: 300px;
     font-size: 10px;
     margin-top: 5px;
+}
+
+.ed_topPart {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 300px;
+    overflow: hidden;
+}
+
+.ed_bottomPart {
+	width: 80%;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: blue;
+}
+
+.ed_topOverlay {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	top: 250px;
+	left: 0px;
+	background-color: black;
+	opacity: 0.7;
+}
+
+#ed_overlay1 {
+	height: 100%;
+	width: 10%;
+	float: left;
+}
+
+#ed_overlay2 {
+	height: 100%;
+	width: 40%;
+	float: left;
+	font-size: 30pt;
+	color: white;
+}
+
+#ed_overlay3 {
+	padding-top: 10px;
+	text-align: right;
+	height: 80%;
+	width: 36%;
+	float: left;
+	font-size: 15pt;
+	color: white;
+}
+
+.ed_bottomLeft {
+	width: 75%;
+	float: left;
+	overflow : hidden;
+}
+
+.ed_bottomRight {
+	margin: 10px;
+	padding-bottom: 25px;
+	width: 20%;
+	float: left;
+	background-color: #0FF000;
+	overflow : hidden;
+	background-color: #666666;
+}
+
+.ed_bottomLeftTermin {
+	width: 100%;
+	height: 50px;
+}
+
+.ed_bottomLeftTitle {
+	width: 100%;
+	height: 50px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.ed_bottomLeftLocation {
+	width: 100%;
+	height: 50px;
+}
+
+.ed_bottomLeftMap {
+	width: 100%;
+	height: 300px;
+}
+
+.ed_bottomLeftPrologue {
+	width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ed_bottomLeftScenario {
+	width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ed_organizationDiv {
+	width: 100%;
+	height: 50px;
+}
+
+.ed_bottomLeftOrganization2 {
+	width: 100%;
+}
+
+.ed_entryFee {
+	width: 100%;
+	height: 100px;
+}
+
+.ed_commentsDiv {
+	width: 100%;
+    background-color: #666666;
+}
+
+.ed_itemLeft {
+	width: 15%;
+	height: 100%;
+	float: left;
+	overflow : hidden;
+	text-align: right;
+    display: block;
+}
+
+#ed_titleText {
+	height: 50px;
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 30pt;
+}
+
+#ed_leftText {
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 20pt;
+}
+
+#ed_organizationText {
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 30pt;
+}
+
+.ed_organization {
+	margin-top: 40px;
+    margin-bottom: 20px;
+	padding: 20px;
+	background-color: #666666;
+}
+
+.ed_organizationNotes {
+	width: 100%;
+	color: white;
+}
+
+.ed_ {
+	margin-top: 30px;
+	width: 100%;
+}
+
+#ed_entryFeeText {
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 30pt;
+	color: white;
+}
+
+#ed_organizationSeparator {
+	height: 5px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+#ed_entryFeePrice {
+	padding-top: 20px;
+	padding-left: 50px;
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 30pt;
+	color: white;
+}
+
+.ed_itemRight {
+	width: 85%;
+	float: left;
+	overflow : hidden;
+}
+
+.ed_player {
+	width: 100%;
+	height: 75px;
+}
+
+.ed_playerPhotoDiv {
+	height: 100%;
+	width: 33%;
+	float: left;
+}
+
+.ed_playerPhoto {
+	margin-top: 15px;
+	margin-left: 15px;
+	height: 50px;
+	width: 50px;
+}
+
+.ed_playerName {
+	height: 100%;
+	width: 67%;
+	float: left;
+	overflow: hidden;
+	text-align: left;
+	line-height: 75px;
+    padding-left: 10px;
+}
+
+.ed_playerSeparatorBottom {
+	height: 1px;
+	width: 100%;
+	background-color: #838383;
+}
+
+.ed_playerSeparatorTop {
+	height: 1px;
+	width: 100%;
+	background-color: #535353;
+}
+
+#ed_attendNumberText {
+	width: 100%;
+	margin-left: 20px;
+    color: white;
+}
+
+#ed_playerNameText {
+    text-align: left;
+    font-size: 20pt;
+    color: white;
+}
+
+.ed_commentsTitle {
+    height: 70px;
+    margin-left: 10px;
+}
+
+.ed_commentsTitleText {
+    padding: 5px;
+    font-size: 30pt;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+}
+
+.ed_comments {
+    background-color: white;
+}
+
+.ed_comment {
+    height: 120px;
+}
+
+.ed_commentPhotoDiv {
+    padding: 10px;
+    float: left;
+    height: 100%;
+    width: 120px;
+    overflow: hidden;
+}
+
+.ed_commentContentDiv {
+    height: 100%;
+    width: calc(100% - 120px);
+    float: left;
+}
+
+.ed_commentPhoto {
+    height: 100px;
+	width: 100px;
+}
+
+.ed_ccTop {
+    height: 33%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.ed_ccBottom {
+    padding: 10px;
+    padding-top: 0px;
+    height: 67%;
+    overflow: hidden;
+    font-size: 10pt;
+}
+
+.ccTopName {
+    padding-left: 20px;
+    float: left;
+    width: 75%;
+    font-size: 18pt;
+    overflow: hidden;
+    color: blueviolet;
+}
+
+.ccTopDate {
+    float: left;
+    width: 25%;
+    font-size: 18pt;
+    overflow: hidden;
+    text-align: left;
+    color: blueviolet;
+}
+
+.ed_newComment {
+    height: 200px;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+.ed_commentsSeparator {
+	height: 5px;
+	background-color: #666666;
+}
+
+.ed_newCommentTextDiv {
+    padding: 10px;
+    height: 80%;
+}
+
+.ed_newCommentButtonDiv {
+    /*padding-right: 10%;*/
+    padding-right: 10px;
+    text-align: right;
+    height: 20%;
+}
+
+.ed_newCommentTextArea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+}
+
+.ed_attendNumberDiv2 {
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
 }

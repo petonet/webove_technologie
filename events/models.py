@@ -9,7 +9,7 @@ from imagekit.models import ProcessedImageField
 class Event(models.Model):
     title = models.CharField(max_length=200, verbose_name='Title')
     startOfAction = models.DateTimeField()
-    published = models.DateTimeField(auto_now_add=True, blank=True)
+    published = models.DateTimeField(blank=True)
     numberOfPlayers = models.IntegerField()
     login_since = models.DateTimeField()
     prologue = models.CharField(max_length=1000)
@@ -22,7 +22,7 @@ class Event(models.Model):
     users = models.ManyToManyField(player, null=True, blank=True)
     author = models.ForeignKey(User)
     ground = models.ForeignKey(ground, null=True, blank=True)
-    titleImage=ProcessedImageField(upload_to='uploads/image/events',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
+    titleImage = ProcessedImageField(upload_to='uploads/image/events',processors=[ResizeToFill(2000, 300)],format='JPEG',options={'quality': 60})
     def __unicode__(self):
         return self.title
 
@@ -39,7 +39,7 @@ class Comments(models.Model):
     eventId = models.ForeignKey(Event)
     user = models.ForeignKey(player)
     comment = models.CharField(max_length=1000)
-    sent = models.DateTimeField(auto_now_add=True)
+    sent = models.DateTimeField()
     def __unicode__(self):
         return self.comment
 
