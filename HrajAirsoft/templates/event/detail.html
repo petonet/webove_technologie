@@ -1,8 +1,96 @@
 {% extends "base.html" %}
-
 {% block content %}
-    <h1>{{ event.title }}</h1>
-    <ul>
+    <script>
+    function deleteEvent() {
+        $.ajax({
+                url: "{% url "eventDetail" pk=0%}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Delete",
+                    eventId: "{{ event.id }}"
+                },
+                success: function(data) {
+                    if (data == "Deleted") {
+                        document.location.href = "{% url "events" %}" ;
+                    }
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+    }
 
-    </ul>
+    function sign(signUp) {
+        if (signUp) {
+            $.ajax({
+                url: "{% url "eventDetail" pk=0%}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "SignUp",
+                    eventId: "{{ event.id }}"
+                },
+                success: function(data) {
+                    document.getElementById('signButton').style.display = 'none';
+                    document.getElementById('unsignButton').style.display = 'block';
+                    alert(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+        } else {
+            $.ajax({
+                url: "{% url "eventDetail" pk=0%}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Unsign",
+                    eventId: "{{ event.id }}"
+                },
+                success: function(data) {
+                    document.getElementById('unsignButton').style.display = 'none';
+                    document.getElementById('signButton').style.display = 'block';
+                    alert(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+        }
+    }
+
+</script>
+    <h1>{{ event.title }}</h1>
+
+    {% if authenticated %}
+        {% csrf_token %}
+        {% if isAuthor %}
+            <button onclick="deleteEvent()" style="width: 50px; height: 50px;">Zrušiť akciu</button><br>
+
+        {% else %}
+            {% if signAllowed %}
+                <button id="unsignButton" onclick="sign(false)" style="width: 50px; height: 50px;
+                    {% if not isSigned %}
+                        display: none;
+                    {% endif %}
+                    ">Odhlásiť</button>
+                <button id="signButton" onclick="sign(true)" style="width: 50px; height: 50px;
+                    {% if isSigned %}
+                        display: none;
+                    {% endif %}
+                    ">Prihlásiť</button>
+            {% else %}
+                Prihlásenie povolené od {{ event.login_since }}<br>
+            {% endif %}
+        {% endif %}
+    {% else %}
+        Na prihlásenie do akcie sa musíte prihlásiť do systému.
+    {% endif %}
+    <br>
+    {% for player in event.users.all %}
+        {{ player.user.username }}
+        <br>
+    {% endfor %}
 {% endblock %}
