@@ -477,6 +477,7 @@ position: absolute;
 
 .ground_submit{
     margin-top: 10px;
+    margin-bottom: 20px; !important;
 }
 
 #id_name{

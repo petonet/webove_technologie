@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/base.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" afterPath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -49,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="layout.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="434" column="30" selection-start="6741" selection-end="6741" vertical-scroll-proportion="-2.64" vertical-offset="7312" max-vertical-offset="14620">
+            <state line="479" column="21" selection-start="7357" selection-end="7357" vertical-scroll-proportion="0.3923611" vertical-offset="7917" max-vertical-offset="14637">
               <folding />
             </state>
           </provider>
@@ -69,10 +65,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepageMap.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="homepageMap.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="44" selection-start="733" selection-end="733" vertical-scroll-proportion="0.59130436" vertical-offset="0" max-vertical-offset="646">
+            <state line="20" column="44" selection-start="733" selection-end="733" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="646">
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -116,12 +112,12 @@
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" />
         <option value="$PROJECT_DIR$/grounds/urls.py" />
         <option value="$PROJECT_DIR$/grounds/views.py" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
       </list>
     </option>
   </component>
@@ -778,7 +774,11 @@
       <created>1387130899473</created>
       <updated>1387130899473</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="- nieco nastylovane&#10;- doplneny wysivyg&#10;-nastylovny addGroundForm&#10;-stylovanie grounds overview">
+      <created>1387131972224</created>
+      <updated>1387131972224</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -991,13 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="434" column="30" selection-start="6741" selection-end="6741" vertical-scroll-proportion="-2.64" vertical-offset="7312" max-vertical-offset="14620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="47" selection-start="480" selection-end="480" vertical-scroll-proportion="0.42348754" vertical-offset="0" max-vertical-offset="562">
@@ -1037,10 +1030,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="44" selection-start="733" selection-end="733" vertical-scroll-proportion="0.59130436" vertical-offset="0" max-vertical-offset="646">
+        <state line="20" column="44" selection-start="733" selection-end="733" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="646">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="479" column="21" selection-start="7357" selection-end="7357" vertical-scroll-proportion="0.3923611" vertical-offset="7917" max-vertical-offset="14637">
+          <folding />
         </state>
       </provider>
     </entry>
