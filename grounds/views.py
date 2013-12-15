@@ -32,6 +32,11 @@ class GroundsOverview(ListView):
     def get_context_data(self, **kwargs):
         a = []
         context={}
+        context['mapHeight'] = 500
+        #context['mapWidth'] = 1583
+        context['mapCenterLat'] = 48.735965
+        context['mapCenterLng'] = 19.662094
+        context['mapZoomLevel'] = 8
         for g in ground.objects.all():
             print g
             a.append(g)

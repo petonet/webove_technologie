@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <div class="head">
+        {% include "grounds/groundsMap.html" %}
+    </div>
+
     <div class="content">
-    <ul id="ground_list">
-    <h2>Zoznam ihrisk</h2>
-    {% for ground in grounds %}
-       <li><h3> <a href="/grounds/{{ ground.id }}"> {{ ground.name }} </a ></h3>
-            <a href="/grounds/{{ ground.id }}">
-                {% load thumbnail %}
-           {% thumbnail ground.photo "120x120" crop="center" as im %}
-                <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
-            {% endthumbnail %}
-            <div class="ground_list_desc">{{ ground.description }}</div>
-            </a>
+        <ul id="ground_list">
+            <h2>Zoznam ihrísk</h2>
+            {% for ground in grounds %}
+                <li><h3><a href="/grounds/{{ ground.id }}"> {{ ground.name }} </a></h3>
+                    <a href="/grounds/{{ ground.id }}">
+                        {% load thumbnail %}
+                        {% thumbnail ground.photo "180x120" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
+                        {% endthumbnail %}
+                        <div class="ground_list_desc">{{ ground.description }}</div>
+                    </a>
 
-       </li>
+                </li>
 
-    {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

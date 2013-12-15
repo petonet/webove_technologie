@@ -430,13 +430,15 @@ position: absolute;
     list-style: none;
 }
 
-#ground_list ul li h3{
-    font-size: 12px;
+#ground_list li h3{
+
+    font-size: 25px;
     margin-top: 5px;
     padding: 0;
 }
 
-#ground_list ul li h3 a{
+#ground_list li h3 a{
+    color: #000000;
    margin: 0;
     padding: 0;
 }
