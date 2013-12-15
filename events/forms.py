@@ -19,13 +19,14 @@ class NewForm(forms.ModelForm):
     organizationNotes = forms.CharField(label='Organizačné pokyny', widget=forms.Textarea(attrs={'type': 'text', 'placeholder': 'Organizačné pokyny', 'cols': '75', 'rows': '5'}), required=False)
     duration = forms.CharField(label='Trvanie', widget=forms.TextInput(attrs={'placeholder': '0'}), required=False)
     entryFee = forms.CharField(label='Vstupné', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Vstupné'}), required=False)
+    titleImage = forms.ImageField(label='Titulná fotka',widget=forms.FileInput, required=False)
     ground = forms.ModelChoiceField(label='Miesto',queryset= ground.objects.all().order_by('name'), empty_label='Nové miesto', required=False)
-    titleImage=forms.ImageField(label='Titulná fotka',widget=forms.FileInput, required=False,)
+
 
     class Meta:
         model = Event
         fields = ('title','startOfActionDate', 'startOfActionTime','duration','login_sinceDate', 'login_sinceTime',
-                  'numberOfPlayers','entryFee','prologue','scenario','organizationNotes','ground')
+                  'numberOfPlayers','entryFee','prologue','scenario','organizationNotes','ground', 'titleImage')
 
     def clean_numberOfPlayers(self):
         value = self.cleaned_data.get("numberOfPlayers")
@@ -121,3 +122,6 @@ class NewForm(forms.ModelForm):
             return False
         else:
             return True
+
+    def clean_titleImage(self):
+        return self.cleaned_data.get("titleImage")
