@@ -8,24 +8,26 @@ from django.core.exceptions import ValidationError
 
 
 class NewForm(forms.ModelForm):
-    title = forms.CharField(label='Názov', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Názov akcie'}), required=False)
-    startOfActionDate = forms.CharField(label='Začiatok akcie', widget=forms.TextInput(attrs={'id': 'startDatepicker', 'placeholder': 'Dátum začiatku'}), required=False)
-    startOfActionTime = forms.CharField(widget=forms.TextInput(attrs={'id': 'startTimePicker','placeholder': 'Čas'}), required=False)
-    numberOfPlayers = forms.IntegerField(label='Počet účastníkov', widget=forms.TextInput(attrs={'placeholder': '0'}), required=False)
-    login_sinceDate = forms.CharField(label='Prihlásenie povolené od', widget=forms.TextInput(attrs={'id':'loginDatepicker', 'placeholder': 'Dátum'}), required=False)
-    login_sinceTime = forms.CharField(widget=forms.TextInput(attrs={'id': 'loginTimePicker','placeholder': 'Čas'}), required=False)
+    title = forms.CharField(label='Názov', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Názov akcie','class':'form-control'}), required=False)
+    startOfActionDate = forms.CharField(label='Začiatok akcie', widget=forms.TextInput(attrs={'id': 'startDatepicker', 'placeholder': 'Dátum začiatku','class':'form-control'}), required=False)
+    startOfActionTime = forms.CharField(widget=forms.TextInput(attrs={'id': 'startTimePicker','placeholder': 'Čas','class':'form-control'}), required=False)
+    numberOfPlayers = forms.IntegerField(label='Počet účastníkov', widget=forms.TextInput(attrs={'placeholder': '0','class':'form-control'}), required=False)
+    login_sinceDate = forms.CharField(label='Prihlásenie povolené od', widget=forms.TextInput(attrs={'id':'loginDatepicker', 'placeholder': 'Dátum','class':'form-control'}), required=False)
+    login_sinceTime = forms.CharField(widget=forms.TextInput(attrs={'id': 'loginTimePicker','placeholder': 'Čas','class':'form-control'}), required=False)
     prologue = forms.CharField(label='Prológ', widget=forms.Textarea(attrs={'type': 'text', 'placeholder': 'Prológ', 'cols': '75', 'rows': '5'}), required=False)
     scenario = forms.CharField(label='Scenár', widget=forms.Textarea(attrs={'type': 'text', 'placeholder': 'Scenár', 'cols': '75', 'rows': '5'}), required=False)
     organizationNotes = forms.CharField(label='Organizačné pokyny', widget=forms.Textarea(attrs={'type': 'text', 'placeholder': 'Organizačné pokyny', 'cols': '75', 'rows': '5'}), required=False)
-    duration = forms.CharField(label='Trvanie', widget=forms.TextInput(attrs={'placeholder': '0'}), required=False)
-    entryFee = forms.CharField(label='Vstupné', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Vstupné'}), required=False)
+    duration = forms.CharField(label='Trvanie', widget=forms.TextInput(attrs={'placeholder': '0','class':'form-control'}), required=False)
+    entryFee = forms.CharField(label='Vstupné', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Vstupné','class':'form-control'}), required=False)
     ground = forms.ModelChoiceField(label='Miesto',queryset= ground.objects.all().order_by('name'), empty_label='Nové miesto', required=False)
     titleImage=forms.ImageField(label='Titulná fotka',widget=forms.FileInput, required=False,)
+    facebookEvent=forms.BooleanField(label='Vytvoriť event na Facebooku?',widget=forms.CheckboxInput,initial=False)
 
     class Meta:
         model = Event
         fields = ('title','startOfActionDate', 'startOfActionTime','duration','login_sinceDate', 'login_sinceTime',
                   'numberOfPlayers','entryFee','prologue','scenario','organizationNotes','ground')
+        exclude=('facebookEvent')
 
     def clean_numberOfPlayers(self):
         value = self.cleaned_data.get("numberOfPlayers")

@@ -484,6 +484,10 @@ position: absolute;
     width: 300px;
 }
 
+.form-control{
+    width: 200px; !important;
+}
+
 .groundAddForm ul{
     margin-left: auto;
     margin-right: auto;
