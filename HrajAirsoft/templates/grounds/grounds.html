@@ -4,13 +4,14 @@
 
     <div class="head">
         {% include "grounds/groundsMap.html" %}
+    <div class="clearfix"></div>
     </div>
 
     <div class="content">
         <ul id="ground_list">
             <h2>Zoznam ihrísk</h2>
         {% if user.is_authenticated %}
-                  <a href="/grounds/add/">  <button class="btn btn-warning" type="button">Pridaj ihrisko</button></a>
+                  <a href="/grounds/add/"><button class="btn btn-warning" type="button">Pridaj ihrisko</button></a>
                 {% endif %}
 
             {% for ground in grounds %}

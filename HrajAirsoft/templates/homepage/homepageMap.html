@@ -18,9 +18,13 @@ function initialize() {
         var marker{{ ground.id }} = new google.maps.Marker({
 		    position: new google.maps.LatLng({{ ground.locationLat }}, {{ ground.locationLng }}),
 		    map: map,
+            url: '/grounds/{{ ground.id }}',
 		    title: '{{ ground.name }}',
             icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
 	    });
+        google.maps.event.addListener(marker{{ ground.id }}, 'click', function() {
+                window.location.href = marker{{ ground.id }}.url;
+            });
     {% endfor %}
 }
 

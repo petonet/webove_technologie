@@ -67,7 +67,7 @@
     {% if user.is_authenticated %}
         <p id="login_as">PRIHLÁSENÝ AKO:  <a href="/accounts/aboutMe/"><STRONG>{{ user.username }}</STRONG></a></p>
     {% endif %}
-
+    <div class="clearfix"></div>
 </div>
 <div id="dialog" title="Prihlásenie">
 <form class="crud_form" method="post" action="/accounts/login/fail" name="login">

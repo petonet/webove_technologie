@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/base.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" afterPath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -28,28 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="homepage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="12" selection-start="82" selection-end="82" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="357">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addForm.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="47" selection-start="480" selection-end="480" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="grounds.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="94" selection-start="953" selection-end="953" vertical-scroll-proportion="-13.076923" vertical-offset="51" max-vertical-offset="629">
+            <state line="6" column="4" selection-start="123" selection-end="151" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
@@ -64,17 +49,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grounds/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="9" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1989">
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="layout.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,20 +58,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/base.html">
+      <file leaf-file-name="groundsMap.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="30" selection-start="2231" selection-end="2231" vertical-scroll-proportion="0.44347826" vertical-offset="663" max-vertical-offset="2176">
-              <folding />
+            <state line="20" column="12" selection-start="701" selection-end="733" vertical-scroll-proportion="-10.346154" vertical-offset="71" max-vertical-offset="646">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ground_detail.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html">
+      <file leaf-file-name="homepageMap.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="19" selection-start="44" selection-end="44" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="272">
-              <folding />
+            <state line="20" column="44" selection-start="733" selection-end="733" vertical-scroll-proportion="0.59130436" vertical-offset="0" max-vertical-offset="646">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,22 +106,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/event/newEventMap.html" />
         <option value="$PROJECT_DIR$/events/views.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/urls.py" />
         <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/settings.py" />
         <option value="$PROJECT_DIR$/grounds/forms.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" />
         <option value="$PROJECT_DIR$/grounds/urls.py" />
         <option value="$PROJECT_DIR$/grounds/views.py" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" />
       </list>
     </option>
   </component>
@@ -796,7 +774,11 @@
       <created>1387129792729</created>
       <updated>1387129792729</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="- nieco nastylovane&#10;- doplneny wysivyg&#10;-nastylovny addGroundForm&#10;-stylovanie grounds overview">
+      <created>1387130899473</created>
+      <updated>1387130899473</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -842,7 +824,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21666667" sideWeight="0.6586922" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34130782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34130782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -949,20 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="59" selection-start="894" selection-end="894" vertical-scroll-proportion="-9.307693" vertical-offset="217" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="47" selection-start="480" selection-end="480" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="14" selection-start="4847" selection-end="4847" vertical-scroll-proportion="0.41763726" vertical-offset="2129" max-vertical-offset="3094">
@@ -986,39 +954,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="12" selection-start="82" selection-end="82" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="44" selection-end="44" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="21" selection-start="856" selection-end="856" vertical-scroll-proportion="0.7930435" vertical-offset="3" max-vertical-offset="578">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="4" selection-start="358" selection-end="527" vertical-scroll-proportion="0.113144755" vertical-offset="68" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="79" selection-end="148" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="493">
           <folding />
         </state>
       </provider>
@@ -1039,9 +977,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="94" selection-start="953" selection-end="953" vertical-scroll-proportion="-13.076923" vertical-offset="51" max-vertical-offset="629">
+        <state line="2" column="19" selection-start="44" selection-end="44" vertical-scroll-proportion="0.06137184" vertical-offset="0" max-vertical-offset="554">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="32" selection-start="2802" selection-end="2802" vertical-scroll-proportion="0.7095652" vertical-offset="765" max-vertical-offset="2176">
           <folding />
         </state>
       </provider>
@@ -1053,10 +998,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="30" selection-start="2231" selection-end="2231" vertical-scroll-proportion="0.44347826" vertical-offset="663" max-vertical-offset="2176">
+        <state line="14" column="47" selection-start="480" selection-end="480" vertical-scroll-proportion="0.42348754" vertical-offset="0" max-vertical-offset="562">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="4" selection-start="163" selection-end="191" vertical-scroll-proportion="0.20695652" vertical-offset="0" max-vertical-offset="575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="123" selection-end="151" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="4" selection-start="79" selection-end="148" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundsMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="12" selection-start="701" selection-end="733" vertical-scroll-proportion="-10.346154" vertical-offset="71" max-vertical-offset="646">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="44" selection-start="733" selection-end="733" vertical-scroll-proportion="0.59130436" vertical-offset="0" max-vertical-offset="646">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
