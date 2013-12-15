@@ -106,6 +106,8 @@ padding-top: 20px;
 }
 
 .content{
+    margin-top: 0;
+    padding-top: 15px; ;
     margin-right: auto;
     margin-left: auto;
     width: 980px;
@@ -113,12 +115,17 @@ padding-top: 20px;
 
 #ground_tag{
     width: 100%;
-    height: 380px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-top: 5px;
+    /*height: 380px;*/
     background-color: #f4f4f0 ;
+
 }
 
 #ground_tag h2{
     margin-bottom: 15px;
+    text-align: center;
 }
 
 #ground_tag h2 a{
@@ -128,12 +135,28 @@ padding-top: 20px;
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
     color: #000000;
-}
+    }
+
 
 #ground_tag ul li{
     display: inline-block;
-    /*margin-right: ;*/
+    margin-right: 15px;
 }
+
+#ground_tag ul li div.tag_ground_info{
+    width: 220px;
+}
+
+
+#events_tag{
+    width: 660px;
+}
+
+#events_tag ul li{
+
+}
+
+
 #login_as,#postAndSettings{
     font-size: 12px;
     text-align: right;

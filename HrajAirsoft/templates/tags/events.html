@@ -6,7 +6,7 @@
 
 
             {% load thumbnail %}
-           {% thumbnail event.titleImage "230x170" crop="center" as im %}
+           {% thumbnail event.titleImage "140x90" crop="center" as im %}
                 <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
             {% endthumbnail %}
 

@@ -12,7 +12,7 @@ from django.views import generic
 def HomeView(request):
     context = {}
     context['mapHeight'] = 500
-    context['mapWidth'] = 1000
+    context['mapWidth'] = 1583
     context['mapCenterLat'] = 48.735965
     context['mapCenterLng'] = 19.662094
     context['mapZoomLevel'] = 8
