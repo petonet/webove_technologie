@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -82,7 +84,7 @@
       <file leaf-file-name="newEvent.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="-0.23545706" vertical-offset="255" max-vertical-offset="1836">
+            <state line="67" column="43" selection-start="2941" selection-end="2941" vertical-scroll-proportion="-0.1301939" vertical-offset="1186" max-vertical-offset="1955">
               <folding />
             </state>
           </provider>
@@ -114,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HrajAirsoft/settings.py" />
         <option value="$PROJECT_DIR$/grounds/forms.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" />
         <option value="$PROJECT_DIR$/grounds/urls.py" />
@@ -130,6 +131,7 @@
         <option value="$PROJECT_DIR$/events/forms.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html" />
       </list>
     </option>
   </component>
@@ -798,7 +800,11 @@
       <created>1387140388377</created>
       <updated>1387140388377</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="- nieco nastylovane&#10;- doplneny wysivyg&#10;-nastylovny addGroundForm&#10;-stylovanie grounds overview&#10;-uprava eventov pre facebook&#10;">
+      <created>1387141419559</created>
+      <updated>1387141419559</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1060,7 +1066,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="-0.23545706" vertical-offset="255" max-vertical-offset="1836">
+        <state line="67" column="43" selection-start="2941" selection-end="2941" vertical-scroll-proportion="-0.1301939" vertical-offset="1186" max-vertical-offset="1955">
           <folding />
         </state>
       </provider>
