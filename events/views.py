@@ -204,9 +204,9 @@ def add(request):
 
             startDate = form.cleaned_data['startOfActionDate']
             startTime = form.cleaned_data['startOfActionTime']
-            splitStartDate = startDate.split(".")
+            splitStartDate = startDate.split("-")
             splitStartTime = startTime.split(":")
-            event.startOfAction = datetime.datetime(int(float(splitStartDate[2])), int(float(splitStartDate[1])), int(float(splitStartDate[0])),
+            event.startOfAction = datetime.datetime(int(float(splitStartDate[0])), int(float(splitStartDate[1])), int(float(splitStartDate[2])),
                                               int(float(splitStartTime[0])), int(float(splitStartTime[1])))
 
             event.published = datetime.datetime.now()
@@ -214,9 +214,9 @@ def add(request):
 
             loginDate = form.cleaned_data['login_sinceDate']
             loginTime = form.cleaned_data['login_sinceTime']
-            splitLoginDate = loginDate.split(".")
+            splitLoginDate = loginDate.split("-")
             splitLoginTime = loginTime.split(":")
-            event.login_since = datetime.datetime(int(float(splitLoginDate[2])), int(float(splitLoginDate[1])), int(float(splitLoginDate[0])),
+            event.login_since = datetime.datetime(int(float(splitLoginDate[0])), int(float(splitLoginDate[1])), int(float(splitLoginDate[2])),
                                               int(float(splitLoginTime[0])), int(float(splitLoginTime[1])))
 
             event.prologue = form.cleaned_data['prologue']

@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class ground(models.Model):
     name=models.CharField(max_length=100)
-    description=models.CharField(max_length=1000)
+    description=models.CharField(max_length=20000)
     rate=models.PositiveIntegerField(default=2.5)
     official=models.BooleanField(default='false')
     pubDate=models.DateTimeField("published",default=datetime.datetime.now())
