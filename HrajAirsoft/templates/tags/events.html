@@ -1,5 +1,6 @@
 <div id="events_tag">
-   <h2> <a href="/events/">Najbližšie akcie</a></h2>
+   <h3> <a href="/events/">Najbližšie akcie</a></h3>
+    <button class="btn btn-warning" type="button">Všetky ihriská</button>
     <ul>
     {% for event in events %}
        <li>
@@ -11,7 +12,7 @@
             {% endthumbnail %}
 
         <div class="tag_event_info">
-           <h3> <a href="/events/detail/{{ event.id }}">{{ event.title }}</a></h3>
+           <h4> <a href="/events/detail/{{ event.id }}">{{ event.title }}</a></h4>
             <div class="tag_event_desc">
                 {{ event.prologue }}
             </div>

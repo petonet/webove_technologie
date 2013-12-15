@@ -11,7 +11,8 @@
     width: 980px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom:50px ;
+    margin-top: 10px;
+    margin-bottom:10px ;
 }
 
 #header img{
@@ -149,10 +150,39 @@ padding-top: 20px;
 
 
 #events_tag{
+    margin-top: 20px;
     width: 660px;
+    float: left;
+}
+#events_tag h3{
+    color: #000000;
+    float: left;
+    margin-left: 50px;
+    margin-right: 150px;
 }
 
+#events_tag h3 a{
+    color: #000000;
+}
+
+#events_tag button{
+ margin-top: 15px;
+ width: 220px ;
+ height:35px ;
+ line-height: 35px;
+  padding: 0;
+}
+
+
 #events_tag ul li{
+    margin-top: 15px;
+    list-style: none;
+
+}
+
+#events_tag ul li img{
+    margin-top: 15px;
+    float: left;
 
 }
 

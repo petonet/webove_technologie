@@ -4,6 +4,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
   var mapOptions = {
+    scrollwheel: false,
     zoom: {{ mapZoomLevel }},
     center: new google.maps.LatLng({{ mapCenterLat }}, {{ mapCenterLng }}),
     mapTypeControl: false,
@@ -24,5 +25,5 @@ function initialize() {
 }
 
 </script>
-<div id="map" style="height: {{ mapHeight }}px; width: {{ mapWidth }}px; background-color: lightblue;"></div>
+<div id="map" style="height: {{ mapHeight }}px; width: 100%; background-color: lightblue;"></div>
 <!--<button onclick="alert(lastCreatedMarker.position)"></button>-->
