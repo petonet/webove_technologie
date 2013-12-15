@@ -431,9 +431,11 @@ position: absolute;
 
 #ground_list li{
     /*background-color:#5f5f5f ;*/
-    padding: 10px;
-    width: 100%;
+    padding: 20px;
+    background-color: #dddddd;
+    width: 96%;
     list-style: none;
+    margin: 20px;
 }
 
 #ground_list li h3{
@@ -458,10 +460,11 @@ position: absolute;
 
 
 
-#ground_list ul li div.ground_list_desc{
-    width: 300px;
-    font-size: 10px;
+#ground_list li div.ground_list_desc{
+    width: 620px;
+    font-size: 14px;
     margin-top: 5px;
+    color: #000000;
 }
 
 .groundAddForm{

@@ -12,18 +12,16 @@
         {% if user.is_authenticated %}
                   <a href="/grounds/add/">  <button class="btn btn-warning" type="button">Pridaj ihrisko</button></a>
                 {% endif %}
+
             {% for ground in grounds %}
                 <li><h3><a href="/grounds/{{ ground.id }}"> {{ ground.name }} </a></h3>
 
-
-
-
-                    <a href="/grounds/{{ ground.id }}">
+             <a href="/grounds/{{ ground.id }}">
                         {% load thumbnail %}
                         {% thumbnail ground.photo "180x120" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
                         {% endthumbnail %}
-                        <div class="ground_list_desc">{{ ground.description }}</div>
+                        <div class="ground_list_desc">{{ ground.description |truncatechars:600}}</div>
                     </a>
 
                 </li>
