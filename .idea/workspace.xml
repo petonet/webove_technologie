@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" afterPath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/settings.py" afterPath="$PROJECT_DIR$/HrajAirsoft/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -25,15 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/events/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="25" selection-start="269" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="4284">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="events.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,34 +51,34 @@
       <file leaf-file-name="ground.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="9" selection-start="687" selection-end="687" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="510">
+            <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="527">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
+      <file leaf-file-name="addForm.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="6" selection-start="958" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3009">
+            <state line="2" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="layout.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="20" selection-start="181" selection-end="181" vertical-scroll-proportion="0.519337" vertical-offset="50" max-vertical-offset="13991">
+            <state line="463" column="1" selection-start="7075" selection-end="7075" vertical-scroll-proportion="-10.4" vertical-offset="7611" max-vertical-offset="14246">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepageMap.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="59" selection-start="894" selection-end="894" vertical-scroll-proportion="-9.307693" vertical-offset="217" max-vertical-offset="578">
+            <state line="140" column="14" selection-start="4847" selection-end="4847" vertical-scroll-proportion="0.6485788" vertical-offset="2129" max-vertical-offset="3094">
               <folding />
             </state>
           </provider>
@@ -103,6 +99,7 @@
         <option value="Matus" />
       </list>
     </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -113,7 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/event/form.html" />
         <option value="$PROJECT_DIR$/events/models.py" />
         <option value="$PROJECT_DIR$/events/urls.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/event/detail.html" />
@@ -123,12 +119,13 @@
         <option value="$PROJECT_DIR$/events/views.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/urls.py" />
         <option value="$PROJECT_DIR$/home/views.py" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/settings.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepageMap.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/settings.py" />
       </list>
     </option>
   </component>
@@ -272,6 +269,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -326,7 +345,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="C:/Python27/Lib/site-packages/gmapi" />
+    <property name="last_opened_file_path" value="C:/Python27/Lib/site-packages/django_wysiwyg" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="829" />
@@ -711,7 +730,11 @@
       <created>1387111859012</created>
       <updated>1387111859012</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="- nieco nastylovane">
+      <created>1387111964661</created>
+      <updated>1387111964661</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -854,13 +877,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.55654764" vertical-offset="0" max-vertical-offset="336">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/event/newEventMap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="75" selection-start="0" selection-end="2644" vertical-scroll-proportion="0.53968257" vertical-offset="0" max-vertical-offset="1428">
@@ -917,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="6" selection-start="958" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3009">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/events/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="25" selection-start="269" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="4284">
@@ -952,16 +961,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="9" selection-start="687" selection-end="687" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="510">
+        <state line="463" column="1" selection-start="7075" selection-end="7075" vertical-scroll-proportion="-10.4" vertical-offset="7611" max-vertical-offset="14246">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="20" selection-start="181" selection-end="181" vertical-scroll-proportion="0.519337" vertical-offset="50" max-vertical-offset="13991">
+        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="14" selection-start="4847" selection-end="4847" vertical-scroll-proportion="0.6485788" vertical-offset="2129" max-vertical-offset="3094">
           <folding />
         </state>
       </provider>

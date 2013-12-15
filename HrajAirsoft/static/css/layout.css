@@ -453,6 +453,21 @@ position: absolute;
     margin-top: 5px;
 }
 
+.groundAddForm{
+    width: 100%;
+}
+.groundAddForm ul li{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.groundAddForm ul{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 .ed_topPart {
 	margin: 0;
 	padding: 0;

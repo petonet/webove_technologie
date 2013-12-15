@@ -137,7 +137,12 @@ INSTALLED_APPS = (
     'home',
     'teams',
     'events',
+    'django_wysiwyg',
+    'tinymce',
 )
+
+DJANGO_WYSIWYG_FLAVOR = "tinymce"
+
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
