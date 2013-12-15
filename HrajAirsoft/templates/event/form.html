@@ -20,6 +20,9 @@
   });
 </script>
 
+{% load wysiwyg %}
+{% wysiwyg_setup %}
+
 <div>
     <form class="bs-example form-horizontal" action="." method="POST"  {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
         <fieldset>
@@ -75,6 +78,8 @@
         </div>
     {% endfor %}
 {% endif %}
-
+       {% wysiwyg_editor "id_prologue" %}
+        {% wysiwyg_editor "id_scenario" %}
+    {% wysiwyg_editor "id_organizationNotes" %}
     </form>
 </div>
