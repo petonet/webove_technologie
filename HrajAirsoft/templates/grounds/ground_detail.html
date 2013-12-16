@@ -4,8 +4,9 @@
     <div>
     <h1>{{ground.name}}</h1>
     <div><img src="{{ MEDIA_URL }}{{ ground.photo }}"></div>
+       {% autoescape off %}
     <p>{{ ground.description }}</p>
-
+    {% endautoescape %}
     </div>
 
 {% endblock %}

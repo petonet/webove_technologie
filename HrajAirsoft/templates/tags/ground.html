@@ -8,7 +8,7 @@
 
 
             {% load thumbnail %}
-           {% thumbnail ground.photo "220x170" crop="center" as im %}
+           {% thumbnail ground.photo "220x170"  as im %}
                 <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
             {% endthumbnail %}
 

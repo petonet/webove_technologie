@@ -19,10 +19,10 @@
 
              <a href="/grounds/{{ ground.id }}">
                         {% load thumbnail %}
-                        {% thumbnail ground.photo "180x120" crop="center" as im %}
+                        {% thumbnail ground.photo "180x120"  as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
                         {% endthumbnail %}
-                        <div class="ground_list_desc">{{ ground.description |truncatechars:600}}</div>
+                        <div class="ground_list_desc">{% autoescape off%}{{ ground.description |truncatechars:600}}{% endautoescape %}</div>
                     </a>
 
                 </li>

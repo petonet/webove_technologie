@@ -122,7 +122,7 @@
 				<span id="ed_leftText"><b>Prológ</b></span>
 			</div>
 			<div class="ed_itemRight">
-				<span id="ed_leftText">{{ event.prologue }}</span>
+				<span id="ed_leftText">{% autoescape off %}{{ event.prologue }}{% endautoescape %}</span>
 			</div>
 		</div>
 		<div class="ed_bottomLeftScenario">
@@ -130,7 +130,7 @@
 				<span id="ed_leftText"><b>Scenár</b></span>
 			</div>
 			<div class="ed_itemRight">
-				<span id="ed_leftText">{{ event.scenario }}</span>
+				<span id="ed_leftText">{% autoescape off %}{{ event.scenario }}{% endautoescape %}</span>
 			</div>
 		</div>
 		<div class="ed_organizationDiv">
@@ -138,7 +138,7 @@
 		</div>
 		<div class="ed_organization">
 			<div class="ed_organizationNotes">
-				<span id="ed_leftText">{{ event.organizationNotes }}</span>
+				<span id="ed_leftText">{% autoescape off %}{{ event.organizationNotes }}{% endautoescape %}</span>
 			</div>
 			<div class="ed_entryFeeDiv">
 				<span id="ed_entryFeeText"><b>Vstupné</b></span>

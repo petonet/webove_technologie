@@ -1,20 +1,24 @@
 <div id="events_tag">
    <h3> <a href="/events/">Najbližšie akcie</a></h3>
-    <button class="btn btn-warning" type="button">Všetky ihriská</button>
+    <button class="btn btn-warning" type="button">Všetky akcie</button>
     <ul>
     {% for event in events %}
        <li>
 
 
             {% load thumbnail %}
-           {% thumbnail event.titleImage "140x90" crop="center" as im %}
-                <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
+           {% thumbnail event.titleImage "160x110" crop="center"  as im %}
+               <a href="/events/detail/" class="event_tag_img"> <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" /></a>
             {% endthumbnail %}
+            <h4> <a href="/events/detail/{{ event.id }}">{{ event.title }}</a></h4>
+            <div class="entryFee">Vstupné: {{ event.entryFee }}€</div>
+            <div class="startDate">Začiatok: {{ event.startOfAction }} </div>
 
         <div class="tag_event_info">
-           <h4> <a href="/events/detail/{{ event.id }}">{{ event.title }}</a></h4>
+
             <div class="tag_event_desc">
-                {{ event.prologue }}
+            <p style="font-size: 18px;font-weight: bold">Prológ:</p>
+               {% autoescape off %}{{ event.prologue | truncatechars:500 }}{% endautoescape %}
             </div>
         </div>
 
