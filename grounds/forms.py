@@ -9,7 +9,7 @@ from imagekit.models import ProcessedImageField
 
 class AddGroundForm(forms.ModelForm):
    #username = forms.CharField(label='Užívateľské meno', widget=forms.TextInput, required=True)
-    name = forms.CharField(label='Meno ihriska', widget=forms.TextInput(attrs={'class':'form-control'}), required=True, max_length=200,)
+    name = forms.CharField(label='Meno ihriska', widget=forms.TextInput(attrs={'class':'form-control form-control2'}), required=True, max_length=200,)
     #city = forms.CharField(label='Mesto', widget=forms.TextInput, required=True, max_length= 100)
    # street = forms.CharField(label='Ulica', widget=forms.TextInput, required=True)
     description = forms.CharField(label='Popis', widget=forms.Textarea, required=False)
