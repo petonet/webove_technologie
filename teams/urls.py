@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     url(r'^(?P<pk>\d+)/cancelMembership/$','teams.views.cancelMembership'),
     url(r'^(?P<pk>\d+)/editBasicInfo/$','teams.views.editBasicInfo'),
     url(r'^(?P<pk>\d+)/removeTeam/$','teams.views.deleteTeam'),
+    url(r'^teamsListSorted/(?P<sortPar>\w+)/$', 'teams.views.teamsListSorted'),
 )

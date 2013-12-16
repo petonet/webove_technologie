@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content">
+    <div id="content-form-player">
+
+
+
+        <div id="left-sidebar">
+            <div class="teams">
+                                <h2>Prehľad tímov</h2>
+            <div class="teams_list_div">
+                <ul id="teams_list">
+
+                                {% for team in team_list %}
+
+                                <li>
+                                <h3 id="h3paddingTeamsList"><a href="/teams/{{ team.id }}/">{{ team.name }}</a></h3>
+                                <table>
+                                <tbody>
+
+                                <tr>
+                                <td width="110px">
+
+
+
+
+                                <img width="80" height="80" alt="defUser.jpg" src="
+                                    {% if team.team_logo  %}
+                                        {{ MEDIA_URL }}{{ team.team_logo }}
+                                    {% else %}
+                                        {{ MEDIA_URL }}templates_img/default_team_logo.png
+                                    {% endif %}">
+
+
+                                </td>
+
+                                <td style="vertical-align: top" height="40">
+                                    <table width="450" >
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Dátum a čas vytvorenia -  </td>
+                                            <td align="right" style="color: darkblue;">{{ team.reg_date }}&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Počet hráčov v tíme -</td>
+                                            <td align="right" style="color: darkblue;">{{ team.counts_of_players }}&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </td>
+
+                                </tr>
+                                <tr width="110px"><td></td><td><span class="teams_desc">{{ team.description |truncatechars:200}}&nbsp;&nbsp;<a id="more" href="/teams/{{ team.id }}/">more</a></span></td></tr>
+                                </tbody>
+                                </table>
+
+                                    </li>
+                                {% endfor %}
+
+                </ul>
+
+            </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div id="right-sidebar">
+             {% include "teams/teamlist_sort.html" %}
+        </div>
+
+
+
+
+    </div>
+</div>
+{% endblock %}
