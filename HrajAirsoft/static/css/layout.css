@@ -46,9 +46,12 @@ padding-top: 20px;
     background-color:#eca701;
     padding: 9px 15px;
     color: #ffffff;
-     border-radius: 2px;
-    margin-left:50px ;
+    border-radius: 2px;
     }
+#header ul li#logout{
+
+    padding: 9px 8px;
+}
 #header ul li#register{
     background-color: #1900ff;
     }
