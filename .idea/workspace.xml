@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/event/detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/event/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/tags/events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" afterPath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -93,7 +86,7 @@
       <file leaf-file-name="layout.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="199" column="4" selection-start="2984" selection-end="2984" vertical-scroll-proportion="0.7138047" vertical-offset="3171" max-vertical-offset="15198">
+            <state line="199" column="0" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.7138047" vertical-offset="3171" max-vertical-offset="15198">
               <folding />
             </state>
           </provider>
@@ -758,7 +751,11 @@
       <created>1387223978810</created>
       <updated>1387223978810</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="- uprava databzy">
+      <created>1387228749702</created>
+      <updated>1387228749702</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1062,7 +1059,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="4" selection-start="2984" selection-end="2984" vertical-scroll-proportion="0.7138047" vertical-offset="3171" max-vertical-offset="15198">
+        <state line="199" column="0" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.7138047" vertical-offset="3171" max-vertical-offset="15198">
           <folding />
         </state>
       </provider>
