@@ -267,13 +267,16 @@ text-align: center;
     white-space: nowrap;
 }
 
-.com_error {
+.com_error, .com_message {
     background-color: #CC0000;
     color: #FFFFFF;
     font-weight: bold;
     margin: 15px;
     padding: 6px 10px;
 
+}
+.com_message{
+ background-color: #18BC9C;
 }
 
 #file-input-form{
@@ -397,4 +400,8 @@ position: absolute;
     width: 300px;
     font-size: 10px;
     margin-top: 5px;
+}
+
+.teams-buttons{
+ margin: 50px;
 }

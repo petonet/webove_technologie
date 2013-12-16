@@ -5,7 +5,8 @@ from imagekit.models import ProcessedImageField
 
 
 class Team(models.Model):
-
+    #2000*300
+    big_logo = ProcessedImageField(upload_to='uploads/image/teams/big_logos',processors=[ResizeToFill(2000, 300)],format='JPEG',options={'quality': 60}, blank=True, null=True)
     team_logo = ProcessedImageField(upload_to='uploads/image/teams/logos',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60}, blank=True, null=True)
     leader = models.ForeignKey(player)
     name = models.CharField(max_length=30)
@@ -22,6 +23,9 @@ class UserInTeamNtoN(models.Model):
 
     team_id = models.ForeignKey(Team)
     user_id = models.ForeignKey(player)
+    invitation = models.NullBooleanField(blank=True, null=True)
+    accepted = models.NullBooleanField(blank=True, null=True)
+    dateOfAdd = models.DateField(blank=True, null=True)
 
     def __unicode__(self):  # Python 3: def __str__(self):
         return 'Do timu = ' + str(self.team_id) + ', je priradeny hrac = ' + str(self.user_id)
@@ -42,7 +46,7 @@ class NewsFeeds(models.Model):
 class Gallery(models.Model):
 
     image = ProcessedImageField(upload_to='uploads/image/teams/gallery',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
-    team_id = models.ForeignKey(Team)
+    team_id = models.ForeignKey(Team,blank=True, null=True)
     news_id = models.ForeignKey(NewsFeeds,blank=True, null=True)
 
     def __unicode__(self):  # Python 3: def __str__(self):

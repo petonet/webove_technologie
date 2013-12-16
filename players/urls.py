@@ -12,4 +12,5 @@ urlpatterns = patterns('',
    url(r'^profile/$', 'players.views.profile'),
    url(r'^aboutMe/$', 'players.views.aboutMe'),
    url(r'^registration/$','players.views.registration'),
+   #url(r'^myTeam/$','players.views.myTeam'),
    )

@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from models import player
 from forms import PlayerForm, RegistrationForm, ChangePassForm, ChangePhotoForm
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, RequestContext
+from django.shortcuts import render_to_response, RequestContext,redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 #from players.views import profile
@@ -213,3 +213,4 @@ def changephoto(request):
     else:
         form = ChangePhotoForm({})
         return render_to_response('players/changephoto.html', {'form': form, 'changePass': True , 'changephoto':True }, context_instance=RequestContext(request))
+

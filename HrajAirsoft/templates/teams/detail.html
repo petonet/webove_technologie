@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+
     {% if team %}
         <ul><h1>{{ team.name }}</h1>
         <li><b>O tíme - </b>{{ team.description }}</li>
@@ -9,6 +11,41 @@
         <li><b>Počet hráčov - </b>{{ team.counts_of_players }}</li>
         </ul>
 
+        {% if thisteamadmin %}
+
+             <input class="btn btn-primary" type="button" value="Editácia tímu"  onclick="window.location='/teams/{{ team.pk }}/editBasicInfo/';" >
+
+        {% elif isMember %}
+             <input class="btn btn-primary" type="button" value="Ukončiť členstvo" onclick="window.location='/teams/{{ team.pk }}/cancelMembership/';" >
+        {% elif haveRequetInThisTeam %}
+            {% if playerRequest == True %}
+                <input class="btn btn-primary" type="button" value="Prihláška odoslaná" >
+                <form action="/teams/cancelRequest/" method="POST">
+                    {% csrf_token %}
+                    {% for f in deleteRequestToTeam %}
+                               {{ f }}
+                    {% endfor %}
+                    <input class="btn btn-primary" type="submit" value="Zruš žiadosť" >
+                </form>
+            {% elif playerRequest == False %}
+                <input class="btn btn-primary" type="button" value="Prihláška bola zamietnuta administrátorom" >
+                <form action="/teams/cancelRequest/" method="POST">
+                    {% csrf_token %}
+                    {% for f in deleteRequestToTeam %}
+                               {{ f }}
+                    {% endfor %}
+                    <input class="btn btn-primary" type="submit" value="Odstráň prihlášku" >
+                </form>
+            {% endif %}
+        {% elif not haveRequest and not teamadmin %}
+                <form action="/teams/sendRequestForMembership/" method="POST">
+                    {% csrf_token %}
+                    {% for f in addRequestToTeam %}
+                               {{ f }}
+                    {% endfor %}
+                    <input class="btn btn-primary" type="submit" value="Odoslať prihlášku" >
+                </form>
+        {% endif %}
         <ul><h1>Členovia tímu</h1>
 
         <li> <img src="{{ MEDIA_URL }}{{ team.leader.photo }}" alt="{{ MEDIA_URL }}{{ team.leader.photo }}"  width="50" height="50" >

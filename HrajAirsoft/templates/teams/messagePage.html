@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content">
+    <div id="content-form-player">
+        <div id="left-sidebar">
+
+
+
+            {% if saved %}
+                <div class="inform-panel">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Požiadavka bola úspešne spracovaná !</h3>
+                      </div>
+                      <div class="panel-body">
+                          <img src="{{ MEDIA_URL }}templates_img/ok.png" alt="ok_logo" height="100" width="100"/>
+                          <div id="mainpage-buttons-success">
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Späť na tím" type="button" onclick="window.location='/teams/{{ id_team }}/';" >
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Domov" type="button" onclick="window.location='/homepage';" >
+                          </div>
+                    </div>
+                </div>
+                </div>
+            {% else %}
+
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Nastala chyba pri odosielaní požiavky skúste to ešte raz !</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="{{ MEDIA_URL }}templates_img/fail.png" alt="ok_logo" height="100" width="100"/>
+                         <div id="mainpage-buttons-success">
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Späť na tím" type="button" onclick="window.location='/teams/{{ id_team }}/';" >
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Domov" type="button" onclick="window.location='/homepage';" >
+                         </div>
+                    </div>
+                 </div>
+
+                {% endif %}
+        </div>
+        <div id="right-sidebar">
+           {% include "teams/right-sidebar.html" %}
+        </div>
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="content">
+
+    <div id="content-form-player">
+
+        <div id="left-sidebar">
+
+
+            {% if not invitation %}
+            <div class="section"><h2>Nie si v žiadnom tíme</h2></div>
+            <div class="com_message">Pošli prihlášku do tímu alebo vytvor tím !</div>
+            {% else %}
+                  {% if invitation.invitation == false %}
+                    <p>Tvoja žiadosť o prijatie do tímu {{ team.name }} bola zamietnuta administrátorom !<p>
+                  {% else %}
+                    <div class="section"><h2>Žiadosť bola odoslaná !</h2></div>
+                    <div class="com_message">Tvoja žiadosť o prihlásenie do tímu sa s pracúva.</div>
+
+
+                  {% endif %}
+            {% endif %}
+            <div class="login_form">
+
+                <center>
+                    <table width="500" cellspacing="0" cellpadding="3" border="0" align="center">
+                      <tbody><tr>
+
+                            {% if invitation %}
+                               <td>Odoslal si žiadosť do tímu: &nbsp;</td>
+                               <td><a href="/teams/{{ team.id }}/">{{ team.name }}</a></td>
+                            {% else %}
+                                <td>
+                            <div class="teams-buttons">
+                            <input class="btn btn-primary" type="button" value="Vytvor nový tím"  onclick="window.location='/teams/new/';" >
+                            </div>
+                                </td>
+                             <td>
+
+                            <div class="teams-buttons">
+                            <input class="btn btn-primary" type="button" value="Vyber si tím a pošli prihlášku" onclick="window.location='/teams/';" >
+                            </div>
+
+                             </td>
+
+
+                            {% endif %}
+
+                      </tr>
+                      {% if invitation %}
+                      <tr>
+                               <td>Žiadosť bola odoslaná: &nbsp;</td>
+                               <td style="color: darkblue;">{{ invitation.dateOfAdd }}</td>
+                      </tr>
+
+                      <tr>
+                         <div class="teams-buttons">
+
+                               <form action="/teams/cancelRequest/" method="POST">
+                                {% csrf_token %}
+                                {% for f in deleteRequestToTeam %}
+                                           {{ f }}
+                                {% endfor %}
+
+
+                                <input class="btn btn-primary" type="submit" value="Zruš žiadosť" >
+
+
+                                </form>
+                         </div>
+                      </tr>
+                      {% endif %}
+                    </tbody></table>
+                </center>
+
+
+        </div>
+         </div>
+
+
+        <div id="right-sidebar">
+             {% include "players/right-sidebar.html" %}
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}
