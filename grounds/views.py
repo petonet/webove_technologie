@@ -81,7 +81,7 @@ class GroundUpdate(UpdateView):
     model = ground
     template_name = 'grounds/addForm.html'
     form_class = AddGroundForm
-    success_url = '/thanks/'
+    success_url = '/grounds/'
     fields = ['name,city,street,description,rate,official,photo']
     #template_name_suffix = '_update_form'
 

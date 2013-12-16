@@ -21,7 +21,7 @@ class NewForm(forms.ModelForm):
     entryFee = forms.CharField(label='Vstupné', widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Vstupné','class':'form-control form-control2'}), required=False)
     ground = forms.ModelChoiceField(label='Miesto',queryset= ground.objects.all().order_by('name'), empty_label='Nové miesto', required=False)
     titleImage=forms.ImageField(label='Titulná fotka',widget=forms.FileInput, required=False,)
-    facebookEvent=forms.BooleanField(label='Vytvoriť event na Facebooku?',widget=forms.CheckboxInput,initial=False)
+    facebookEvent=forms.BooleanField(label='Vytvoriť event na Facebooku?',widget=forms.CheckboxInput,initial=False,required=False)
 
     class Meta:
         model = Event

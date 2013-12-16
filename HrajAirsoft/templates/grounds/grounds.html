@@ -22,8 +22,12 @@
                         {% thumbnail ground.photo "180x120"  as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
                         {% endthumbnail %}
-                        <div class="ground_list_desc">{% autoescape off%}{{ ground.description |truncatechars:600}}{% endautoescape %}</div>
-                    </a>
+                      {% if  user.id  == ground.user.id %}
+                        <a href="/grounds/update/{{ ground.id }}"><button class="btn btn-warning" type="button"> Edituj</button></a>
+                        <a href="/grounds/delete/{{ ground.id }}"><button class="btn btn-warning" type="button">Vymaž</button></a>
+                    {% endif %}
+             </a>
+                <div class="ground_list_desc">{% autoescape off%}{{ ground.description |truncatechars:600}}{% endautoescape %}</div>
 
                 </li>
 
