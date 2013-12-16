@@ -1,4 +1,6 @@
+
 <div id="ground_tag">
+    <div class="content">
    <h2> <a href="/grounds/all/">Najlepšie ihriská</a></h2>
     <ul>
     {% for ground in grounds %}
@@ -6,18 +8,19 @@
 
 
             {% load thumbnail %}
-           {% thumbnail ground.photo "230x170" crop="center" as im %}
+           {% thumbnail ground.photo "220x170" crop="center" as im %}
                 <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
             {% endthumbnail %}
 
         <div class="tag_ground_info">
            <h3> <a href="/grounds/{{ ground.id }}">{{ ground.name }}</a></h3>
             <div class="tag_ground_desc">
-                {{ ground.description }}
+                {{ ground.description |truncatechars:150}}
             </div>
         </div>
 
        </li>
     {% endfor %}
     </ul>
+    </div>
     </div>

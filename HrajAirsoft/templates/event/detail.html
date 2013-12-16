@@ -34,7 +34,8 @@
                 success: function(data) {
                     document.getElementById('signButton').style.display = 'none';
                     document.getElementById('unsignButton').style.display = 'block';
-                    alert(data);
+                    $( "#ed_player{{ user.id }}").show();
+                    $( "#ed_attendNumberText").html("Počet prihlásených: {{ numberInc }}/{{ event.numberOfPlayers }}");
                 },
                 error: function() {
                     alert ("Error");
@@ -52,7 +53,8 @@
                 success: function(data) {
                     document.getElementById('unsignButton').style.display = 'none';
                     document.getElementById('signButton').style.display = 'block';
-                    alert(data);
+                    $( "#ed_player{{ user.id }}").hide();
+                    $( "#ed_attendNumberText").html("Počet prihlásených: {{ event.users.all.count }}/{{ event.numberOfPlayers }}");
                 },
                 error: function() {
                     alert ("Error");
@@ -61,22 +63,151 @@
         }
     }
 
-</script>
-    <h1>{{ event.title }}</h1>
+    function newComment() {
+        var comment = $("#ed_textArea").val();
+        $.ajax({
+                url: "{% url "eventDetail" pk=0%}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "NewComment",
+                    eventId: "{{ event.id }}",
+                    comment: comment
+                },
+                success: function(data) {
+                    $("#ed_textArea").val("");
+                    $("#ed_commentsDiv").append(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+    }
 
-    {% if authenticated %}
+</script>
+    <div class="ed_topPart" style="background-image: url('{{ MEDIA_URL }}{{ event.titleImage }}')">
+	<div class="ed_topOverlay">
+		<div id="ed_overlay1"></div>
+		<div id="ed_overlay2">Detail akcie</div>
+		<div id="ed_overlay3">Zverejnená: {{ event.published|date:'d. M Y H:i' }} </div>
+	</div>
+</div>
+    <div class="ed_bottomPart">
+	<div class="ed_bottomLeft">
+		<div class="ed_bottomLeftTitle">
+			<span id="ed_titleText"><b>{{ event.title }}</b></span>
+		</div>
+		<div class="ed_bottomLeftTermin">
+			<div class="ed_itemLeft">
+				<span id="ed_leftText"><b>Termín</b></span>
+			</div>
+			<div class="ed_itemRight">
+				<span id="ed_leftText">{{ event.startOfAction|date:'d. M Y' }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ event.startOfAction|date:'H:i' }}</span>
+			</div>
+		</div>
+		<div class="ed_bottomLeftLocation">
+			<div class="ed_itemLeft">
+				<span id="ed_leftText"><b>Miesto</b></span>
+			</div>
+		</div>
+		<div class="ed_bottomLeftMap">
+			<div class="ed_itemLeft">
+			</div>
+			<div class="ed_itemRight">
+				<span id="ed_leftText">{% include "event/eventDetailMap.html" %}</span>
+			</div>
+		</div>
+		<div class="ed_bottomLeftPrologue">
+			<div class="ed_itemLeft">
+				<span id="ed_leftText"><b>Prológ</b></span>
+			</div>
+			<div class="ed_itemRight">
+				<span id="ed_leftText">{{ event.prologue }}</span>
+			</div>
+		</div>
+		<div class="ed_bottomLeftScenario">
+			<div class="ed_itemLeft">
+				<span id="ed_leftText"><b>Scenár</b></span>
+			</div>
+			<div class="ed_itemRight">
+				<span id="ed_leftText">{{ event.scenario }}</span>
+			</div>
+		</div>
+		<div class="ed_organizationDiv">
+			<span id="ed_organizationText"><b>Organizácia</b></span>
+		</div>
+		<div class="ed_organization">
+			<div class="ed_organizationNotes">
+				<span id="ed_leftText">{{ event.organizationNotes }}</span>
+			</div>
+			<div class="ed_entryFeeDiv">
+				<span id="ed_entryFeeText"><b>Vstupné</b></span>
+				<div id="ed_organizationSeparator"></div>
+				<span id="ed_entryFeePrice">{{ event.entryFee }} &euro;</span>
+			</div>
+		</div>
+
+		<div class="ed_commentsDiv">
+            <div class="ed_commentsTitle">
+                <span class="ed_commentsTitleText"><b>Komentáre</b></span>
+            </div>
+            <div id="ed_commentsDiv" class="ed_comments">
+                {% for comment in comments %}
+                    <div class="ed_comment">
+                        <div class="ed_commentPhotoDiv">
+                            <img class="ed_commentPhoto"
+                                src="{% if comment.user.photo %}
+                                    {{ MEDIA_URL }}{{ comment.user.photo }}
+                                {% else %}
+                                    {{ MEDIA_URL }}templates_img/user.png
+                                {% endif %}">
+                          </img>
+                        </div>
+                        <div class="ed_commentContentDiv">
+                            <div class="ed_ccTop">
+                                <div class="ccTopName">{{ comment.user }}</div>
+                                <div class="ccTopDate">{{ comment.sent|date:'d.m.Y H:i' }}</div>
+                            </div>
+                            <div class="ed_ccBottom">
+                                {{ comment.comment }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="ed_commentsSeparator"></div>
+        {% if authenticated %}
+            <div class="ed_newComment">
+                <div class="ed_newCommentTextDiv">
+                    <textarea id="ed_textArea" class="ed_newCommentTextArea" placeholder="Napíšte komentár"></textarea>
+                </div>
+                <div class="ed_newCommentButtonDiv">
+                    <button onclick="newComment()" class="btn btn-primary" style="height: 100%;">Odošli komentár</button>
+                </div>
+            </div>
+        {% endif %}
+		</div>
+	</div>
+	<div class="ed_bottomRight">
+
+        <div class="ed_attendNumberDiv">
+			<br>
+			<div id="ed_attendNumberText">Počet prihlásených: {{ event.users.all.count }}/{{ event.numberOfPlayers }}</div>
+		</div>
+        <div class="ed_attendNumberDiv2" id="ed_players_bla">
+			<br>
+			{% if authenticated %}
         {% csrf_token %}
         {% if isAuthor %}
-            <button onclick="deleteEvent()" style="width: 50px; height: 50px;">Zrušiť akciu</button><br>
-
+            <button class="btn btn-primary" type="button" onclick="deleteEvent()" style="margin-left: 25%; width: 50%; margin-bottom: 20px;">Zrušiť akciu</button><br>
         {% else %}
             {% if signAllowed %}
-                <button id="unsignButton" onclick="sign(false)" style="width: 50px; height: 50px;
+                <button class="btn btn-primary" type="button" id="unsignButton" onclick="sign(false)" style="margin-left: 25%; width: 50%; margin-bottom: 20px;
                     {% if not isSigned %}
                         display: none;
                     {% endif %}
                     ">Odhlásiť</button>
-                <button id="signButton" onclick="sign(true)" style="width: 50px; height: 50px;
+                <button class="btn btn-primary" type="button" id="signButton" onclick="sign(true)" style="margin-left: 25%; width: 50%; margin-bottom: 20px;
                     {% if isSigned %}
                         display: none;
                     {% endif %}
@@ -88,9 +219,52 @@
     {% else %}
         Na prihlásenie do akcie sa musíte prihlásiť do systému.
     {% endif %}
+		</div>
+        <div class="ed_attendPlayersDiv">
+        {% for player in event.users.all %}
+            {% if not player.user.id == user.id %}
+        <div id="ed_player{{ player.user.id }}">
+		<div class="ed_playerSeparatorTop"></div>
+		<div class="ed_player">
+			<div class="ed_playerPhotoDiv">
+				<img class="ed_playerPhoto"
+                     src="{% if player.photo %}
+                            {{ MEDIA_URL }}{{ player.photo }}
+                          {% else %}
+                            {{ MEDIA_URL }}templates_img/user.png
+                          {% endif %}">
+                          </img>
+			</div>
+			<div class="ed_playerName">
+				<span id="ed_playerNameText">{{ player.user.username }}</span>
+			</div>
+		</div>
+		<div class="ed_playerSeparatorBottom"></div>
+        </div>
+            {% endif %}
+        {% endfor %}
+
+        <div id="ed_player{{ user.id }}" {% if not isSigned %}hidden="hidden"{% endif %}>
+		<div class="ed_playerSeparatorTop"></div>
+		<div class="ed_player">
+			<div class="ed_playerPhotoDiv">
+				<img class="ed_playerPhoto"
+                     src="{% if user.player.photo %}
+                            {{ MEDIA_URL }}{{ user.player.photo }}
+                          {% else %}
+                            {{ MEDIA_URL }}templates_img/user.png
+                          {% endif %}">
+                          </img>
+			</div>
+			<div class="ed_playerName">
+				<span id="ed_playerNameText">{{ user.username }}</span>
+			</div>
+		</div>
+		<div class="ed_playerSeparatorBottom"></div>
+        </div>
+
+        </div>
+	</div>
+</div>
     <br>
-    {% for player in event.users.all %}
-        {{ player.user.username }}
-        <br>
-    {% endfor %}
 {% endblock %}

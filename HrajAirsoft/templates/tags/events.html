@@ -1,17 +1,18 @@
 <div id="events_tag">
-   <h2> <a href="/events/">Najbližšie akcie</a></h2>
+   <h3> <a href="/events/">Najbližšie akcie</a></h3>
+    <button class="btn btn-warning" type="button">Všetky ihriská</button>
     <ul>
     {% for event in events %}
        <li>
 
 
             {% load thumbnail %}
-           {% thumbnail event.titleImage "230x170" crop="center" as im %}
+           {% thumbnail event.titleImage "140x90" crop="center" as im %}
                 <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" />
             {% endthumbnail %}
 
         <div class="tag_event_info">
-           <h3> <a href="/events/detail/{{ event.id }}">{{ event.title }}</a></h3>
+           <h4> <a href="/events/detail/{{ event.id }}">{{ event.title }}</a></h4>
             <div class="tag_event_desc">
                 {{ event.prologue }}
             </div>

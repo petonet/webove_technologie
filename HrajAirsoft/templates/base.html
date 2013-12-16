@@ -2,8 +2,9 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.css">
+
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
     <link href="{{ STATIC_URL }}css/eggplant/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 	<script src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
@@ -54,6 +55,8 @@
         <li><a href="#">NÁJDI TÍM</a></li>
         <li><a href="#">NÁJDI IHRISKO</a></li>
         <li><a href="/teams/">TÍMY</a></li>
+        <li><a href="/grounds/">NÁJDI IHRISKO</a></li>
+        <li><a href="#">TÍMY</a></li>
         <li><a href="#">ČLÁNKY</a></li>
         <li><a href="#">FAQ</a></li>
     {% if user.is_authenticated %}
@@ -67,7 +70,7 @@
     {% if user.is_authenticated %}
         <p id="login_as">PRIHLÁSENÝ AKO:  <a href="/accounts/aboutMe/"><STRONG>{{ user.username }}</STRONG></a></p>
     {% endif %}
-
+    <div class="clearfix"></div>
 </div>
 <div id="dialog" title="Prihlásenie">
 <form class="crud_form" method="post" action="/accounts/login/fail" name="login">

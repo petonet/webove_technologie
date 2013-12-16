@@ -7,6 +7,7 @@ from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse_lazy
 from forms import *
 import datetime
+import sys
 
 
 import models
@@ -31,6 +32,11 @@ class GroundsOverview(ListView):
     def get_context_data(self, **kwargs):
         a = []
         context={}
+        context['mapHeight'] = 500
+        #context['mapWidth'] = 1583
+        context['mapCenterLat'] = 48.735965
+        context['mapCenterLng'] = 19.662094
+        context['mapZoomLevel'] = 8
         for g in ground.objects.all():
             print g
             a.append(g)
@@ -45,22 +51,28 @@ class GroundCreate(CreateView):
     success_url = '/thanks/'
     template_name = 'grounds/addForm.html'
     fields = ['name,city,street,description,rate,official,photo']
-
+    lng=None
+    lat=None
 
 
     def form_valid(self, form):
         print self.request.user
         form.instance.user = self.request.user
-        #print(self.photo)
+
+        form.instance.locationLat=form.data['Latitude']
+        form.instance.locationLng=form.data['Longitude']
         return super(GroundCreate, self).form_valid(form)
 
 
     def get_context_data(self, **kwargs):
         context = super(GroundCreate, self).get_context_data(**kwargs)
         context['user'] = self.request.user
-        #context['photo']=self.request.FILES['photo']
+        context['mapHeight']=300
+        context['mapWidth']=620
+        context['mapZoomLevel']=7
+        context['mapCenterLat']=48.73627700
+        context['mapCenterLng']=19.14619170
         return context
-
 
 
 

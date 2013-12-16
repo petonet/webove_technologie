@@ -1,7 +1,8 @@
 <script>
   $(function() {
     $( "#startDatepicker" ).datepicker({
-      dateFormat: 'dd.mm.yy',
+      //dateFormat: 'dd.mm.yy',
+        dateFormat: 'yy-mm-dd',
       changeMonth: true,
       changeYear: true,
       yearRange: "2010:2100"
@@ -10,7 +11,8 @@
 
    $(function() {
     $( "#loginDatepicker" ).datepicker({
-      dateFormat: 'dd.mm.yy',
+      //dateFormat: 'dd.mm.yy',
+        dateFormat: 'yy-mm-dd',
       changeMonth: true,
       changeYear: true,
       yearRange: "2010:2100"
@@ -18,8 +20,11 @@
   });
 </script>
 
+{% load wysiwyg %}
+{% wysiwyg_setup %}
+
 <div>
-    <form action="." method="POST"  {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
+    <form class="bs-example form-horizontal" action="." method="POST"  {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
         <fieldset>
             {% csrf_token %}
             {% for f in form %}
@@ -58,7 +63,7 @@
             <input type="hidden" name="Longitude" id="formLng">
         </fieldset>
     {% include "event/newEventMap.html" %}
-        <input id="submit-edit-event" type="submit" value="Uložiť">
+        <input class="btn btn-primary" id="submit-edit-event" type="submit" value="Uložiť">
         {% if form.errors %}
     {% for field in form %}
         {% for error in field.errors %}
@@ -73,6 +78,8 @@
         </div>
     {% endfor %}
 {% endif %}
-
+       {% wysiwyg_editor "id_prologue" %}
+        {% wysiwyg_editor "id_scenario" %}
+    {% wysiwyg_editor "id_organizationNotes" %}
     </form>
 </div>
