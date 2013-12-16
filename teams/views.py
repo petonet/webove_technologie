@@ -12,11 +12,28 @@ import forms as formularis
 
 class TeamsView(generic.ListView):
     model = Team
-    template_name = 'teams\\index.html'
+    template_name = 'teams\\teamslist.html'
+
 
 class TeamsDetailView(generic.ListView):
     model = Team
     template_name = 'teams\\ground_detail.html'
+
+def teamsListSorted(request,sortPar):
+    if str(sortPar).startswith('name'):
+        teams = Team.objects.all().order_by('name')
+    if str(sortPar).startswith('counts_of_players'):
+        teams = Team.objects.all().order_by('counts_of_players')
+    if str(sortPar).startswith('reg_date'):
+        teams = Team.objects.all().order_by('reg_date')
+    if str(sortPar).startswith('counts_of_players'):
+        teams = Team.objects.all().order_by('counts_of_players')
+    if str(sortPar).endswith('Rev'):
+        teams = teams.reverse()
+    response = {
+        'team_list' : teams,
+    }
+    return render_to_response('teams/teamslist.html',response, context_instance=RequestContext(request))
 
 """
 

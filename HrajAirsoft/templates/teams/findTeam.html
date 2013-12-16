@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="content">
+
+    <div id="content-form-player">
+
+        <div id="left-sidebar">
+
+            <div class="section"><h2>Hľadanie tímu</h2></div>
+            {% if fail  %}
+            <div class="com_error">Žiadny tím s takýmto názvom nebol nájdený !</div>
+            {% else %}<br /><br />
+            {% endif %}
+            <div class="login_form">
+
+            <form class="crud_form" method="post" action="/teams/findTeam/" name="login">
+
+                  {% csrf_token %}
+
+                <center>
+                    <table width="200" cellspacing="0" cellpadding="3" border="0" align="center">
+                      <tbody><tr>
+
+
+                        <td><label class="col-lg-2 control-label" for="username">Meno tímu:</label></td>
+                        <td><div class="col-lg-10"><input id="inputEmail" class="form-control" type="text" name="username"></div></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td><input class="subBut2" type="submit" value="Hľadaj" name="prihlas"> <input type="hidden" name="next" value="/teams/"></td>
+                      </tr>
+
+                    </tbody></table>
+                </center>
+            </form>
+
+        </div>
+
+             <div class="teams">
+                                <h2>Nájdené tímy</h2>
+            <div class="teams_list_div">
+                <ul id="teams_list">
+
+                                {% for team in team_list %}
+
+                                <li>
+                                <h3 id="h3paddingTeamsList"><a href="/teams/{{ team.id }}/">{{ team.name }}</a></h3>
+                                <table>
+                                <tbody>
+
+                                <tr>
+                                <td width="110px">
+
+
+
+
+                                <img width="80" height="80" alt="defUser.jpg" src="
+                                    {% if team.team_logo  %}
+                                        {{ MEDIA_URL }}{{ team.team_logo }}
+                                    {% else %}
+                                        {{ MEDIA_URL }}templates_img/default_team_logo.png
+                                    {% endif %}">
+
+
+                                </td>
+
+                                <td style="vertical-align: top" height="40">
+                                    <table width="450" >
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Dátum a čas vytvorenia -  </td>
+                                            <td align="right" style="color: darkblue;">{{ team.reg_date }}&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Počet hráčov v tíme -</td>
+                                            <td align="right" style="color: darkblue;">{{ team.counts_of_players }}&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </td>
+
+                                </tr>
+                                <tr width="110px"><td></td><td><span class="teams_desc">{{ team.description |truncatechars:200}}&nbsp;&nbsp;<a id="more" href="/teams/{{ team.id }}/">more</a></span></td></tr>
+                                </tbody>
+                                </table>
+
+                                    </li>
+                                {% endfor %}
+
+                </ul>
+
+            </div>
+
+
+
+            </div>
+
+        </div>
+        <div id="right-sidebar">
+
+        </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

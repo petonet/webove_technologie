@@ -868,3 +868,85 @@ position: absolute;
     margin-left: 20px;
     margin-right: 20px;
 }
+
+
+.teams{
+   background-color: #f4f4f0;
+}
+
+.teams h2{
+   float: left;
+   margin-left: 50px;
+   margin-bottom: 50px;
+   margin-right: 200px;
+}
+.teams_list_div{
+    padding-top: 35px;
+
+}
+
+#teams_list{
+    width: 100%;
+    padding: 30px;
+}
+
+
+
+#teams_list li{
+    /*background-color:#5f5f5f ;*/
+    padding: 20px;
+    background-color: #dddddd;
+    width: 96%;
+    list-style: none;
+    margin: 20px;
+}
+
+#teams_list li h3{
+
+    font-size: 25px;
+    margin-top: 5px;
+    padding: 0;
+}
+
+#teams_list li h3 a{
+    color: #480222;
+    margin-bottom: 50px;
+}
+
+#teams_list ul li a img{
+    font-size: 12px;
+    margin-top: 5px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+
+
+#teams_list li div.teams_list_desc{
+    width: 620px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.teams_left{
+    float: left;
+    width: 25%;
+}
+
+.teams_right{
+    float: right;
+    width: 25%;
+}
+
+.teams_desc{
+    color: #18BC9C;
+}
+
+#h3paddingTeamsList{
+    color: #480222;
+    margin-bottom: 25px;
+}
+
+#more{
+
+    color: #1000ff;
+}
