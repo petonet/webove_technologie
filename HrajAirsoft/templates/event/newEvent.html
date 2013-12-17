@@ -4,9 +4,11 @@
 
     <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
     <script type=text/javascript>
-        $(document).ready(function () {
+        $(document).ready(function (){
+
             $.ajaxSetup({ cache: true });
-            $('.newEventForm').submit( function () {
+            $('.newEventForm').submit( function (e) {
+
                 console.log('submit');
                 if ($('#id_facebookEvent').is(':checked')) {
                     var fbuserid, fbtoken;
@@ -100,16 +102,11 @@
 
 
 
-
-
-
-
-
                 }
                 else {
                     console.log('not checked')
                 }
-
+                return false;
             });
         });
 
