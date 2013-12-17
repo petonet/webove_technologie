@@ -16,7 +16,25 @@
 
 </div>
 <div class="content">
-<div id="left-sidebar"></div>
+<div id="left-sidebar">
+    <h2 class="teamsdetailh2">
+        O tíme
+    </h2>
+    <div class="teamsDescDetailLeft">
+
+                                 <img width="150" height="150" alt="defUser.jpg" src="
+                                    {% if team.team_logo  %}
+                                        {{ MEDIA_URL }}{{ team.team_logo }}
+                                    {% else %}
+                                        {{ MEDIA_URL }}templates_img/default_team_logo.png
+                                 {% endif %}">
+    </div>
+    <div class="teamsDescDetailRight">
+
+                                {{ team.description }}
+
+    </div>
+</div>
 <div id="right-sidebar"></div>
 </div>
 
