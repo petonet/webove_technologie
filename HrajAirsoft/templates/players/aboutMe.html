@@ -30,9 +30,9 @@
                                 <div  class="info-left">Vek :</div><div class="info-right"> {{ age }}</div>
                                 <div  class="info-left">Pohlavie :</div><div class="info-right"> {{ info_about_player.gender }}</div>
                                 <div  class="info-left">Kraj :</div><div class="info-right"> {{ info_about_player.countryPart }}</div>
-                                <div  class="info-left">Email :</div><div class="info-right"> {{ user.email }}</div>
-                                <div  class="info-left">Registrovaný :</div><div class="info-right">{{ user.date_joined }}</div>
-                                <div  class="info-left">Naposledy prihlásený :</div><div class="info-right">{{ user.last_login }}</div>
+                                {% if user.mail %}<div  class="info-left">Email :</div><div class="info-right"> {{ user.email }}</div>{% endif %}
+                                {% if user.date_joined  %}<div  class="info-left">Registrovaný :</div><div class="info-right">{{ user.date_joined }}</div>{% endif %}
+                                {% if user.last_login  %}<div  class="info-left">Naposledy prihlásený :</div><div class="info-right">{{ user.last_login }}</div>{% endif %}
 
                                 <div  class="info-left">
                                     <img style="padding-bottom: 3px; padding-left: 3px" width="17" height="16" alt="rankStar.jpg" src="{{ MEDIA_URL }}templates_img/star.gif">

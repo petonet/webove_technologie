@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="717d898a-28d0-47f3-896c-c314c35c1a83">
+  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="86aa1f90-4c70-405d-8d7f-cecf45b87c6d">
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:C:\Projects\18112013\webove_technologie\database.db</jdbc-url>
