@@ -1037,3 +1037,30 @@ position: absolute;
     margin-bottom: 15px;
     font-size: 15pt;
 }
+
+.left_filter{
+    position: fixed;
+    left: 130px;
+    top:300px;
+    background-color: #dddddd;
+    padding: 20px;
+    border-radius: 3px;
+
+}
+
+.left_filter p{
+    border-bottom: 1px solid ;
+    width: 100%;
+}
+
+.left_filter ul{
+     list-style: none;
+    width: 100%;
+}
+
+.left_filter ul li{
+     margin-top: 10px;
+}
+
+
+

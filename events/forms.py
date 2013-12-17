@@ -55,13 +55,13 @@ class NewForm(forms.ModelForm):
         if loginTime == "":
             raise ValidationError(u'Nezadali ste čas začiatku prihlasovania')
         if (self.checkDate(startDate) and self.checkDate(loginDate) and self.checkTime(startTime) and self.checkTime(loginTime)):
-            splitStartDate = startDate.split("-")
+            splitStartDate = startDate.split(".")
             splitStartTime = startTime.split(":")
-            splitLoginDate = loginDate.split("-")
+            splitLoginDate = loginDate.split(".")
             splitLoginTime = loginTime.split(":")
-            startDateTime = datetime.datetime(int(float(splitStartDate[0])), int(float(splitStartDate[1])), int(float(splitStartDate[2])),
+            startDateTime = datetime.datetime(int(float(splitStartDate[2])), int(float(splitStartDate[1])), int(float(splitStartDate[0])),
                                               int(float(splitStartTime[0])), int(float(splitStartTime[1])))
-            loginDateTime = datetime.datetime(int(float(splitLoginDate[0])), int(float(splitLoginDate[1])), int(float(splitLoginDate[2])),
+            loginDateTime = datetime.datetime(int(float(splitLoginDate[2])), int(float(splitLoginDate[1])), int(float(splitLoginDate[0])),
                                               int(float(splitLoginTime[0])), int(float(splitLoginTime[1])))
             difference = startDateTime - loginDateTime
             if difference.total_seconds() < 0:
@@ -87,13 +87,13 @@ class NewForm(forms.ModelForm):
             raise ValidationError(u'Nevybrali ste miesto (Vybrané miesto je označené zeleným ukazovateľom)')
 
     def checkDate(self, date):
-        pattern = "^\d{4}\-\d{2}\-\d{2}$"
+        pattern = "^\d{2}\.\d{2}\.\d{4}$"
         if (re.match(pattern, date) is None):
             raise ValidationError(u'Zlý formát dátumu')
             return False
         else:
-            split = date.split("-")
-            if int(float(split[2])) > 31:
+            split = date.split(".")
+            if int(float(split[0])) > 31:
                 raise ValidationError(u'Zlý formát dátumu')
                 return False
             if int(float(split[1])) > 12:
