@@ -4323,11 +4323,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a > img {
   max-width: none;
 }
-
+/*
 .nav-tabs {
   border-bottom: 1px solid #ecf0f1;
 }
-
+*/
 .nav-tabs > li {
   float: left;
   margin-bottom: -1px;
@@ -4336,7 +4336,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li > a {
   margin-right: 2px;
   line-height: 1.428571429;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;*/
   border-radius: 4px 4px 0 0;
 }
 
@@ -4347,11 +4347,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #2c3e50;
+  /*color: #2c3e50;*/
+  color: #ffffff;
   cursor: default;
+  background-color:#5d5d5d;
+    /*
   background-color: #ffffff;
   border: 1px solid #ecf0f1;
   border-bottom-color: transparent;
+  */
 }
 
 .nav-tabs.nav-justified {

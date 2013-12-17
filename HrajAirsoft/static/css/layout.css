@@ -257,7 +257,7 @@ text-align: center;
     padding: 20px;
 }
 
-#left-sidebar{
+#left-sidebar,#left-sidebar2{
     float: left;
     height: auto;
     width: 71%;
@@ -265,8 +265,10 @@ text-align: center;
     overflow: hidden;
     margin-bottom: 5px;
 }
-
-#right-sidebar{
+#left-sidebar2{
+    width: 63.5%;
+}
+#right-sidebar,#right-sidebar2{
     float: right;
     height: auto;
     width: 20%;
@@ -275,6 +277,10 @@ text-align: center;
     margin-right: 60px;
 }
 
+#right-sidebar2{
+   width: 32%;
+    margin-right:0;
+}
 #content-form-player{
     width: 100%;
     min-height: 1000px;
@@ -1036,4 +1042,90 @@ position: absolute;
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 15pt;
+}
+
+.galleryImg{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.teamsGallery,.newsGallery{
+    text-align: justify;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #DDDDDD;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.newsGallery{
+    padding-left: 10px;
+    padding-right: 30px;
+    overflow: hidden;
+}
+
+
+.readMoreButton {
+    background-color: #585853;
+    border-radius: 2px;
+    color: #FFFFFF;
+    padding: 9px 15px;
+    width: 100px;
+    height: 40px;
+    float: right;
+}
+.newsImg{
+    border:1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.newsContent{
+    width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float:right;
+}
+
+.boldNews{
+
+    font-weight: bold;
+}
+.dateNews{
+    float: left;
+    color: #918f8f;
+    padding-top: 10px;
+}
+.teamsection{
+    margin-bottom: 30px;
+}
+
+.content2{
+    margin-top: 0;
+    padding-top: 15px; ;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1100px;
+}
+
+.non-active{
+    background-color: #787878;
+    color: #ffffff;
+}
+
+.detailTeamRef
+{
+    color: #ffffff;
+    font-size: 10pt;
+    padding-right: 50px;
+}
+
+
+#zucastnimesa,#absolvovalisme{
+background-color: #646464;
+    width:347px;
+}
+
+#rightWindows{
+    white-space: nowrap;
+    width:1000px;
 }

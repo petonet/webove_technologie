@@ -15,11 +15,13 @@
 </div>
 
 </div>
-<div class="content">
-<div id="left-sidebar">
+<div class="content2">
+<div id="left-sidebar2">
+<div class="teamsection">
     <h2 class="teamsdetailh2">
         O tíme
     </h2>
+
     <div class="teamsDescDetailLeft">
 
                                  <img width="150" height="150" alt="defUser.jpg" src="
@@ -34,14 +36,63 @@
                                 {{ team.description }}
 
     </div>
+</div>
+<div class="teamsection">
+
     <h2 class="teamsdetailh2">
         Vyberáme z galérie
-
-
     </h2>
+    <div class="teamsGallery">
+                {% for im in GalleryTeam %}
+             <a href="{{ MEDIA_URL }}{{ im.image }}"><img class="galleryImg" width="200" height="150" alt="defUser.jpg" src="{{ MEDIA_URL }}{{ im.image }}"></a>
+        {% endfor %}
+    </div>
 </div>
-<div id="right-sidebar"></div>
+
+    <h2 class="teamsdetailh2">
+        Z nášho blogu
+    </h2>
+ {% for news in new_feeds %}
+    <div class="newsGallery">
+        <a href="{{ MEDIA_URL }}{{  news.title_image  }}"><img class="newsImg" width="140" height="140" alt="defUser.jpg" src="{{ MEDIA_URL }}{{ news.title_image }}"></a>
+        <div class="newsContent"><div class="boldNews">{{ news.title }}</div><br /><p>{{ news.content | truncatechars:200}}</p></div>
+        <div class="newsContent"><div class="dateNews">Publikované: {{ news.publish_date|date:"d.m.Y"  }}</div><a class="readMoreButton" type="button" href='/teams/news/{{ news.pk }}/'>read more</a></div>
+
+     </div>
+
+
+{% endfor %}
 </div>
+
+
+<div id="right-sidebar2">
+
+              <ul id="rightWindows" class="nav nav-tabs">
+                <li class="non-active active" ><a class="detailTeamRef" data-toggle="tab" href="#zucastnimesa">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}templates_img/users-one.png" width="30px" height="20px">  Zúčastnime sa&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                <li class="non-active"><a class="detailTeamRef"  data-toggle="tab" href="#absolvovalisme">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}templates_img/users-all.png" width="30px" height="20px">  Absolvovali sme&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div id="zucastnimesa" class="tab-pane fade active in">
+
+
+                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+
+
+                </div>
+                <div id="absolvovalisme" class="tab-pane fade">
+                  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                </div>
+              </div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
 
 
 

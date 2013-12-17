@@ -254,8 +254,8 @@ def teamDetail(request, pk):
             #    context['players'] = None
 
             #context['new_feeds'] = NewsFeeds(team_id=self.model.pk).objects.order_by('-publish_date')
-        new_feeds= NewsFeeds.objects.filter(team_id=PK)
-        GalleryTeam= Gallery.objects.filter(team_id=PK).order_by('date_of_add')
+        new_feeds= NewsFeeds.objects.filter(team_id=PK).order_by('publish_date').reverse()
+        GalleryTeam= Gallery.objects.filter(team_id=PK).order_by('date_of_add')[:3].reverse()
 
             #context['path'] = PROJECT_PATH.strip("\HrajAirsoft").replace('\\', '/') + "/"
 
@@ -353,8 +353,8 @@ def myTeam(request):
             team = Team.objects.get(pk=team.team_id.pk)
             for e in UserInTeamNtoN.objects.filter(team_id=team.pk):
                 a.append(player.objects.get(pk=e.user_id.pk))
-            new_feeds = NewsFeeds.objects.filter(team_id=team.pk)
-            GalleryTeam = Gallery.objects.filter(team_id=team.pk)
+            new_feeds = NewsFeeds.objects.filter(team_id=team.pk).order_by('publish_date').reverse()
+            GalleryTeam = Gallery.objects.filter(team_id=team.pk).order_by('date_of_add')[:3].reverse()
             team_data = {'players': a, 'new_feeds': new_feeds,'GalleryTeam':GalleryTeam, 'team':team, 'isMember': True}
             return render_to_response('teams/detail.html', team_data, context_instance=RequestContext(request))
 
@@ -372,8 +372,8 @@ def myTeam(request):
     if len(teamadmin) > 0 :
         for e in UserInTeamNtoN.objects.filter(team_id=teamadmin[0].pk):
             a.append(player.objects.get(pk=e.user_id.pk))
-        new_feeds = NewsFeeds.objects.filter(team_id=teamadmin[0].pk)
-        GalleryTeam = Gallery.objects.filter(team_id=teamadmin[0].pk)
+        new_feeds = NewsFeeds.objects.filter(team_id=teamadmin[0].pk).order_by('publish_date').reverse()
+        GalleryTeam = Gallery.objects.filter(team_id=teamadmin[0].pk).order_by('date_of_add')[:3].reverse()
         team_data = {'players': a, 'new_feeds': new_feeds,'GalleryTeam':GalleryTeam ,'team':teamadmin[0],'thisteamadmin':True}
         return render_to_response('teams/detail.html',team_data, context_instance=RequestContext(request))
     #Nema ziadny tím
