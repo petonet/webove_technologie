@@ -10,7 +10,7 @@ class Team(models.Model):
     team_logo = ProcessedImageField(upload_to='uploads/image/teams/logos',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60}, blank=True, null=True)
     leader = models.ForeignKey(player)
     name = models.CharField(max_length=30)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=2000)
     reg_date = models.DateTimeField()
     counts_of_players = models.IntegerField()
 
@@ -36,7 +36,7 @@ class NewsFeeds(models.Model):
     title_image = ProcessedImageField(upload_to='uploads/image/teams/feeds/logos',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60}, blank=True, null=True)
     team_id = models.ForeignKey(Team)
     title = models.CharField(max_length=100)
-    content = models.CharField(max_length=3500)
+    content = models.CharField(max_length=4000)
     publish_date = models.DateTimeField()
 
     def __unicode__(self):  # Python 3: def __str__(self):
