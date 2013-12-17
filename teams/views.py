@@ -255,7 +255,7 @@ def teamDetail(request, pk):
 
             #context['new_feeds'] = NewsFeeds(team_id=self.model.pk).objects.order_by('-publish_date')
         new_feeds= NewsFeeds.objects.filter(team_id=PK)
-        GalleryTeam= Gallery.objects.filter(team_id=PK)
+        GalleryTeam= Gallery.objects.filter(team_id=PK).order_by('date_of_add')
 
             #context['path'] = PROJECT_PATH.strip("\HrajAirsoft").replace('\\', '/') + "/"
 

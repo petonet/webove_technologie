@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/teams/gallery/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/polls/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/polls/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" afterPath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/models.py" afterPath="$PROJECT_DIR$/teams/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/views.py" afterPath="$PROJECT_DIR$/teams/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -56,7 +53,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teams/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="420" column="36" selection-start="16832" selection-end="16832" vertical-scroll-proportion="0.0" vertical-offset="7478" max-vertical-offset="7803">
+            <state line="257" column="77" selection-start="10162" selection-end="10173" vertical-scroll-proportion="0.0" vertical-offset="4087" max-vertical-offset="7803">
               <folding />
             </state>
           </provider>
@@ -74,7 +71,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teams/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="44" selection-start="1721" selection-end="1721" vertical-scroll-proportion="1.9876924" vertical-offset="0" max-vertical-offset="986">
+            <state line="50" column="15" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.84307694" vertical-offset="576" max-vertical-offset="1003">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -85,7 +82,7 @@
       <file leaf-file-name="layout.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1035" column="19" selection-start="14795" selection-end="14795" vertical-scroll-proportion="-10.038462" vertical-offset="17334" max-vertical-offset="17714">
+            <state line="1030" column="24" selection-start="14686" selection-end="14686" vertical-scroll-proportion="-4.8076925" vertical-offset="17385" max-vertical-offset="17748">
               <folding />
             </state>
           </provider>
@@ -94,7 +91,7 @@
       <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="61" selection-start="815" selection-end="815" vertical-scroll-proportion="-5.8846154" vertical-offset="255" max-vertical-offset="1326">
+            <state line="39" column="0" selection-start="1340" selection-end="1340" vertical-scroll-proportion="-10.692307" vertical-offset="385" max-vertical-offset="1411">
               <folding />
             </state>
           </provider>
@@ -136,7 +133,6 @@
       <list>
         <option value="$PROJECT_DIR$/teams/urls.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html" />
-        <option value="$PROJECT_DIR$/teams/views.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
         <option value="$PROJECT_DIR$/events/forms.py" />
@@ -147,8 +143,9 @@
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
         <option value="$PROJECT_DIR$/events/urls.py" />
         <option value="$PROJECT_DIR$/events/views.py" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" />
+        <option value="$PROJECT_DIR$/teams/views.py" />
         <option value="$PROJECT_DIR$/teams/models.py" />
       </list>
     </option>
@@ -247,6 +244,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="webove_technologie" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -650,7 +657,11 @@
       <created>1387269081373</created>
       <updated>1387269081373</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="- mala zmena db">
+      <created>1387269540527</created>
+      <updated>1387269540527</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -727,7 +738,8 @@
     <MESSAGE value="- uprava databzy" />
     <MESSAGE value="- peta nepocuval git tak commitujem a pushujem za neho dufam ze klapne&#10;-riesene events" />
     <MESSAGE value="- peta nepocuval git tak commitujem a pushujem za neho dufam ze klapne&#10;-som zabudol na jeden subor tak sorka" />
-    <option name="LAST_COMMIT_MESSAGE" value="- peta nepocuval git tak commitujem a pushujem za neho dufam ze klapne&#10;-som zabudol na jeden subor tak sorka" />
+    <MESSAGE value="- mala zmena db" />
+    <option name="LAST_COMMIT_MESSAGE" value="- mala zmena db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -749,12 +761,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html</url>
-          <line>38</line>
+          <line>43</line>
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html</url>
-          <line>42</line>
+          <line>47</line>
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
@@ -920,13 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teams/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="36" selection-start="16832" selection-end="16832" vertical-scroll-proportion="0.0" vertical-offset="7140" max-vertical-offset="7939">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grounds/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="27" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1989">
@@ -943,23 +948,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="61" selection-start="815" selection-end="815" vertical-scroll-proportion="-5.8846154" vertical-offset="255" max-vertical-offset="1326">
+        <state line="1030" column="24" selection-start="14686" selection-end="14686" vertical-scroll-proportion="-4.8076925" vertical-offset="17385" max-vertical-offset="17748">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1035" column="19" selection-start="14795" selection-end="14795" vertical-scroll-proportion="-10.038462" vertical-offset="17334" max-vertical-offset="17714">
+        <state line="39" column="0" selection-start="1340" selection-end="1340" vertical-scroll-proportion="-10.692307" vertical-offset="385" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teams/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="257" column="77" selection-start="10162" selection-end="10173" vertical-scroll-proportion="0.0" vertical-offset="4087" max-vertical-offset="7803">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teams/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="44" selection-start="1721" selection-end="1721" vertical-scroll-proportion="1.9876924" vertical-offset="0" max-vertical-offset="986">
+        <state line="50" column="15" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.84307694" vertical-offset="576" max-vertical-offset="1003">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

@@ -48,6 +48,7 @@ class Gallery(models.Model):
     image = ProcessedImageField(upload_to='uploads/image/teams/gallery',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
     team_id = models.ForeignKey(Team,blank=True, null=True)
     news_id = models.ForeignKey(NewsFeeds,blank=True, null=True)
+    date_of_add = models.DateTimeField()
 
     def __unicode__(self):  # Python 3: def __str__(self):
        return 'Team_id = ' + str(self.team_id) + ' News_id =  ' + str(self.news_id)
