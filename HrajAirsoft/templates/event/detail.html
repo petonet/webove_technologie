@@ -12,7 +12,7 @@
                 },
                 success: function(data) {
                     if (data == "Deleted") {
-                        document.location.href = "{% url "events" %}" ;
+                        document.location.href = "{% url "eventList" %}" ;
                     }
                 },
                 error: function() {
@@ -32,10 +32,12 @@
                     eventId: "{{ event.id }}"
                 },
                 success: function(data) {
-                    document.getElementById('signButton').style.display = 'none';
-                    document.getElementById('unsignButton').style.display = 'block';
-                    $( "#ed_player{{ user.id }}").show();
-                    $( "#ed_attendNumberText").html("Počet prihlásených: {{ numberInc }}/{{ event.numberOfPlayers }}");
+                    if (data == "OK") {
+                        document.getElementById('signButton').style.display = 'none';
+                        document.getElementById('unsignButton').style.display = 'block';
+                        $( "#ed_player{{ user.id }}").show();
+                        $( "#ed_attendNumberText").html("Počet prihlásených: {{ numberInc }}/{{ event.numberOfPlayers }}");
+                    }
                 },
                 error: function() {
                     alert ("Error");
@@ -122,7 +124,7 @@
 				<span id="ed_leftText"><b>Prológ</b></span>
 			</div>
 			<div class="ed_itemRight">
-				<span id="ed_leftText">{% autoescape off %}{{ event.prologue }}{% endautoescape %}</span>
+				<span id="ed_leftText">{{ event.prologue }}</span>
 			</div>
 		</div>
 		<div class="ed_bottomLeftScenario">
@@ -130,7 +132,7 @@
 				<span id="ed_leftText"><b>Scenár</b></span>
 			</div>
 			<div class="ed_itemRight">
-				<span id="ed_leftText">{% autoescape off %}{{ event.scenario }}{% endautoescape %}</span>
+				<span id="ed_leftText">{{ event.scenario }}</span>
 			</div>
 		</div>
 		<div class="ed_organizationDiv">
@@ -138,7 +140,7 @@
 		</div>
 		<div class="ed_organization">
 			<div class="ed_organizationNotes">
-				<span id="ed_leftText">{% autoescape off %}{{ event.organizationNotes }}{% endautoescape %}</span>
+				<span id="ed_leftText">{{ event.organizationNotes }}</span>
 			</div>
 			<div class="ed_entryFeeDiv">
 				<span id="ed_entryFeeText"><b>Vstupné</b></span>
@@ -257,7 +259,7 @@
                           </img>
 			</div>
 			<div class="ed_playerName">
-				<span id="ed_playerNameText">{{ user.username }}</span>
+				<span id="ed_playerNameText" >{{ user.username }}</span>
 			</div>
 		</div>
 		<div class="ed_playerSeparatorBottom"></div>

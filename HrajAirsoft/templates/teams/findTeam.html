@@ -8,13 +8,13 @@
         <div id="left-sidebar">
 
             <div class="section"><h2>Hľadanie tímu</h2></div>
-            {% if fail  %}
-            <div class="com_error">Žiadny tím s takýmto názvom nebol nájdený !</div>
-            {% else %}<br /><br />
+            {% if fail %}
+                <div class="com_error">{{ fail }}</div>
             {% endif %}
+        <br/><br/>
             <div class="login_form">
 
-            <form class="crud_form" method="post" action="/teams/findTeam/" name="login">
+            <form class="crud_form" method="post" action="." name="login">
 
                   {% csrf_token %}
 
@@ -24,7 +24,7 @@
 
 
                         <td><label class="col-lg-2 control-label" for="username">Meno tímu:</label></td>
-                        <td><div class="col-lg-10"><input id="inputEmail" class="form-control" type="text" name="username"></div></td>
+                        <td><div class="col-lg-10"><input id="inputEmail" class="form-control" type="text" name="teamname"></div></td>
                       </tr>
                       <tr>
                         <td>&nbsp;</td>
@@ -36,6 +36,9 @@
             </form>
 
         </div>
+
+                    {% if team_list %}
+
 
              <div class="teams">
                                 <h2>Nájdené tímy</h2>
@@ -74,7 +77,7 @@
                                             <td align="right" style="color: darkblue;">{{ team.reg_date }}&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td>Počet hráčov v tíme -</td>
+                                            <td>Počet členov -</td>
                                             <td align="right" style="color: darkblue;">{{ team.counts_of_players }}&nbsp;</td>
                                         </tr>
                                     </tbody>
@@ -96,6 +99,7 @@
 
 
             </div>
+            {% endif %}
 
         </div>
         <div id="right-sidebar">

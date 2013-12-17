@@ -1,13 +1,97 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <script>
+    var ip;
+    var locationLat;
+    var locationLng;
+    $( document ).ready(function() {
+        $.getJSON("http://freegeoip.net/json/", function(data){
+            var items = [];
+            $.each( data, function( key, val ) {
+                if (key == "ip") {
+                    ip = val;
+                } else {
+                    if (key == "latitude") {
+                        locationLat = val;
+                    } else {
+                        if (key == "longitude") {
+                            locationLng = val;
+                        }
+                    }
+                }
+            });
+        });
 
-<h1>Events</h1>
-    <ul>
-        {% for event in events %}
-            <li><a href="/events/detail/{{ event.id }}"> {{ event.title }} </a></li>
-        {% endfor %}
+        $('#ev_btnNewest').click( function() {
+            $.ajax({
+                url: "{% url "eventList" %}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Newest"
+                },
+                success: function(data) {
+                    $("#ev_eventList").html(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+            return false;
+        });
+        $('#ev_btnClosest').click( function() {
+            $.ajax({
+                url: "{% url "eventList" %}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Closest",
+                    latitude: locationLat,
+                    longitude: locationLng
+                },
+                success: function(data) {
+                    $("#ev_eventList").html(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+            return false;
+        });
+        $('#ev_btnSoonest').click( function() {
+            $.ajax({
+                url: "{% url "eventList" %}",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Soonest"
+                },
+                success: function(data) {
+                    $("#ev_eventList").html(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+            return false;
+        });
+    });
+    </script>
 
-    <a href="{% url "addEvent" %}">Vytvoriť novú akciu</a>
-    </ul>
+    <div class="panel panel-primary" id="ev_content">
+        {% csrf_token %}
+        <div class="panel-heading">
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-default" id="ev_btnNewest">Posledné pridané</a>
+                <a class="btn btn-default" id="ev_btnClosest">V okolí</a>
+                <a class="btn btn-default" id="ev_btnSoonest">Najaktuálnejšie</a>
+                <a class="btn btn-info" href="new">Nová akcia</a>
+            </div>
+        </div>
+        <div class="ev_events"  id="ev_eventList">
+            {% include "event/eventsDisplay.html" %}
+        </div>
+    </div>
 {% endblock %}

@@ -6,94 +6,10 @@
 
     {% if form.errors.numberOfPlayers %}<li>
          <div class="error_box"><div class="error_label_box">Login</div>
-         <div class="error_content_box" type="button"><p>{{ form.errors.numberOfPlayers.0 }}</p></div></div></li>
+         <div class="error_content_box" type="button"><p >{{ form.errors.numberOfPlayers.0 }}</p></div></div></li>
     {% endif %}
 
 </ul>
 {% include "event/form.html" %}
-<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
-    <script type=text/javascript>
-    $(document).ready(function(){
-        $('#id_facebookEvent').on('click', function () {
-            console.log('submit');
-            if ($('#id_facebookEvent').is(':checked')) {
-                var fbuserid, fbtoken;
-                var appid = "661642747192057";
-                var loggedin = false;
-
-                FB.init({appId: appid, status: true, cookie: true, xfbml: true});
-
-                   function loginFB() {
-                    FB.login(function (response) {
-                        if (response.authResponse) {
-                            fbtoken = response.authResponse.accessToken;
-                            fbuserid = response.authResponse.userID;
-                        }
-                    }, {perms: 'create_event'});
-                }
-                FB.getLoginStatus(function (response) {
-                      if (response.status === 'connected') {
-                            fbtoken = response.authResponse.accessToken;
-                            fbuserid = response.authResponse.userID;
-                        console.log(fbtoken);
-                    }
-                       else if (response.status === 'not_authorized') {
-                             fbtoken = response.authResponse.accessToken;
-                            fbuserid = response.authResponse.userID;
-                }
-                    else {
-                        loginFB();
-                    }
-                });
-
-                 function createEvent(name, startTime, endTime, location, description){
-                  console.log("create event");
-                        var eventData = {
-                           "access_token": fbtoken,
-                            "start_time": startTime,
-                            "end_time": endTime,
-                            "location": location,
-                            "name": name,
-                            "description": description,
-                            "privacy_type": "OPEN"
-                        };
-                      console.log(eventData);
-                        FB.api("/me/events", 'post', eventData, function (response) {
-                            console.log(response);
-                            if (response.id) {
-                                alert("We have successfully created a Facebook event with ID: " + response.id);
-                            }
-                        })
-                    }
-                   createEvent("moj event",
-                           "2013-8-7T07:00:00",
-                           "2015-05-25T07:00:00",
-                           "Presov",
-                           $('#id_prologue').val());
-
-                FB.Event.subscribe('auth.sessionChange', function (response) {
-                    console.log(response);
-                     if (response.authResponse) {
-                            fbtoken = response.authResponse.accessToken;
-                            fbuserid = response.authResponse.userID;
-                         console.log(fbtoken);
-                    }
-                });
-
-
-
-                function logoutFB() {
-                    FB.logout(function (response) {
-                        // user is now logged out
-                    });}
-            }
-            else {
-                console.log('not checked')
-            }
-
-        });
-    });
-
-    </script>
 
 {% endblock %}

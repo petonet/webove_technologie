@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 import datetime
 from models import Event
-#from django.contrib.gis.geoip import GeoIP
 from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render_to_response, RequestContext, render
 from django.contrib.auth.decorators import login_required
 from forms import NewForm
 from models import Comments
-from models import player
 from grounds.models import ground
-from players.models import player
 from django.contrib.auth.models import User
 from django.utils import formats
+from math import radians, cos, sin, asin, sqrt
 
 
 def eventDetail(request, pk):
@@ -21,30 +19,13 @@ def eventDetail(request, pk):
         event = Event.objects.get(id=request.POST['eventId'])
         response = ""
         if action == "SignUp":
-            #currentPlayer = request.user.player
-            event.users.add(request.user.player)
-            event.save()
-            if request.user.player.photo._file == None:
-                photo = '/media/templates_img/user.png'
+            if event.users.count() < event.numberOfPlayers:
+                event.users.add(request.user.player)
+                event.save()
+                response = 'OK'
             else:
-                photo = "/media/uploads/image/players/" + request.user.player.photo._file
-
-
-            response = '<div id="ed_player'+ str(request.user.player.id) + '">' \
-		        '<div class="ed_playerSeparatorTop"></div>' \
-		        '<div class="ed_player">' \
-		        	'<div class="ed_playerPhotoDiv">' \
-		        		'<img class="ed_playerPhoto" src="' + photo + '" </img>' \
-		           '</div>' \
-		           '<div class="ed_playerName">' \
-		        	    '<span id="ed_playerNameText">' + request.user.username + '</span>' \
-		           '</div>' \
-		        '</div>' \
-		        '<div class="ed_playerSeparatorBottom"></div>' \
-                '</div>'
-
+                response = 'Error'
         elif action == "Unsign":
-            #currentPlayer = player.objects.get(id=request.user.id)
             event.users.remove(request.user.player)
             event.save()
             response = 'Boli ste odhlásený z tejto akcie'
@@ -69,7 +50,7 @@ def eventDetail(request, pk):
                         '<div class="ed_commentContentDiv">' \
                            ' <div class="ed_ccTop">' \
                                 '<div class="ccTopName">' + coment.user.user.username + '</div>' \
-                                '<div class="ccTopDate">' + coment.sent.strftime("%d.%m.%Y %H:%M") + '</div>' \
+                                '<div  class="ccTopDate">' + coment.sent.strftime("%d.%m.%Y %H:%M") + '</div>' \
                             '</div>' \
                            ' <div class="ed_ccBottom">' \
                                '' + coment.comment + '' \
@@ -87,7 +68,7 @@ def eventDetail(request, pk):
 
         context['mapHeight'] = 300
         context['mapWidth'] = 600
-        context['mapZoomLevel'] = 12
+        context['mapZoomLevel'] = 14
 
         naive = event.login_since.replace(tzinfo=None)
         difference = datetime.datetime.now() - naive
@@ -123,15 +104,45 @@ def eventDetail(request, pk):
         return render_to_response('event/detail.html', context, context_instance=RequestContext(request))
 
 
-#class EventDetailView(generic.DetailView):
-#    model = Event
-#    template_name = 'event/detail.html'
-#    queryset = Event.objects.all()
-#
-#    def get_context_data(self, **kwargs):
-#        context={}
-#        context['event'] = get_object_or_404(self.model, pk=self.kwargs['pk'])
-#        return context
+def eventList(request):
+    events = []
+    context = {}
+
+    if request.is_ajax():
+        action = request.POST['operation']
+        if action == "Newest":
+            for event in Event.objects.all().order_by('-published'):
+                events.append(event)
+                context['events'] = events
+        elif action == "Closest":
+            lat = request.POST['latitude']
+            lng = request.POST['longitude']
+            for event in Event.objects.all().order_by('published'):
+                if haversine(float(lng), float(lat), float(event.locationLng), float(event.locationLat)) < 25:
+                    events.append(event)
+                    context['events'] = events
+        elif action == "Soonest":
+            for event in Event.objects.all().order_by('startOfAction'):
+                events.append(event)
+                context['events'] = events
+
+        return render_to_response('event/eventsDisplay.html', context, context_instance=RequestContext(request))
+
+    else:
+        for event in Event.objects.all().order_by('published'):
+            events.append(event)
+            context['events'] = events
+        return render_to_response('event/events.html', context, context_instance=RequestContext(request))
+
+def haversine(lon1, lat1, lon2, lat2):
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a))
+    km = 6367 * c
+    return km
 
 
 class EventsView(generic.ListView):
@@ -147,42 +158,12 @@ class EventsView(generic.ListView):
         return context
 
 
-def MapView(request):
-
-    if request.is_ajax():
-        context = {}
-        #context['mapform'] = MapForm(initial={'map': gmap})
-        #events = []
-        #for event in Event.objects.all():
-        #    events.append(event)
-        return HttpResponse("OK")
-    else:
-        context = {}
-        #client_address = request.META['REMOTE_ADDR']
-        #context['mapform'] = MapForm(initial={'map': gmap})
-        #events = []
-        #for event in Event.objects.all():
-        #    events.append(event)
-        #context['event'] = Event.objects.get(pk=1)
-        context['mapHeight'] = 500
-        context['mapWidth'] = 500
-        context['mapCenterLat'] = 48.998465
-        context['mapCenterLng'] = 21.239812
-        context['mapZoomLevel'] = 13
-
-        events = []
-        for event in Event.objects.all():
-            events.append(event)
-            context['events'] = events
-        return render_to_response('event/mapTest.html', context, context_instance=RequestContext(request))
-
-
 @login_required
 def add(request):
 
     context = {}
     context['mapHeight'] = 500
-    context['mapWidth'] = 500
+    context['mapWidth'] = 760
     context['mapCenterLat'] = 48.998465
     context['mapCenterLng'] = 21.239812
     context['mapZoomLevel'] = 13
@@ -204,9 +185,9 @@ def add(request):
 
             startDate = form.cleaned_data['startOfActionDate']
             startTime = form.cleaned_data['startOfActionTime']
-            splitStartDate = startDate.split("-")
+            splitStartDate = startDate.split(".")
             splitStartTime = startTime.split(":")
-            event.startOfAction = datetime.datetime(int(float(splitStartDate[0])), int(float(splitStartDate[1])), int(float(splitStartDate[2])),
+            event.startOfAction = datetime.datetime(int(float(splitStartDate[2])), int(float(splitStartDate[1])), int(float(splitStartDate[0])),
                                               int(float(splitStartTime[0])), int(float(splitStartTime[1])))
 
             event.published = datetime.datetime.now()
@@ -214,9 +195,9 @@ def add(request):
 
             loginDate = form.cleaned_data['login_sinceDate']
             loginTime = form.cleaned_data['login_sinceTime']
-            splitLoginDate = loginDate.split("-")
+            splitLoginDate = loginDate.split(".")
             splitLoginTime = loginTime.split(":")
-            event.login_since = datetime.datetime(int(float(splitLoginDate[0])), int(float(splitLoginDate[1])), int(float(splitLoginDate[2])),
+            event.login_since = datetime.datetime(int(float(splitLoginDate[2])), int(float(splitLoginDate[1])), int(float(splitLoginDate[0])),
                                               int(float(splitLoginTime[0])), int(float(splitLoginTime[1])))
 
             event.prologue = form.cleaned_data['prologue']
@@ -229,7 +210,7 @@ def add(request):
             event.duration = datetime.time(int(float(splitDurationTime[0])), int(float(splitDurationTime[1])), 0)
             event.entryFee = form.cleaned_data['entryFee']
             event.author = user
-            event.ground = form.cleaned_data['ground']
+            #event.ground = form.cleaned_data['ground']
             event.locationLat = form.data['Latitude']
             event.locationLng = form.data['Longitude']
             event.titleImage = form.cleaned_data['titleImage']

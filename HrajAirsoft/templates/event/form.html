@@ -1,8 +1,7 @@
 <script>
   $(function() {
     $( "#startDatepicker" ).datepicker({
-      //dateFormat: 'dd.mm.yy',
-        dateFormat: 'yy-mm-dd',
+      dateFormat: 'dd.mm.yy',
       changeMonth: true,
       changeYear: true,
       yearRange: "2010:2100"
@@ -11,8 +10,7 @@
 
    $(function() {
     $( "#loginDatepicker" ).datepicker({
-      //dateFormat: 'dd.mm.yy',
-        dateFormat: 'yy-mm-dd',
+      dateFormat: 'dd.mm.yy',
       changeMonth: true,
       changeYear: true,
       yearRange: "2010:2100"
@@ -20,31 +18,34 @@
   });
 </script>
 
-{% load wysiwyg %}
-{% wysiwyg_setup %}
-
-<div>
-    <form class="bs-example form-horizontal" action="." method="POST"  {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
+<div class="content2">
+    <div class="section"><h2>Vytvorenie novej akcie</h2></div>
+<div class="well" xmlns="http://www.w3.org/1999/html">
+    <form class="bs-example form-horizontal" action="." method="POST" {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
         <fieldset>
             {% csrf_token %}
             {% for f in form %}
+
                 {% if f.field.widget.attrs.id == "startTimePicker" %}
-                    <div>
+                    <div class="col-lg-10-moj" style="width: 50%;">
                         {{ f }}
                     </div>
                 {% else %}
                     {% if f.field.widget.attrs.id == "loginTimePicker" %}
-                        <div>
+                        <div class="col-lg-10-moj" style="width: 50%;">
                             {{ f }}
                         </div>
                     {% else %}
-                        <label for="id_{{ f.id }}">{{ f.label }} :</label>
-                        <div>
+                        <label class="col-lg-2-moj control-label" for="id_{{ f.id }}">{{ f.label }} :</label>
+                        <div class="col-lg-10-moj" style="width: 50%;">
                             {{ f }}
                         </div>
                     {% endif %}
                 {% endif %}
 
+                {% if f.field.widget.attrs.id == "" %}
+
+                {% endif %}
 
                 <!--{% if  f.field.widget.attrs.id  == "startDatepicker" %}
                     <input id="startDatepicker" placeholder="Čas" name="dateOfStart" type="text" />
@@ -61,9 +62,15 @@
             {% endfor %}
             <input type="hidden" name="Latitude" id="formLat">
             <input type="hidden" name="Longitude" id="formLng">
+            <input type="hidden" name="groundName" id="formGroundName">
         </fieldset>
+    <legend style="margin-top: 20px;">
+        Miesto
+    </legend>
     {% include "event/newEventMap.html" %}
-        <input class="btn btn-primary" id="submit-edit-event" type="submit" value="Uložiť">
+        <div id="mainpage-buttons-success">
+            <input class="btn btn-primary" id="submit-edit-event" type="submit" value="Uložiť">
+        </div>
         {% if form.errors %}
     {% for field in form %}
         {% for error in field.errors %}
@@ -74,12 +81,11 @@
     {% endfor %}
     {% for error in form.non_field_errors %}
         <div class="alert alert-error">
-            <strong>{{ error|escape }}</strong>
+            <strong>{{ error|escape }}</strong >
         </div>
     {% endfor %}
 {% endif %}
-       {% wysiwyg_editor "id_prologue" %}
-        {% wysiwyg_editor "id_scenario" %}
-    {% wysiwyg_editor "id_organizationNotes" %}
+
     </form>
+</div>
 </div>

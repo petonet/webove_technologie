@@ -71,11 +71,9 @@ function initialize() {
       form = document.forms[0];
       form["Latitude"].value = event.latLng.lat();
       form["Longitude"].value = event.latLng.lng();
-      console.log(form["Latitude"].value)
-      console.log(form["Longitude"].value)
   });
 }
 
 </script>
-<div id="map" style="height: {{ mapHeight }}px; width: {{ mapWidth }}px; background-color: lightblue;"></div>
+<div id="map" style="height: {{ mapHeight }}px; width: {{ mapWidth }}px; background-color: lightblue;"></div >
 <!--<button onclick="alert(lastCreatedMarker.position)"></button>-->

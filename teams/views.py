@@ -35,6 +35,25 @@ def teamsListSorted(request,sortPar):
     }
     return render_to_response('teams/teamslist.html',response, context_instance=RequestContext(request))
 
+def findTeam(request):
+    if request.method=="POST":
+        if (len(request.POST['teamname'])) > 0:
+            teams = Team.objects.all().filter(name__contains=request.POST['teamname'])
+            if len(teams)==0:
+                response = {
+                    'fail' : 'Žiadny tím s takýmto názvom nebol nájdený !',
+                }
+            else:
+                response = {
+                    'team_list' : teams,
+                }
+        else:
+                response = {
+                    'fail' : 'Nič si nezadal !',
+                }
+    else:
+        response = None
+    return render_to_response('teams/findTeam.html',response, context_instance=RequestContext(request))
 """
 
 class IndexView(generic.ListView):
