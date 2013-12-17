@@ -2,36 +2,81 @@
 
 {% block content %}
 
+
+    <script>
+     $( document ).ready(function() {
+    $('#ground_latest').click( function() {
+            $.ajax({
+                url: "/grounds/",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Newest"
+                },
+                success: function(data) {
+                    $(".content").html(data);
+                },
+                error: function(data) {
+                    alert ("Error");
+                    console.log(data);
+                }
+            });
+            return false;
+        });
+        $('#ground_top_rated').click( function() {
+            $.ajax({
+                url: "/grounds/",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Rate"
+                },
+                success: function(data) {
+                    $(".content").html(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+            return false;
+        });
+        $('#alphanum').click( function() {
+            $.ajax({
+                url: "/grounds/",
+                type: "POST",
+                data : {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    operation: "Alphabet"
+                },
+                success: function(data) {
+                    $(".content").html(data);
+                },
+                error: function() {
+                    alert ("Error");
+                }
+            });
+            return false;
+        });
+    });
+    </script>
+
     <div class="head">
         {% include "grounds/groundsMap.html" %}
     <div class="clearfix"></div>
     </div>
 
-    <div class="content">
-        <ul id="ground_list">
-            <h2>Zoznam ihrísk</h2>
-        {% if user.is_authenticated %}
-                  <a href="/grounds/add/"><button class="btn btn-warning" type="button">Pridaj ihrisko</button></a>
-                {% endif %}
-
-            {% for ground in grounds %}
-                <li><h3><a href="/grounds/{{ ground.id }}"> {{ ground.name }} </a></h3>
-
-             <a href="/grounds/{{ ground.id }}">
-                        {% load thumbnail %}
-                        {% thumbnail ground.photo "180x120"  as im %}
-                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"/>
-                        {% endthumbnail %}
-                      {% if  user.id  == ground.user.id %}
-                        <a href="/grounds/update/{{ ground.id }}"><button class="btn btn-warning" type="button"> Edituj</button></a>
-                        <a href="/grounds/delete/{{ ground.id }}"><button class="btn btn-warning" type="button">Vymaž</button></a>
-                    {% endif %}
-             </a>
-                <div class="ground_list_desc">{% autoescape off%}{{ ground.description |truncatechars:600}}{% endautoescape %}</div>
-
-                </li>
-
-            {% endfor %}
+    <div class="left_filter">
+        <p>Zoradiť podľa</p>
+        <ul>
+            <li id="ground_latest">Dátum pridania</li>
+            <li id="ground_top_rated">Hodnotenie</li>
+            <li id="alphanum">Abecedne</li>
         </ul>
+    </div>
+
+
+
+    <div class="content">
+    {% include "grounds/groundList.html" %}
     </div>
 {% endblock %}

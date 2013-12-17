@@ -2,14 +2,130 @@
 
 {% block content %}
 
-<ul class="unsigned-list">
+    <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+    <script type=text/javascript>
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: true });
+            $('.newEventForm').submit( function () {
+                console.log('submit');
+                if ($('#id_facebookEvent').is(':checked')) {
+                    var fbuserid, fbtoken;
+                    var appid = "661642747192057";
+                    //var loggedin = false;
 
-    {% if form.errors.numberOfPlayers %}<li>
-         <div class="error_box"><div class="error_label_box">Login</div>
-         <div class="error_content_box" type="button"><p >{{ form.errors.numberOfPlayers.0 }}</p></div></div></li>
-    {% endif %}
+{#                    function loginFB() {#}
+{#                        FB.login(function (response) {#}
+{#                            if (response.authResponse) {#}
+{#                                fbtoken = response.authResponse.accessToken;#}
+{#                                console.log('fbtoken '+fbtoken)#}
+{#                                fbuserid = response.authResponse.userID;#}
+{#                            }#}
+{#                        }, {perms: 'create_event'});#}
+{#                    }#}
 
-</ul>
-{% include "event/form.html" %}
+                    function parseDateTime(date,time){
+                        var d=date.split(".");
+
+                        return d[2]+"-"+d[1]+"-"+d[0]+"T"+time+":00-0100";
+
+                    }
+
+
+                    function logoutFB() {
+                        FB.logout(function (response) {
+                            // user is now logged out
+                        });
+                    }
+
+                    FB.init({appId: appid, status: true, cookie: true, xfbml: true,oauth:true});
+                    console.log(FB.getLoginStatus());
+
+                     function createEvent(name, startTime, endTime, location, description) {
+                        console.log("create event");
+                        var eventData = {
+                            // "access_token": fbtoken,
+                            "start_time": startTime,
+                            "end_time": endTime,
+                            "location": location,
+                            "name": name,
+                            "description": description,
+                            "privacy_type": "OPEN"
+                        };
+                        console.log(eventData);
+                        FB.api("/me/events", 'post', eventData, function (response) {
+                            console.log(response);
+                            if (response.id) {
+                                alert("We have successfully created a Facebook event with ID: " + response.id);
+                            }
+                        })
+                    }
+
+                    FB.getLoginStatus(function (response) {
+                        console.log('response status ' + response.status);
+                        if (response.status == 'connected') {
+                            fbtoken = response.authResponse.accessToken;
+                             createEvent($('#id_title').val(),
+                                    parseDateTime($('#startDatepicker').val(),$('#startTimePicker').val()),
+                                    parseDateTime($('#startDatepicker').val(),$('#id_duration').val()),
+                                    "Presov",
+                                     $('#id_prologue').val());
+                        } else {
+                            // open dialog
+                            FB.login(function (response) {
+                                if (response.authResponse) {
+                                     fbtoken = response.authResponse.accessToken;
+                                    console.log('fbtoken '+fbtoken)
+                                     fbuserid = response.authResponse.userID;
+                                     createEvent($('#id_title').val(),
+                                    parseDateTime($('#startDatepicker').val(),$('#startTimePicker').val()),
+                                    parseDateTime($('#startDatepicker').val(),$('#id_duration').val()),
+                                    "Presov",
+                                     $('#id_prologue').val());
+                                } else {
+                                    // logged out
+                                }
+                            }, {scope: 'publish_stream'});
+                        }
+                    });
+
+
+{#                                    FB.Event.subscribe('auth.sessionChange', function (response) {#}
+{#                                        console.log(response);#}
+{#                                         if (response.authResponse) {#}
+{#                                                fbtoken = response.authResponse.accessToken;#}
+{#                                                fbuserid = response.authResponse.userID;#}
+{#                                             console.log(fbtoken);#}
+{#                                        }#}
+{#                                    });#}
+
+
+
+
+
+
+
+
+                }
+                else {
+                    console.log('not checked')
+                }
+
+            });
+        });
+
+    </script>
+
+    <ul class="unsigned-list">
+
+        {% if form.errors.numberOfPlayers %}
+            <li>
+            <div class="error_box">
+                <div class="error_label_box">Login</div>
+                <div class="error_content_box" type="button"><p>{{ form.errors.numberOfPlayers.0 }}</p></div>
+            </div></li>
+        {% endif %}
+
+    </ul>
+    {% include "event/form.html" %}
 
 {% endblock %}

@@ -12,5 +12,5 @@ urlpatterns = patterns('',
   url(r'update/(?P<pk>\d+)$', login_required(GroundUpdate.as_view(model=ground))),
   url(r'delete/(?P<pk>\d+)$', login_required(GroundDelete.as_view(model=ground))),
   url(r'^(?P<pk>\d+)/$', GroundDetailView.as_view(model=ground), name='detail'),
-  url(r'^$',GroundsOverview.as_view(model=ground))
+  url(r'^$',GroundsOverview.as_view(model=ground),name="groundList")
 )

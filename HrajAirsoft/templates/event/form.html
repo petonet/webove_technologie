@@ -21,7 +21,7 @@
 <div class="content2">
     <div class="section"><h2>Vytvorenie novej akcie</h2></div>
 <div class="well" xmlns="http://www.w3.org/1999/html">
-    <form class="bs-example form-horizontal" action="." method="POST" {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
+    <form class="bs-example form-horizontal newEventForm" action="." method="POST" {% if form.is_multipart %} enctype="multipart/form-data" {% endif %}>
         <fieldset>
             {% csrf_token %}
             {% for f in form %}

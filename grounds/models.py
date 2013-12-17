@@ -14,7 +14,7 @@ class ground(models.Model):
     rate=models.PositiveIntegerField(default=2.5)
     official=models.BooleanField(default='false')
     pubDate=models.DateTimeField("published",default=datetime.datetime.now())
-    photo = ProcessedImageField(upload_to='uploads/image/grounds',processors=[ResizeToFill(800, 600)],format='JPEG',options={'quality': 60})
+    photo = ProcessedImageField(upload_to='uploads/image/grounds',processors=[ResizeToFill(2000, 300)],format='JPEG',options={'quality': 80})
     locationLat = models.CharField(max_length=20, verbose_name='Latitude')
     locationLng = models.CharField(max_length=20, verbose_name='Longitude')
     user = models.ForeignKey(User)
