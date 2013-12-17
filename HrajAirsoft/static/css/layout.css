@@ -110,7 +110,7 @@ padding-top: 20px;
      margin-bottom: 6px;
 }
 
-.content{
+.content,.contentAddingPlayers{
     margin-top: 0;
     padding-top: 15px; ;
     margin-right: auto;
@@ -118,6 +118,9 @@ padding-top: 20px;
     width: 980px;
 }
 
+.contentAddingPlayers{
+    min-height: 600px;
+}
 #ground_tag{
     width: 100%;
     padding-bottom: 15px;
@@ -141,8 +144,6 @@ padding-top: 20px;
     text-decoration: none;
     color: #000000;
     }
-
-
 #ground_tag ul li{
     display: inline-block;
     margin-right: 15px;
@@ -1079,6 +1080,9 @@ position: absolute;
     margin-left: 5px;
     margin-right: 5px;
 }
+.eventImgDetailTeam{
+
+}
 .newsContent{
     width: 500px;
     padding-left: 10px;
@@ -1120,12 +1124,48 @@ position: absolute;
 }
 
 
-#zucastnimesa,#absolvovalisme{
+#zucastnimesa,#absolvovalisme,#clenoviatimu,#administracia{
 background-color: #646464;
-    width:347px;
+    width:348px;
 }
-
-#rightWindows{
+#clenoviatimu,#administracia{
+background-color: #646464;
+    width:346px;
+}
+#rightWindow,#rightWindow2{
     white-space: nowrap;
     width:1000px;
+}
+#myTabContent2{
+margin-top: 35px;
+
+}
+.ActionsTeamsNewOld{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.textFieldsTeamActions{
+    float: right;
+    text-align: left;
+    width: 210px;
+    color: #ffffff;
+}
+.textFieldsTeamActions p{
+    font-size: 8pt;
+    margin:0;
+}
+.detailTeamEventLink{
+    font-size: inherit;
+    color: inherit;
+}
+
+#addingPlayersTable th{
+    text-align: center;
+}
+
+#addingPlayersButton{
+    float:right;
 }

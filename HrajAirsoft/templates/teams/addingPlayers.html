@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="contentAddingPlayers">
+
+
+
+        <div id="left-sidebar">
+
+                    <div class="section"><h2>
+                        Pridávanie hráčov do tímu <strong>{{ team.name }}</strong>
+                    </h2></div>
+                    {% if data %}
+                    <div class="com_message">
+
+                        Máš zobrazené aktuálne požiadavky od hráčov !
+
+                    </div>
+                          {% if savedy %}
+
+                <div class="inform-panel">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Požiadavka bola úspešne spracovaná !</h3>
+                      </div>
+                      <div class="panel-body">
+                          <img src="{{ MEDIA_URL }}templates_img/ok.png" alt="ok_logo" height="100" width="100"/>
+                          <div id="mainpage-buttons-success">
+                              {% if not delTeam %}
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Späť na tím" type="button" onclick="window.location='/teams/{{ team.pk }}/';" >
+                              {% endif %}
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Domov" type="button" onclick="window.location='/homepage';" >
+
+                          </div>
+                    </div>
+                </div>
+                </div>
+                {% endif %}
+            {% if fail %}
+
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Nastala chyba pri odosielaní požiavky skúste to ešte raz !</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="{{ MEDIA_URL }}templates_img/fail.png" alt="ok_logo" height="100" width="100"/>
+                         <div id="mainpage-buttons-success">
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Späť na tím" type="button" onclick="window.location='/teams/{{  team.pk }}/';" >
+                              <input id="mainpage-button"class="btn btn-default" name="prihlas" value="Domov" type="button" onclick="window.location='/homepage';" >
+                         </div>
+                    </div>
+                 </div>
+
+            {% endif%}
+
+                    <div class="login_form">
+
+                        <center>
+
+
+                            <table id="addingPlayersTable"class="table table-striped table-bordered table-hover" style="text-align: center;">
+                                                        <thead>
+                            <th>Používateľ/Hráč</th>
+                            <th>Požiadavka odoslaná</th>
+                            <th>Aktivovanie hráča</th>
+                            <th>Zamietnutie požiadavky</th>
+                            </thead>
+                              <tbody>
+                                {% for player in data %}
+
+                                    <div class="teams-buttons"><tr>
+                                        <td>
+                                            <h4>{{ player.0.user.username }}</h4>
+
+                                        </td>
+                                        <td>
+                                            <h4>{{ player.1.dateOfAdd }}</h4>
+
+                                        </td>
+                                        <td>
+                                        <form action="." method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="team_id" value="{{ player.1.team_id.pk }}">
+                                        <input type="hidden" name="player_id" value="{{ player.1.user_id.pk }}">
+                                        <input type="hidden" name="operation" value="add">
+                                        <input class="btn btn-primary" type="submit" value="Prijať" >
+                                        </form>
+                                        </td>
+                                        <td>
+                                        <form action="." method="POST">
+                                        {% csrf_token %}
+
+                                        <input type="hidden" name="team_id" value="{{  player.1.team_id.pk  }}">
+                                        <input type="hidden" name="player_id" value="{{  player.1.user_id.pk }}">
+                                        <input type="hidden" name="operation" value="delete">
+                                        <input class="btn btn-primary" type="submit" value="Zamietnuť" >
+                                        </form>
+                                        </td>
+
+
+                                    </tr>
+
+
+                                        </div>
+                                  {% endfor %}
+
+                            </tbody></table>
+                                                {% else %}
+                        <div class="com_error">
+
+                        Nemáš žiadne požiadavky od hráčov !
+
+                    </div>
+                    {% endif %}
+                        <div class="teams-buttons">
+                                    <input id="addingPlayersButton" class="btn btn-primary" type="button" value="Späť" onclick="window.location='/teams/{{ team.pk }}/';" >
+                                    </div>
+                        </center>
+
+
+                </div>
+
+
+
+
+         </div>
+
+
+        <div id="right-sidebar">
+             {% include "teams/right-sidebar.html" %}
+        </div>
+
+
+
+</div>
+
+{% endblock %}

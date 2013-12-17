@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     url(r'^(?P<pk>\d+)/removeTeam/$','teams.views.deleteTeam'),
     url(r'^teamsListSorted/(?P<sortPar>\w+)/$', 'teams.views.teamsListSorted'),
     url(r'^findTeam/$', 'teams.views.findTeam'),
+    url(r'^(?P<pk>\d+)/addingPlayers/$', 'teams.views.addingPlayers'),
 )

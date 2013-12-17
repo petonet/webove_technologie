@@ -53,3 +53,7 @@ class deleteTeam(forms.Form):
 
     team_id = forms.CharField(label='nevidis',widget=forms.TextInput(attrs={'type':'hidden','id': 'hidden'}), required=False)
 
+class addingPlayer(forms.Form):
+
+    team_id = forms.CharField(label='team_id',widget=forms.TextInput(attrs={'type':'hidden','id': 'hidden'}), required=False)
+    user_id = forms.CharField(label='user_id',widget=forms.TextInput(attrs={'type':'hidden','id': 'hidden'}), required=False)

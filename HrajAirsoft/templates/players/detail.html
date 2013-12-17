@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content">
+    <div id="content-form-player">
+
+
+
+        <div id="left-sidebar">
+
+             <div class="section"><h2><strong>{{ info_about_player.user.username }}</strong></h2></div>
+                    <div class="profile">
+                        <div class="profile-left">
+
+
+                            {% if info_about_player.photo %}
+                                <img class="profile-photo" width="170" height="170" alt="defUser.jpg" src="{{ MEDIA_URL }}{{ info_about_player.photo }}">
+                            {% else %}
+                                <img class="profile-photo" width="170" height="170" alt="defUser.jpg" src="{{ MEDIA_URL }}templates_img/user.png">
+                            {% endif %}
+                        </div>
+                        <div class="profile-right">
+
+
+                            <div class="profil_udaje">
+
+                                <h2 class="nickname">Základné údaje</h2>
+                                <br />
+                                <div  class="info-left">Vek :</div><div class="info-right"> {{ age }}</div>
+                                <div  class="info-left">Pohlavie :</div><div class="info-right"> {{ info_about_player.gender }}</div>
+                                <div  class="info-left">Kraj :</div><div class="info-right"> {{ info_about_player.countryPart }}</div>
+                               {% if info_about_player.city  %}    <div  class="info-left">Mesto :</div><div class="info-right"> {{ info_about_player.city }}</div>{% endif %}
+                                {% if info_about_player.user.email %} <div  class="info-left">Email :</div><div class="info-right"> {{ info_about_player.user.email }}</div>{% endif %}
+                                {% if info_about_player.user.date_joined %}  <div  class="info-left">Registrovaný :</div><div class="info-right">{{ info_about_player.user.date_joined }}</div>{% endif %}
+                                <div  class="info-left">Naposledy prihlásený :</div><div class="info-right">{{ info_about_player.user.last_login }}</div>
+
+                                <div  class="info-left">
+                                    <img style="padding-bottom: 3px; padding-left: 3px" width="17" height="16" alt="rankStar.jpg" src="{{ MEDIA_URL }}templates_img/star.gif">
+                                    &nbsp;Hodnotenie užívateľa :</div>
+                                <div class="info-right">{{ info_about_player.rank }}</div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    {% if info_about_player.about_me %}
+                        <div class="profile-right">
+
+
+                            <div class="profil_udaje">
+
+                                <h2 class="nickname">O mne</h2>
+                                <br />
+
+                                <span>
+                                    {{ info_about_player.about_me }}
+                                </span>
+
+
+                            </div>
+
+                        </div>
+                    {% endif %}
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+        </div>
+
+
+        <div id="right-sidebar">
+           {% include "players/right-sidebar.html" %}
+        </div>
+
+
+
+
+    </div>
+</div>
+{% endblock %}

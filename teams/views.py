@@ -3,10 +3,11 @@
 from django.views import generic
 from teams.models import Team, NewsFeeds, Gallery, UserInTeamNtoN
 from players.models import player
-from forms import addTeamForm,addRequestToTeam,deleteRequestToTeam
+from forms import addTeamForm,addRequestToTeam,deleteRequestToTeam,addingPlayer
 from django.shortcuts import render_to_response, RequestContext, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from events.models import Event
 import datetime
 import forms as formularis
 
@@ -20,6 +21,7 @@ class TeamsDetailView(generic.ListView):
     template_name = 'teams\\ground_detail.html'
 
 def teamsListSorted(request,sortPar):
+
     if str(sortPar).startswith('name'):
         teams = Team.objects.all().order_by('name')
     if str(sortPar).startswith('counts_of_players'):
@@ -191,7 +193,6 @@ def teamDetail(request, pk):
     haveRequetInThisTeam = None
     playerRequest = None
     team=None
-
     a = []
     PK = int(pk)
 
@@ -243,9 +244,9 @@ def teamDetail(request, pk):
                         playerRequest = True
                         haveRequetInThisTeam = True
 
-        for e in UserInTeamNtoN.objects.filter(team_id=PK):
+        for e in UserInTeamNtoN.objects.filter(team_id=PK,accepted=True):
            a.append(player.objects.get(pk=e.user_id.pk))
-        players = a
+        a.append(player.objects.get(pk=team.leader.pk))
 
             #try:
             #    context['players'] = player(pk=UserInTeamNtoN(team_id=self.model.pk).user_id).objects.all()
@@ -256,10 +257,12 @@ def teamDetail(request, pk):
             #context['new_feeds'] = NewsFeeds(team_id=self.model.pk).objects.order_by('-publish_date')
         new_feeds= NewsFeeds.objects.filter(team_id=PK).order_by('publish_date').reverse()
         GalleryTeam= Gallery.objects.filter(team_id=PK).order_by('date_of_add')[:3].reverse()
-
+        Events = Event.objects.filter(users__in=a).distinct()
             #context['path'] = PROJECT_PATH.strip("\HrajAirsoft").replace('\\', '/') + "/"
-
-
+        lastEvents = Events.filter(startOfAction__lte=datetime.datetime.now()).order_by('startOfAction').reverse()
+        futureEvents = Events.filter(startOfAction__gt=datetime.datetime.now()).order_by('startOfAction')
+        a.pop()
+        players = a
         addRequestToTeam = formularis.addRequestToTeam(
             initial={'team_id': PK,}
         )
@@ -278,6 +281,8 @@ def teamDetail(request, pk):
            'deleteRequestToTeam' :deleteRequestToTeam,
            'haveRequest':haveRequest,
            'haveRequetInThisTeam':haveRequetInThisTeam,
+           'lastEvents':lastEvents,
+           'futureEvents':futureEvents,
         }
 
         return render_to_response('teams/detail.html',team_data, context_instance=RequestContext(request))
@@ -337,7 +342,7 @@ def addTeam(request):
 
 @login_required
 def myTeam(request):
-
+    u = []
     a = []
     try:
         playerObject = request.user.get_profile()
@@ -351,11 +356,19 @@ def myTeam(request):
         team = team[0]
         if team.accepted == True :
             team = Team.objects.get(pk=team.team_id.pk)
-            for e in UserInTeamNtoN.objects.filter(team_id=team.pk):
+            for e in UserInTeamNtoN.objects.filter(team_id=team.pk,accepted=True):
                 a.append(player.objects.get(pk=e.user_id.pk))
             new_feeds = NewsFeeds.objects.filter(team_id=team.pk).order_by('publish_date').reverse()
             GalleryTeam = Gallery.objects.filter(team_id=team.pk).order_by('date_of_add')[:3].reverse()
-            team_data = {'players': a, 'new_feeds': new_feeds,'GalleryTeam':GalleryTeam, 'team':team, 'isMember': True}
+            a.append(player.objects.get(pk=team.leader.pk))
+
+            Events = Event.objects.filter(users__in=a).distinct()
+            #context['path'] = PROJECT_PATH.strip("\HrajAirsoft").replace('\\', '/') + "/"
+            lastEvents = Events.filter(startOfAction__lte=datetime.datetime.now()).order_by('startOfAction').reverse()
+            futureEvents = Events.filter(startOfAction__gt=datetime.datetime.now()).order_by('startOfAction')
+            a.pop()
+
+            team_data = {'users':u,'players': a, 'new_feeds': new_feeds,'GalleryTeam':GalleryTeam, 'team':team, 'isMember': True,'lastEvents':lastEvents,'futureEvents':futureEvents}
             return render_to_response('teams/detail.html', team_data, context_instance=RequestContext(request))
 
     #Ma poslanu ziadost do timu
@@ -370,11 +383,17 @@ def myTeam(request):
     teamadmin = Team.objects.filter(leader=playerObject)
     #Je administrator tímu
     if len(teamadmin) > 0 :
-        for e in UserInTeamNtoN.objects.filter(team_id=teamadmin[0].pk):
+        for e in UserInTeamNtoN.objects.filter(team_id=teamadmin[0].pk,accepted=True):
             a.append(player.objects.get(pk=e.user_id.pk))
+        a.append(player.objects.get(pk=teamadmin[0].leader.pk))
+        Events = Event.objects.filter(users__in=a).distinct()
+        #context['path'] = PROJECT_PATH.strip("\HrajAirsoft").replace('\\', '/') + "/"
+        lastEvents = Events.filter(startOfAction__lte=datetime.datetime.now()).order_by('startOfAction').reverse()
+        futureEvents = Events.filter(startOfAction__gt=datetime.datetime.now()).order_by('startOfAction')
+        a.pop()
         new_feeds = NewsFeeds.objects.filter(team_id=teamadmin[0].pk).order_by('publish_date').reverse()
         GalleryTeam = Gallery.objects.filter(team_id=teamadmin[0].pk).order_by('date_of_add')[:3].reverse()
-        team_data = {'players': a, 'new_feeds': new_feeds,'GalleryTeam':GalleryTeam ,'team':teamadmin[0],'thisteamadmin':True}
+        team_data = {'players': a, 'new_feeds': new_feeds,'GalleryTeam':GalleryTeam ,'team':teamadmin[0],'thisteamadmin':True,'lastEvents':lastEvents,'futureEvents':futureEvents}
         return render_to_response('teams/detail.html',team_data, context_instance=RequestContext(request))
     #Nema ziadny tím
     return render_to_response('players/myTeam.html', context_instance=RequestContext(request))
@@ -439,7 +458,6 @@ def editBasicInfo(request,pk):
     else:
         return render_to_response('teams/addTeamForm.html', {'form': form, 'PlayerHasTeam':PlayerHasTeam ,'pk':pk}, context_instance=RequestContext(request))
 
-
 #Zmazanie tímu
 @login_required
 def deleteTeam(request, pk):
@@ -449,13 +467,44 @@ def deleteTeam(request, pk):
         delTeam = formularis.deleteTeam(request.POST)
         if delTeam.is_valid():
             team.delete()
-            return render_to_response('teams/messageWarning.html',{'team':team,'saved':True,'delTeam' : True}, context_instance=RequestContext(request))
+            return render_to_response('teams/messageWarning.html',{'team':team,'saved':True,'delTeam' : True,'pk':PK}, context_instance=RequestContext(request))
         else:
-            return render_to_response('teams/messageWarning.html',{'team':team,'fail':True,'delTeam' : True}, context_instance=RequestContext(request))
+            return render_to_response('teams/messageWarning.html',{'team':team,'fail':True,'delTeam' : True,'pk':PK}, context_instance=RequestContext(request))
     else:
 
         form = formularis.deleteTeam(
-            initial={'team_id': PK,}
+            initial={'team_id': PK}
         )
-        return render_to_response('teams/messageWarning.html',{'form':form,'team':team, 'delTeam' : True}, context_instance=RequestContext(request))
+        return render_to_response('teams/messageWarning.html',{'form':form,'team':team, 'delTeam' : True, 'pk':PK}, context_instance=RequestContext(request))
 
+#Pridavanie hracov do timu na zaklade poziadavuek
+@login_required
+def addingPlayers(request,pk):
+    a = []
+    saved=None
+    fail=None
+    PK = int(pk)
+    team = Team.objects.get(pk=PK)
+    if request.method=="POST":
+        teamID = request.POST['team_id']
+        playerID = request.POST['player_id']
+        operation = request.POST['operation']
+        if operation=="add":
+            userInTeamAcception = UserInTeamNtoN.objects.filter(team_id=int(teamID),user_id=int(playerID))
+            userInTeamAcception = userInTeamAcception[0]
+            userInTeamAcception.accepted=True
+            userInTeamAcception.save()
+            saved = True
+        elif operation=="delete":
+            userInTeamDeletion = UserInTeamNtoN.objects.filter(team_id=int(teamID),user_id=int(playerID))
+            userInTeamDeletion = userInTeamDeletion[0]
+            userInTeamDeletion.accepted=False
+            userInTeamDeletion.save()
+            saved = True
+        else:
+            fail=True
+    PlayerRequests = UserInTeamNtoN.objects.exclude(accepted=False).exclude(accepted=True)
+    PlayerRequests = PlayerRequests.filter(team_id=PK)
+    for req in PlayerRequests:
+        a.append( [ (player.objects.get(pk=req.user_id.pk)),req ] )
+    return render_to_response('teams/addingPlayers.html',{'saved':saved,'data':a,'team':team, 'delTeam' : True, 'pk':PK,'fail':fail}, context_instance=RequestContext(request))

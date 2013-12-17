@@ -214,3 +214,9 @@ def changephoto(request):
         form = ChangePhotoForm({})
         return render_to_response('players/changephoto.html', {'form': form, 'changePass': True , 'changephoto':True }, context_instance=RequestContext(request))
 
+
+def detail(request,pk):
+    info_about_player = player.objects.get(pk=int(pk))
+
+    age = calculate_age(info_about_player.date_of_birth)
+    return render_to_response('players/detail.html', {'info_about_player': info_about_player,'age':age,'general':True }, context_instance=RequestContext(request))

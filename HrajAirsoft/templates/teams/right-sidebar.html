@@ -5,21 +5,27 @@
                 <li>
                     <a href="/homepage">DOMOV</a>
                 </li>
-    {% if no_team %}
+    {% if no_team  %}
                 <li>
                     <a href="/teams/new/">VYTVORENIE TÍMU</a>
                 </li>
-    {% elif leader %}
+    {% elif leader or delTeam %}
                 <li>
                      <a href="/teams/{{ pk }}/editBasicInfo/">ZMENA ZÁKL. ÚDAJOV O TÍME</a>
                 </li>
                 <li>
-                    <a href="/teams/addingPlayers/">PRIDAVANIE HRAČOV</a>
+                    <a href="/teams/{{ pk }}/addingPlayers/">PRIDAVANIE HRAČOV</a>
                 </li>
                 <li>
                     <a href="/teams/{{ pk }}/removeTeam/">ZMAZAŤ TÍM</a>
                 </li>
+
+        {% if  pk %}
+            <li>
+                    <a href="/teams/{{ pk }}/">SPÄŤ NA TÍM</a>
+                </li> {% endif %}
     {% elif member %}
+
 
 
     {% endif %}

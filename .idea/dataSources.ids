@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="79d74391-bfea-437c-8024-8a67e1f3c317">
+  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="717d898a-28d0-47f3-896c-c314c35c1a83">
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-    <jdbc-url>jdbc:sqlite:c:\Users\idefix\db.ha</jdbc-url>
+    <jdbc-url>jdbc:sqlite:C:\Projects\18112013\webove_technologie\database.db</jdbc-url>
     <libraries>
       <library>
         <url>file://$USER_HOME$/.PyCharm30/config/jdbc-drivers/xerial-sqlite-license.txt</url>
       </library>
       <library>
-        <url>jar://$USER_HOME$/.PyCharm30/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar!/</url>
+        <url>file://$USER_HOME$/.PyCharm30/config/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
       </library>
     </libraries>
     <schema name="" catalog=""/>
@@ -25,6 +25,8 @@
       <column name="permission_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_auth_group_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_group_permissions_83d7f98b" unique="true" columns="permission_id"/>
+      <index name="auth_group_permissions_5f412f9a" unique="true" columns="group_id"/>
     </table>
     <table name="auth_permission" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -34,6 +36,7 @@
       <primary-key columns="id"/>
       <exported-key name="#FAKE_auth_group_permissions_1" table="auth_group_permissions" schema="" catalog="" columns="permission_id"/>
       <exported-key name="#FAKE_auth_user_user_permissions_1" table="auth_user_user_permissions" schema="" catalog="" columns="permission_id"/>
+      <index name="auth_permission_37ef4eb4" unique="true" columns="content_type_id"/>
     </table>
     <table name="auth_user" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -49,6 +52,7 @@
       <column name="date_joined" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_django_admin_log_2" table="django_admin_log" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_players_player_1" table="players_player" schema="" catalog="" columns="user_id"/>
     </table>
     <table name="auth_user_groups" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -56,6 +60,8 @@
       <column name="group_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_auth_user_groups_1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_user_groups_5f412f9a" unique="true" columns="group_id"/>
+      <index name="auth_user_groups_6340c63c" unique="true" columns="user_id"/>
     </table>
     <table name="auth_user_user_permissions" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -63,6 +69,8 @@
       <column name="permission_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_auth_user_user_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_user_user_permissions_83d7f98b" unique="true" columns="permission_id"/>
+      <index name="auth_user_user_permissions_6340c63c" unique="true" columns="user_id"/>
     </table>
     <table name="django_admin_log" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -76,6 +84,8 @@
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_django_admin_log_1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <foreign-key name="#FAKE_django_admin_log_2" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="django_admin_log_37ef4eb4" unique="true" columns="content_type_id"/>
+      <index name="django_admin_log_6340c63c" unique="true" columns="user_id"/>
     </table>
     <table name="django_content_type" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -90,23 +100,190 @@
       <column name="session_data" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
       <column name="expire_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
       <primary-key columns="session_key"/>
+      <index name="django_session_b7b81f0c" unique="true" columns="expire_date"/>
     </table>
-    <table name="django_site" schema="" catalog="" type="TABLE">
+    <table name="events_comments" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
-      <column name="domain" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
-      <column name="name" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="eventId_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="comment" sqlType="VARCHAR(1000)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="sent" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
+      <foreign-key name="#FAKE_events_comments_1" columns="user_id" ref-table="players_player" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_events_comments_2" columns="eventId_id" ref-table="events_event" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="events_comments_6340c63c" unique="true" columns="user_id"/>
+      <index name="events_comments_81a1c742" unique="true" columns="eventId_id"/>
+    </table>
+    <table name="events_event" schema="" catalog="" type="TABLE">
+      <column name="titleImage" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="startOfAction" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="published" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="numberOfPlayers" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="login_since" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="prologue" sqlType="VARCHAR(20000)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="scenario" sqlType="VARCHAR(20000)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="organizationNotes" sqlType="VARCHAR(20000)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="duration" sqlType="TIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="entryFee" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="6"/>
+      <column name="locationLat" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="locationLng" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="author_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="ground_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_events_comments_2" table="events_comments" schema="" catalog="" columns="eventId_id"/>
+      <exported-key name="#FAKE_events_notifications_1" table="events_notifications" schema="" catalog="" columns="eventId_id"/>
+      <exported-key name="#FAKE_events_restrictions_1" table="events_restrictions" schema="" catalog="" columns="eventId_id"/>
+    </table>
+    <table name="events_event_users" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="event_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="player_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_events_event_users_1" columns="player_id" ref-table="players_player" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="events_event_users_f7c6108c" unique="true" columns="player_id"/>
+      <index name="events_event_users_a41e20fe" unique="true" columns="event_id"/>
+    </table>
+    <table name="events_notifications" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="eventId_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="content" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_events_notifications_1" columns="eventId_id" ref-table="events_event" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="events_notifications_81a1c742" unique="true" columns="eventId_id"/>
+    </table>
+    <table name="events_restrictions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="eventId_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="gunFps" sqlType="DECIMAL" length="2000000000" precision="10" nullable="false" jdbcType="6"/>
+      <column name="pyro" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="age" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_events_restrictions_1" columns="eventId_id" ref-table="events_event" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="events_restrictions_81a1c742" unique="true" columns="eventId_id"/>
     </table>
     <table name="grounds_ground" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
-      <column name="city" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
-      <column name="street" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
-      <column name="photo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
-      <column name="rate" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
-      <column name="official" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR(20000)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="rate" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="official" sqlType="BOOL" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="pubDate" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="photo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="locationLat" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="locationLng" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <primary-key columns="id"/>
+    </table>
+    <table name="home_topmenu" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="menuCategory" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="players_armory" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="user_id_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR(300)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_players_armory_1" columns="user_id_id" ref-table="players_player" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="players_armory_1ffdedc6" unique="true" columns="user_id_id"/>
+    </table>
+    <table name="players_player" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="phone" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="photo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR(80)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="date_of_birth" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="rank" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="6"/>
+      <column name="about_me" sqlType="TEXT" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR(15)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="countryPart" sqlType="VARCHAR(60)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_players_player_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_events_comments_1" table="events_comments" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_events_event_users_1" table="events_event_users" schema="" catalog="" columns="player_id"/>
+      <exported-key name="#FAKE_players_armory_1" table="players_armory" schema="" catalog="" columns="user_id_id"/>
+      <exported-key name="#FAKE_teams_team_1" table="teams_team" schema="" catalog="" columns="leader_id"/>
+      <exported-key name="#FAKE_teams_userinteamnton_1" table="teams_userinteamnton" schema="" catalog="" columns="user_id_id"/>
+    </table>
+    <table name="polls_choice" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="poll_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="choice_text" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="votes" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_polls_choice_1" columns="poll_id" ref-table="polls_poll" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="polls_choice_70f78e6b" unique="true" columns="poll_id"/>
+    </table>
+    <table name="polls_poll" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="question" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="pub_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_polls_choice_1" table="polls_choice" schema="" catalog="" columns="poll_id"/>
+    </table>
+    <table name="teams_gallery" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="team_id_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="news_id_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="date_of_add" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_teams_gallery_1" columns="news_id_id" ref-table="teams_newsfeeds" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_teams_gallery_2" columns="team_id_id" ref-table="teams_team" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="teams_gallery_43d9d521" unique="true" columns="news_id_id"/>
+      <index name="teams_gallery_5b799cb3" unique="true" columns="team_id_id"/>
+    </table>
+    <table name="teams_newsfeeds" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="title_image" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="team_id_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="VARCHAR(4000)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="publish_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_teams_newsfeeds_1" columns="team_id_id" ref-table="teams_team" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_teams_gallery_1" table="teams_gallery" schema="" catalog="" columns="news_id_id"/>
+      <index name="teams_newsfeeds_5b799cb3" unique="true" columns="team_id_id"/>
+    </table>
+    <table name="teams_team" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="big_logo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="team_logo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="leader_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR(2000)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="reg_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="counts_of_players" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_teams_team_1" columns="leader_id" ref-table="players_player" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_teams_gallery_2" table="teams_gallery" schema="" catalog="" columns="team_id_id"/>
+      <exported-key name="#FAKE_teams_newsfeeds_1" table="teams_newsfeeds" schema="" catalog="" columns="team_id_id"/>
+      <exported-key name="#FAKE_teams_userinteamnton_2" table="teams_userinteamnton" schema="" catalog="" columns="team_id_id"/>
+      <index name="teams_team_3a82c675" unique="true" columns="leader_id"/>
+    </table>
+    <table name="teams_userinteamnton" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="team_id_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="user_id_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="invitation" sqlType="BOOL" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="accepted" sqlType="BOOL" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="dateOfAdd" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_teams_userinteamnton_1" columns="user_id_id" ref-table="players_player" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_teams_userinteamnton_2" columns="team_id_id" ref-table="teams_team" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="teams_userinteamnton_1ffdedc6" unique="true" columns="user_id_id"/>
+      <index name="teams_userinteamnton_5b799cb3" unique="true" columns="team_id_id"/>
+    </table>
+    <table name="thumbnail_kvstore" schema="" catalog="" type="TABLE">
+      <column name="key" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="value" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="key"/>
     </table>
   </data-source>
 </component>

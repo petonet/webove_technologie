@@ -1,23 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/groundList.html" />
+    <list default="true" id="df52f413-e102-4845-b6b9-6d68e628fe22" name="Default" comment="-dokonceny team-detail, potvrdzovanie/zamietanie poziadaviek do timov&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/16.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/1_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/cache/42/7f/427f195e3e2a49b40586b4d112090336.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/cache/83/dc/83dcf6e43ac4dc39dae78a28ffe79051.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/events/9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/cache/ce/3e/ce3e90503da5ecce50268cb7d25dfbd2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/cache/d9/b9/d9b9b3ed5c1d2fdaf6d0c6a8bd84bcf8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/templates_img/def-event.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/templates_img/def_article.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/big_logos/draguni_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/fail_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/lgoo_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/logos/logo1_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/logo1_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/players/logo2_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/templates_img/settings_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/big_logos/slide4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/uploads/image/teams/big_logos/slide4_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/media/templates_img/team_icom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/teams/addingPlayers.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/players/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.db" afterPath="$PROJECT_DIR$/database.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/event/detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/event/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/base.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/event/form.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/event/form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/forms.py" afterPath="$PROJECT_DIR$/events/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/ground_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/forms.py" afterPath="$PROJECT_DIR$/teams/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" afterPath="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grounds/models.py" afterPath="$PROJECT_DIR$/grounds/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/event/newEventMap.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/event/newEventMap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grounds/urls.py" afterPath="$PROJECT_DIR$/grounds/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/views.py" afterPath="$PROJECT_DIR$/events/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grounds/views.py" afterPath="$PROJECT_DIR$/grounds/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/players/myTeam.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/players/myTeam.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/players/right-sidebar.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/players/right-sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html" afterPath="$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/players/urls.py" afterPath="$PROJECT_DIR$/players/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/urls.py" afterPath="$PROJECT_DIR$/teams/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/players/views.py" afterPath="$PROJECT_DIR$/players/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/views.py" afterPath="$PROJECT_DIR$/teams/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HrajAirsoft.iws" />
@@ -41,91 +75,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/events/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="129" selection-start="2530" selection-end="2530" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="2227">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messageWarning.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="181" selection-start="842" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="2261">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grounds/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="27" selection-start="3315" selection-end="3315" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2567">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teams/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="356" column="65" selection-start="14100" selection-end="14100" vertical-scroll-proportion="0.0" vertical-offset="6052" max-vertical-offset="7939">
+            <state line="509" column="7" selection-start="21985" selection-end="21985" vertical-scroll-proportion="-14.884615" vertical-offset="8266" max-vertical-offset="8755">
+              <folding>
+                <element signature="e#25#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/players/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="218" column="30" selection-start="8541" selection-end="8541" vertical-scroll-proportion="0.0" vertical-offset="3565" max-vertical-offset="3876">
+              <folding>
+                <element signature="e#25#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/players/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="39" selection-start="780" selection-end="780" vertical-scroll-proportion="-7.1923075" vertical-offset="153" max-vertical-offset="1632">
+              <folding>
+                <element signature="e#2226#2272#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="190" column="55" selection-start="9193" selection-end="9193" vertical-scroll-proportion="-2.4615386" vertical-offset="3166" max-vertical-offset="5049">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grounds.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html">
+      <file leaf-file-name="registration.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/players/registration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="13" selection-start="2224" selection-end="2224" vertical-scroll-proportion="0.0" vertical-offset="989" max-vertical-offset="1479">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1496">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="64" selection-start="1963" selection-end="1963" vertical-scroll-proportion="0.6275168" vertical-offset="527" max-vertical-offset="2346">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newEvent.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2312">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HrajAirsoft/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="697">
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/teams/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="70" selection-start="853" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="510">
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/teams/models.py">
+        <entry file="file://$PROJECT_DIR$/players/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="16" selection-start="1741" selection-end="1741" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="1003">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1101" column="9" selection-start="15854" selection-end="15862" vertical-scroll-proportion="-3.7692308" vertical-offset="18619" max-vertical-offset="19312">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4366" column="14" selection-start="70642" selection-end="70642" vertical-scroll-proportion="0.0" vertical-offset="122507" max-vertical-offset="131750">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="22" selection-start="635" selection-end="635" vertical-scroll-proportion="0.29929578" vertical-offset="204" max-vertical-offset="2278">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teamslist.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/teamslist.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="99" selection-start="1547" selection-end="1547" vertical-scroll-proportion="0.0" vertical-offset="638" max-vertical-offset="1479">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
               <folding />
             </state>
           </provider>
@@ -156,22 +200,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
-        <option value="$PROJECT_DIR$/events/forms.py" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/tags/ground.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html" />
-        <option value="$PROJECT_DIR$/grounds/views.py" />
-        <option value="$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html" />
-        <option value="$PROJECT_DIR$/events/urls.py" />
-        <option value="$PROJECT_DIR$/events/views.py" />
         <option value="$PROJECT_DIR$/teams/models.py" />
-        <option value="$PROJECT_DIR$/teams/views.py" />
         <option value="$PROJECT_DIR$/HrajAirsoft/static/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html" />
+        <option value="$PROJECT_DIR$/teams/urls.py" />
+        <option value="$PROJECT_DIR$/teams/forms.py" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/players/myTeam.html" />
+        <option value="$PROJECT_DIR$/teams/views.py" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/addingPlayers.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/static/css/layout.css" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html" />
+        <option value="$PROJECT_DIR$/players/urls.py" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/players/right-sidebar.html" />
+        <option value="$PROJECT_DIR$/players/views.py" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/players/detail.html" />
         <option value="$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html" />
+        <option value="$PROJECT_DIR$/HrajAirsoft/templates/base.html" />
       </list>
     </option>
   </component>
@@ -291,6 +335,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="teams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="players" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="HrajAirsoft" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -332,6 +418,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="teams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="players" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webove_technologie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HrajAirsoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="event" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,14 +531,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="C:/Python27/Lib/site-packages/gmapi" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="829" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="153" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -423,8 +553,8 @@
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -532,7 +662,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HrajAirsoft" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -558,27 +708,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HrajAirsoft" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -806,29 +936,33 @@
       <created>1387291043578</created>
       <updated>1387291043578</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/dataSources.xml&#10;&#9;.idea/workspace.xml&#10;&#9;HrajAirsoft/static/css/layout.css&#10;&#9;database.db&#10;">
+      <created>1387291865385</created>
+      <updated>1387291865385</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32767403" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32597622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32535884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18484849" sideWeight="0.2082671" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2030303" sideWeight="0.67232597" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.62988114" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37351444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31917632" sideWeight="0.45454547" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3820034" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37351444" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37011886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32597622" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32535884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -850,9 +984,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18484849" sideWeight="0.2082671" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23863636" sideWeight="0.639866" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.360134" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -886,7 +1020,8 @@
     <MESSAGE value="- mala zmena db" />
     <MESSAGE value="- praca na team detail" />
     <MESSAGE value="-praca na timoch detail&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="-praca na timoch detail&#10;" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/dataSources.xml&#10;&#9;.idea/workspace.xml&#10;&#9;HrajAirsoft/static/css/layout.css&#10;&#9;database.db&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/dataSources.xml&#10;&#9;.idea/workspace.xml&#10;&#9;HrajAirsoft/static/css/layout.css&#10;&#9;database.db&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -898,77 +1033,47 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/HrajAirsoft/templates/players/myTeam.html</url>
-          <line>29</line>
+          <line>30</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/HrajAirsoft/templates/players/myTeam.html</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html</url>
-          <line>98</line>
+          <line>261</line>
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html</url>
-          <line>13</line>
-          <option name="timeStamp" value="235" />
+          <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html</url>
+          <line>59</line>
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html</url>
+          <line>214</line>
+          <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html</url>
+          <line>82</line>
+          <option name="timeStamp" value="254" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>181</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>335</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>336</line>
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>196</line>
-          <option name="timeStamp" value="217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>204</line>
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>206</line>
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>197</line>
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>313</line>
+          <line>318</line>
           <option name="timeStamp" value="225" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>310</line>
+          <line>315</line>
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/teams/views.py</url>
-          <line>315</line>
+          <line>320</line>
           <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -996,128 +1101,195 @@
           <line>24</line>
           <option name="timeStamp" value="234" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>398</line>
+          <option name="timeStamp" value="242" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>491</line>
+          <option name="timeStamp" value="269" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>492</line>
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>493</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>494</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>495</line>
+          <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>496</line>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/teams/views.py</url>
+          <line>497</line>
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="236" />
+      <option name="time" value="276" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/addForm.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/addingPlayers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/events/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="107" selection-start="8871" selection-end="8871" vertical-scroll-proportion="0.8947368" vertical-offset="3417" max-vertical-offset="3791">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/events/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="305" selection-end="305" vertical-scroll-proportion="0.3753943" vertical-offset="0" max-vertical-offset="317">
+        <state line="3" column="36" selection-start="83" selection-end="83" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="2414">
           <folding>
-            <element signature="e#0#51#0" expanded="false" />
+            <element signature="e#2704#2731#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/homepage/homepage.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="28" selection-start="282" selection-end="282" vertical-scroll-proportion="0.599359" vertical-offset="0" max-vertical-offset="374">
+        <state line="121" column="17" selection-start="1906" selection-end="1906" vertical-scroll-proportion="-9.653846" vertical-offset="1806" max-vertical-offset="19992">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/event/detail.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/right-sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="237" column="32" selection-start="9354" selection-end="9354" vertical-scroll-proportion="0.10702341" vertical-offset="3861" max-vertical-offset="4573">
+        <state line="24" column="46" selection-start="783" selection-end="783" vertical-scroll-proportion="-8.115385" vertical-offset="197" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/players/aboutMe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="29" selection-start="0" selection-end="4138" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/players/right-sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="28" selection-start="189" selection-end="189" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/players/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="47" selection-start="749" selection-end="755" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="697">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teams/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="70" selection-start="853" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="510">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teams/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="509" column="7" selection-start="21985" selection-end="21985" vertical-scroll-proportion="-14.884615" vertical-offset="8266" max-vertical-offset="8755">
+          <folding>
+            <element signature="e#25#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/players/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="30" selection-start="8541" selection-end="8541" vertical-scroll-proportion="0.0" vertical-offset="3567" max-vertical-offset="3876">
+          <folding>
+            <element signature="e#25#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/players/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/players/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="39" selection-start="780" selection-end="780" vertical-scroll-proportion="-7.1923075" vertical-offset="153" max-vertical-offset="1632">
+          <folding>
+            <element signature="e#2226#2272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="190" column="55" selection-start="9193" selection-end="9193" vertical-scroll-proportion="-2.4615386" vertical-offset="3166" max-vertical-offset="5049">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/players/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/event/newEvent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.2724359" vertical-offset="0" max-vertical-offset="340">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/grounds/grounds.html">
+    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="13" selection-start="2224" selection-end="2224" vertical-scroll-proportion="0.0" vertical-offset="989" max-vertical-offset="1479">
+        <state line="42" column="64" selection-start="1963" selection-end="1963" vertical-scroll-proportion="0.6275168" vertical-offset="527" max-vertical-offset="2346">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grounds/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="27" selection-start="3315" selection-end="3315" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/events/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="129" selection-start="2530" selection-end="2530" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teams/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="16" selection-start="1741" selection-end="1741" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/messageWarning.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="181" selection-start="842" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="2261">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/teamslist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="99" selection-start="1547" selection-end="1547" vertical-scroll-proportion="0.0" vertical-offset="638" max-vertical-offset="1479">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teams/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="356" column="65" selection-start="14100" selection-end="14100" vertical-scroll-proportion="0.0" vertical-offset="5719" max-vertical-offset="7803">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4366" column="14" selection-start="70642" selection-end="70642" vertical-scroll-proportion="0.0" vertical-offset="122507" max-vertical-offset="131750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/static/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1101" column="9" selection-start="15854" selection-end="15862" vertical-scroll-proportion="-3.7692308" vertical-offset="18619" max-vertical-offset="19312">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HrajAirsoft/templates/teams/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="22" selection-start="635" selection-end="635" vertical-scroll-proportion="0.29929578" vertical-offset="204" max-vertical-offset="2278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
