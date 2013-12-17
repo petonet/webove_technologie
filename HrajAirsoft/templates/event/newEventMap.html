@@ -36,6 +36,8 @@ function initialize() {
             selectedGroundMarker = marker{{ ground.id }};
 		    map.setCenter(marker{{ ground.id }}.getPosition());
 
+            $("#groundId").val("{{ ground.id }}");
+
             form = document.forms[0];
             form["Latitude"].value = marker{{ ground.id }}.getPosition().lat();
             form["Longitude"].value = marker{{ ground.id }}.getPosition().lng();
@@ -55,6 +57,9 @@ function initialize() {
 		lastCreatedMarker.setMap(null);
 		lastCreatedMarker = null;
 	}
+
+    $("#groundId").val("0");
+
 	var marker = new google.maps.Marker({
 		position: event.latLng,
 		map: map,

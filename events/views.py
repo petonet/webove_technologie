@@ -100,7 +100,6 @@ def eventDetail(request, pk):
 
         context['event'] = event
         context['numberInc'] = event.users.count() + 1
-
         return render_to_response('event/detail.html', context, context_instance=RequestContext(request))
 
 
@@ -134,6 +133,7 @@ def eventList(request):
             context['events'] = events
         return render_to_response('event/events.html', context, context_instance=RequestContext(request))
 
+
 def haversine(lon1, lat1, lon2, lat2):
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
 
@@ -145,25 +145,12 @@ def haversine(lon1, lat1, lon2, lat2):
     return km
 
 
-class EventsView(generic.ListView):
-    model = Event
-    template_name = 'event/events.html'
-
-    def get_context_data(self, **kwargs):
-        events = []
-        context = {}
-        for event in Event.objects.all().order_by('published'):
-            events.append(event)
-            context['events'] = events
-        return context
-
-
 @login_required
 def add(request):
 
     context = {}
     context['mapHeight'] = 500
-    context['mapWidth'] = 760
+    context['mapWidth'] = 940
     context['mapCenterLat'] = 48.998465
     context['mapCenterLng'] = 21.239812
     context['mapZoomLevel'] = 13
@@ -187,18 +174,21 @@ def add(request):
             startTime = form.cleaned_data['startOfActionTime']
             splitStartDate = startDate.split(".")
             splitStartTime = startTime.split(":")
-            event.startOfAction = datetime.datetime(int(float(splitStartDate[2])), int(float(splitStartDate[1])), int(float(splitStartDate[0])),
-                                              int(float(splitStartTime[0])), int(float(splitStartTime[1])))
+            event.startOfAction = datetime.datetime(int(splitStartDate[2]), int(splitStartDate[1]), int(splitStartDate[0]),
+                                              int(splitStartTime[0]), int(splitStartTime[1]))
 
             event.published = datetime.datetime.now()
             event.numberOfPlayers = form.cleaned_data['numberOfPlayers']
 
-            loginDate = form.cleaned_data['login_sinceDate']
-            loginTime = form.cleaned_data['login_sinceTime']
-            splitLoginDate = loginDate.split(".")
-            splitLoginTime = loginTime.split(":")
-            event.login_since = datetime.datetime(int(float(splitLoginDate[2])), int(float(splitLoginDate[1])), int(float(splitLoginDate[0])),
-                                              int(float(splitLoginTime[0])), int(float(splitLoginTime[1])))
+            if form.data.get("loginCheckBox") == "on":
+                event.login_since = datetime.datetime.now()
+            else:
+                loginDate = form.cleaned_data['login_sinceDate']
+                loginTime = form.cleaned_data['login_sinceTime']
+                splitLoginDate = loginDate.split(".")
+                splitLoginTime = loginTime.split(":")
+                event.login_since = datetime.datetime(int(splitLoginDate[2]), int(splitLoginDate[1]), int(splitLoginDate[0]),
+                                                  int(splitLoginTime[0]), int(splitLoginTime[1]))
 
             event.prologue = form.cleaned_data['prologue']
             event.scenario = form.cleaned_data['scenario']
@@ -207,7 +197,7 @@ def add(request):
             durationTime = form.cleaned_data['duration']
             splitDurationTime = durationTime.split(":")
 
-            event.duration = datetime.time(int(float(splitDurationTime[0])), int(float(splitDurationTime[1])), 0)
+            event.duration = datetime.time(int(splitDurationTime[0]), int(splitDurationTime[1]), 0)
             event.entryFee = form.cleaned_data['entryFee']
             event.author = user
             #event.ground = form.cleaned_data['ground']
@@ -215,6 +205,10 @@ def add(request):
             event.locationLng = form.data['Longitude']
             event.titleImage = form.cleaned_data['titleImage']
             event.published = datetime.datetime.now()
+            groundId = int(form.data['groundId'])
+            if (groundId > 0):
+                event.ground = ground.objects.get(id=groundId)
+
             event.save()
             event.users.add(user.player)
             return HttpResponseRedirect('/events/detail/' + str(event.id))
