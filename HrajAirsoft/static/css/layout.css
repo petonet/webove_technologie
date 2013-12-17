@@ -1038,29 +1038,53 @@ position: absolute;
     font-size: 15pt;
 }
 
-.left_filter{
-    position: fixed;
-    left: 130px;
-    top:300px;
-    background-color: #dddddd;
-    padding: 20px;
-    border-radius: 3px;
-
+.content2{
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
 }
 
-.left_filter p{
-    border-bottom: 1px solid ;
-    width: 100%;
+#ev_content {
+    width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.left_filter ul{
-     list-style: none;
-    width: 100%;
+.ev_searchDiv {
+    height: 100px;
+    background-color: lightblue;
 }
 
-.left_filter ul li{
-     margin-top: 10px;
+.ev_event {
+    height: 120px;
+    overflow: hidden;
 }
 
+.ev_eventLeft {
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    width: 65%;
+    overflow : hidden;
+}
 
+.ev_eventRight {
+    display: inline-block;
+    position: relative;
+    height: 100px;
+    width: 200px;
+    left: calc(35% - 200px);
+    overflow : hidden;
+}
 
+.ev_eventTitle {
+    font-size: 25pt;
+}
+
+.ev_eventDate {
+    font-size: 15pt;
+}
+
+.ev_numberOfPlayers {
+    font-size: 15pt;
+}

@@ -111,9 +111,15 @@
 			<div class="ed_itemLeft">
 				<span id="ed_leftText"><b>Miesto</b></span>
 			</div>
+            <div class="ed_itemRight">
+                {% if event.ground %}
+                    <span id="ed_leftText"><a href="">{{ event.ground.name }}</a></span>
+                {% endif %}
+            </div>
 		</div>
 		<div class="ed_bottomLeftMap">
 			<div class="ed_itemLeft">
+
 			</div>
 			<div class="ed_itemRight">
 				<span id="ed_leftText">{% include "event/eventDetailMap.html" %}</span>
