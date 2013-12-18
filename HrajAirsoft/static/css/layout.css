@@ -621,12 +621,16 @@ position: absolute;
 
 .ed_bottomLeftPrologue {
 	width: 100%;
+    height: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 10pt;
 }
 
 .ed_bottomLeftScenario {
 	width: 100%;
+    height: 120px;
+    font-size: 10pt;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -674,6 +678,33 @@ position: absolute;
     vertical-align: middle;
 	text-align: left;
 	font-size: 20pt;
+}
+
+#ed_leftTextSmall {
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 12pt;
+    padding-top: 10px;
+}
+
+#ed_leftTextSmallPrologue {
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 12pt;
+    padding-top: 10px;
+}
+
+#ed_leftTextSmallScenario {
+	width: 100%;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: left;
+	font-size: 12pt;
+    padding-top: 10px;
 }
 
 #ed_organizationText {
@@ -1168,4 +1199,55 @@ margin-top: 35px;
 
 #addingPlayersButton{
     float:right;
+}
+
+.content2{
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+}
+
+#ev_content {
+    width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ev_searchDiv {
+    height: 100px;
+    background-color: lightblue;
+}
+
+.ev_event {
+    height: 120px;
+    overflow: hidden;
+}
+
+.ev_eventLeft {
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    width: 65%;
+    overflow : hidden;
+}
+
+.ev_eventRight {
+    display: inline-block;
+    position: relative;
+    height: 100px;
+    width: 200px;
+    left: calc(35% - 200px);
+    overflow : hidden;
+}
+
+.ev_eventTitle {
+    font-size: 25pt;
+}
+
+.ev_eventDate {
+    font-size: 15pt;
+}
+
+.ev_numberOfPlayers {
+    font-size: 15pt;
 }

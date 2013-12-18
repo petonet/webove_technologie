@@ -124,13 +124,12 @@
 			<div class="ed_itemRight">
 				<span id="ed_leftText">{% include "event/eventDetailMap.html" %}</span>
 			</div>
-		</div>
-		<div class="ed_bottomLeftPrologue">
+		</div><div class="ed_bottomLeftPrologue">
 			<div class="ed_itemLeft">
 				<span id="ed_leftText"><b>Prológ</b></span>
 			</div>
 			<div class="ed_itemRight">
-				<span id="ed_leftText">{{ event.prologue }}</span>
+				<span id="ed_leftTextSmallPrologue"></span>
 			</div>
 		</div>
 		<div class="ed_bottomLeftScenario">
@@ -138,16 +137,18 @@
 				<span id="ed_leftText"><b>Scenár</b></span>
 			</div>
 			<div class="ed_itemRight">
-				<span id="ed_leftText">{{ event.scenario }}</span>
+				<span id="ed_leftTextSmallScenario">{{ event.scenario }}</span>
 			</div>
 		</div>
+		<!---->
 		<div class="ed_organizationDiv">
 			<span id="ed_organizationText"><b>Organizácia</b></span>
 		</div>
 		<div class="ed_organization">
 			<div class="ed_organizationNotes">
-				<span id="ed_leftText">{{ event.organizationNotes }}</span>
+				<span id="ed_leftTextSmall">{{ event.organizationNotes }}</span>
 			</div>
+
 			<div class="ed_entryFeeDiv">
 				<span id="ed_entryFeeText"><b>Vstupné</b></span>
 				<div id="ed_organizationSeparator"></div>

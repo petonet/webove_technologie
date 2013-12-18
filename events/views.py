@@ -205,7 +205,7 @@ def add(request):
             event.locationLng = form.data['Longitude']
             event.titleImage = form.cleaned_data['titleImage']
             event.published = datetime.datetime.now()
-            groundId = int(form.data['ground'])
+            groundId = int(form.data['groundId'])
             if (groundId > 0):
                 event.ground = ground.objects.get(id=groundId)
 
