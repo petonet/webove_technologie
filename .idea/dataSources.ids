@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3f94f6ab-4a7e-45c2-a219-2c00a05a3c44">
+  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="7b8a6168-e706-44e8-af79-d5356d1f8213">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:D:\etc\Dropbox\Skola\4.rocnik\ZS\WT\new2\webove_technologie\database.db</jdbc-url>
     <libraries/>
